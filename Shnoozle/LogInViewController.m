@@ -37,7 +37,9 @@
         // Create the log in view controller
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        logInViewController.fields= PFLogInFieldsDefault | PFLogInFieldsFacebook | PFLogInFieldsTwitter;
+        logInViewController.fields= PFLogInFieldsDefault | PFLogInFieldsFacebook ;
+        
+        [logInViewController.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-logo.png"]]];
         
         // Create the sign up view controller
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
@@ -161,7 +163,12 @@
     [self dismissModalViewControllerAnimated:YES];
      [self _presentUserDetailsViewControllerAnimated:YES];
     
-  
+    [self loginButtonTouchHandler:self];
+}
+
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
+    [self dismissModalViewControllerAnimated:YES];
+    [self _presentUserDetailsViewControllerAnimated:YES];
     
     [self loginButtonTouchHandler:self];
 }

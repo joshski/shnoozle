@@ -18,6 +18,7 @@
 		B36E1A311AC0470700300174 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A301AC0470700300174 /* MainViewController.m */; };
 		B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A321AC0575700300174 /* TableHeaderView.xib */; };
 		B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A351AC0576700300174 /* UserDetailsViewController.m */; };
+		B36E1A381AC08D0400300174 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A371AC08D0400300174 /* nav-logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B36E1A321AC0575700300174 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		B36E1A341AC0576700300174 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		B36E1A351AC0576700300174 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		B36E1A371AC08D0400300174 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
 		D5113FF57EF7B59FD04488A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				B34AFF701AADBAD5007269C4 /* AppDelegate.h */,
 				B34AFF711AADBAD5007269C4 /* AppDelegate.m */,
 				B34AFF731AADBAD5007269C4 /* LogInViewController.h */,
+				B36E1A371AC08D0400300174 /* nav-logo.png */,
 				B34AFF741AADBAD5007269C4 /* LogInViewController.m */,
 				B36E1A2F1AC0470700300174 /* MainViewController.h */,
 				B36E1A341AC0576700300174 /* UserDetailsViewController.h */,
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */,
+				B36E1A381AC08D0400300174 /* nav-logo.png in Resources */,
 				B34AFF781AADBAD5007269C4 /* Main.storyboard in Resources */,
 				B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */,
 				B34AFF7A1AADBAD5007269C4 /* Images.xcassets in Resources */,

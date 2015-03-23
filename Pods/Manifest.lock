@@ -12,6 +12,7 @@ PODS:
     - ParseFacebookUtils (~> 1.6)
 
 DEPENDENCIES:
+  - Facebook-iOS-SDK
   - Parse
   - ParseUI
 

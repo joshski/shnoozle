@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A11C1304-B2DC-40A9-A5D2-5D0E34264828</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Shnoozle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9B1C0BFF0A69E1718750095E01F4E9CAC3AA5DF0</key>
+		<string>github.com:leomdivani/shnoozle.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Shnoozle.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9B1C0BFF0A69E1718750095E01F4E9CAC3AA5DF0</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:leomdivani/shnoozle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9B1C0BFF0A69E1718750095E01F4E9CAC3AA5DF0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9B1C0BFF0A69E1718750095E01F4E9CAC3AA5DF0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Shnoozle</string>
+		</dict>
+	</array>
+</dict>
+</plist>

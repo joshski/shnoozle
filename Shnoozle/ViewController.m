@@ -3,6 +3,10 @@
 #import "ViewController.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <FacebookSDK/FacebookSDK.h>
+
+
 
 @interface ViewController ()
 
@@ -22,6 +26,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [PFFacebookUtils initializeFacebook];
+
     
     PFLogInViewController *loginController = [[PFLogInViewController alloc]init];
     loginController.fields= PFLogInFieldsDefault | PFLogInFieldsFacebook | PFLogInFieldsTwitter;

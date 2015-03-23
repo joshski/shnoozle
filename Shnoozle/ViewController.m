@@ -5,7 +5,6 @@
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "UserDetailsTableViewController.h"
 
 
 
@@ -26,14 +25,26 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [PFFacebookUtils initializeFacebook];
-
     
-    PFLogInViewController *loginController = [[PFLogInViewController alloc]init];
-    loginController.fields= PFLogInFieldsDefault | PFLogInFieldsFacebook | PFLogInFieldsTwitter;
-    
-    
-    [self presentViewController:loginController animated:YES completion:nil];
+    if (![PFUser currentUser]) { // No user logged in
+        
+        [PFFacebookUtils initializeFacebook];
+        
+        // Create the log in view controller
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        logInViewController.fields= PFLogInFieldsDefault | PFLogInFieldsFacebook | PFLogInFieldsTwitter;
+        
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,19 +103,18 @@
             } else {
                 NSLog(@"User with facebook logged in!");
             }
-            [self _presentUserDetailsViewControllerAnimated:YES];
+//            [self _presentUserDetailsViewControllerAnimated:YES];
+            NSLog(@"should now present users details view controller");
+
         }
     }];
     
     [_activityIndicator startAnimating]; // Show loading indicator until login is finished
 }
 
-- (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
-    UserDetailsTableViewController *detailsViewController = [[UserDetailsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    [self.navigationController pushViewController:detailsViewController animated:animated];
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [self loginButtonTouchHandler:self];
 }
-
-
 
 
 @end

@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
   
-@interface ViewController : UIViewController <PFLogInViewControllerDelegate,PFSignUpViewControllerDelegate> 
+@interface LogInViewController : UIViewController <PFLogInViewControllerDelegate,PFSignUpViewControllerDelegate> 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 

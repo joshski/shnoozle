@@ -1,33 +1,37 @@
 
 
-#import "ViewController.h"
+#import "LogInViewController.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "MainViewController.h"
+#import "UserDetailsViewController.h"
 
-
-
-@interface ViewController ()
+@interface LogInViewController ()
 
 @end
 
 
-@implementation ViewController
+@implementation LogInViewController
 
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self userSignedIn];
+    
+}
+
+- (void)userSignedIn {
     
     if (![PFUser currentUser]) { // No user logged in
-        
         [PFFacebookUtils initializeFacebook];
         
         // Create the log in view controller
@@ -45,6 +49,15 @@
         // Present the log in view controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
+    else {
+//        UIAlertView *loggedInAlert =[[UIAlertView alloc] initWithTitle:@"Logged In" message:@"Log me out?" delegate:nil cancelButtonTitle:@"Log me out!" otherButtonTitles:nil, nil];
+//        
+//        [loggedInAlert show];
+//        [PFUser logOut];
+//        [self viewDidAppear:YES];
+        [self _presentUserDetailsViewControllerAnimated:YES];
+
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,12 +66,12 @@
 
 - (void)parse {
     PFUser *user = [PFUser user];
-//    user.username = usernameInput.text;
-//    user.password = passwordInput.text;
-//    user.email = @"email@example.com";
-//    
-//    // other fields can be set if you want to save more information
-//    user[@"phone"] = @"650-555-0000";
+    //    user.username = usernameInput.text;
+    //    user.password = passwordInput.text;
+    //    user.email = @"email@example.com";
+    //
+    //    // other fields can be set if you want to save more information
+    //    user[@"phone"] = @"650-555-0000";
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -71,12 +84,13 @@
 }
 - (IBAction)createUser:(id)sender {
     [self parse];
-
+    
 }
 
 - (IBAction)loginButtonTouchHandler:(id)sender  {
+    
     // Set permissions required from the facebook user account
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location",@"user_friends"];
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
@@ -97,15 +111,46 @@
                                                   cancelButtonTitle:nil
                                                   otherButtonTitles:@"Dismiss", nil];
             [alert show];
-        } else {
+        }
+        else {
             if (user.isNew) {
                 NSLog(@"User with facebook signed up and logged in!");
             } else {
                 NSLog(@"User with facebook logged in!");
             }
-//            [self _presentUserDetailsViewControllerAnimated:YES];
+            
             NSLog(@"should now present users details view controller");
-
+            
+            FBRequest *request = [FBRequest requestForMe];
+            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    NSDictionary *userData = (NSDictionary *)result;
+                    NSLog(@"facebook dictionary %@",userData);
+                    NSString *name = userData[@"name"];
+                    NSLog(@"first name ?? %@",name);
+                    
+                }
+        }];
+            
+//            FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+//            
+//            [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+//                                                          
+//                                                          NSDictionary* result,
+//                                                          NSError *error) {
+//                if(!error){
+//                    NSMutableArray *facebookUIDs = [NSMutableArray array];
+//                    NSArray* friends = [result objectForKey:@"data"];
+//                    NSLog(@"Found: %i friends", friends.count);
+//                    // STUFFS
+//                    for (NSDictionary<FBGraphUser>* friend in friends) {
+//                        [facebookUIDs addObject:friend.id];
+//                    }
+//                    
+//                    
+//                }
+//            }];
+            
         }
     }];
     
@@ -113,7 +158,21 @@
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [self dismissModalViewControllerAnimated:YES];
+     [self _presentUserDetailsViewControllerAnimated:YES];
+    
+  
+    
     [self loginButtonTouchHandler:self];
+}
+
+- (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
+//    UserDetailsViewController *detailsViewController = [[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//    [self.navigationController pushViewController:detailsViewController animated:animated];
+    
+    [self performSegueWithIdentifier:@"transitionToMainController" sender:self];
+    
+    
 }
 
 

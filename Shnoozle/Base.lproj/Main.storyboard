@@ -88,7 +88,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseBtnClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="U5V-FM-zeX"/>
+                                    <action selector="stopBtnClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="w0P-Uy-OjU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9m-zc-EuL">
+                                <rect key="frame" x="139" y="393" width="97" height="30"/>
+                                <state key="normal" title="Send to Parse">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadToParseClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="zWE-YO-p9t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,6 +108,7 @@
                         <outlet property="playBtn" destination="sfx-6V-ipX" id="Izq-4Y-yRI"/>
                         <outlet property="recordPauseBtn" destination="zky-DF-Nxf" id="Obh-FG-gey"/>
                         <outlet property="stopBtn" destination="vXd-ML-EvN" id="m0U-tV-gBE"/>
+                        <outlet property="uploadToParse" destination="x9m-zc-EuL" id="64Q-ju-EvU"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutClicked" id="fuz-00-iPx"/>
                     </connections>
                 </viewController>

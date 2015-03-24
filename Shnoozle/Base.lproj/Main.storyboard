@@ -119,6 +119,12 @@
                                             <action selector="closeClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="9Hj-hf-ch6"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcd-Mq-na8" userLabel="timerLabel">
+                                        <rect key="frame" x="166" y="80" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -161,6 +167,7 @@
                         <outlet property="playView" destination="d6d-lf-4xO" id="qmr-ga-CzW"/>
                         <outlet property="recordPauseBtn" destination="zky-DF-Nxf" id="Obh-FG-gey"/>
                         <outlet property="recordView" destination="AYu-yi-yo4" id="YJN-z8-9sC"/>
+                        <outlet property="timerLabel" destination="Qcd-Mq-na8" id="jcd-fw-5Jk"/>
                         <outlet property="uploadToParse" destination="x9m-zc-EuL" id="64Q-ju-EvU"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutClicked" id="fuz-00-iPx"/>
                     </connections>

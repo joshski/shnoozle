@@ -22,7 +22,7 @@
 @synthesize playView;
 @synthesize recordPauseBtn;
 @synthesize recordView;
-
+@synthesize timerLabel;
 
 - (void)viewDidLoad
 {
@@ -89,9 +89,29 @@
     }
     
 }
+
+-(void)aTime
+{
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    id obj = [standardUserDefaults objectForKey:@"TimerValue"];
+    int i = 0;
+    
+    if(obj != nil)
+    {
+        i = [obj intValue];
+    }
+    
+    timerLabel.text = [NSString stringWithFormat:@"%d",i];
+    i++;
+    
+    [standardUserDefaults setObject:[NSNumber numberWithInt:i] forKey:@"TimerValue"];
+    [standardUserDefaults synchronize];
+}
+
 - (IBAction)recordTouchDown:(id)sender {
 
-    [recorder recordForDuration:30];    
+    [recorder recordForDuration:30];
+     NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(aTime) userInfo:nil repeats:YES];
 
     NSLog(@"started started");
 

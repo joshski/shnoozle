@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *uploadToParse;
 @property (weak, nonatomic) IBOutlet UIView *recordView;
 @property (weak, nonatomic) IBOutlet UIView *playView;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @end

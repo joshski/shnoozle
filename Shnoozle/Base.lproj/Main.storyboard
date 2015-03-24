@@ -61,16 +61,6 @@
                                     <action selector="logOutClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Ujd-v0-A2y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zky-DF-Nxf">
-                                <rect key="frame" x="162" y="195" width="50" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.062338048889999997" blue="0.10071189480000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Record">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="recordBtnClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="MdI-AK-asb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfx-6V-ipX">
                                 <rect key="frame" x="172" y="298" width="30" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,6 +88,17 @@
                                 </state>
                                 <connections>
                                     <action selector="uploadToParseClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="zWE-YO-p9t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zky-DF-Nxf">
+                                <rect key="frame" x="55" y="70" width="282" height="150"/>
+                                <color key="backgroundColor" red="1" green="0.062338048889999997" blue="0.10071189480000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordBtnClicked:" destination="kC0-Pt-0sG" eventType="touchDown" id="GFj-S9-vcB"/>
+                                    <action selector="recordStopped:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="1nX-Ty-P5S"/>
                                 </connections>
                             </button>
                         </subviews>

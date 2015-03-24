@@ -119,6 +119,12 @@
     
     [stopBtn setEnabled:YES];
     [playBtn setEnabled:YES];
+    NSLog(@"started started");
+
+}
+- (IBAction)recordStopped:(id)sender {
+    [self stopBtnClicked:self];
+    NSLog(@"stopped stopped");
 
 }
 

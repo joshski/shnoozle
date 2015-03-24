@@ -25,8 +25,8 @@
     [super viewDidLoad];
     
     // Disable Stop/Play button when application launches
-    [stopBtn setEnabled:NO];
-    [playBtn setEnabled:NO];
+//    [stopBtn setEnabled:NO];
+//    [playBtn setEnabled:NO];
     
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -37,7 +37,9 @@
     
     // Setup audio session
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord
+                                     withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
+                                           error:nil];
     
     // Define the recorder setting
     NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];

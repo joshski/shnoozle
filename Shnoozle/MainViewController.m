@@ -10,6 +10,8 @@
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
     NSURL *tempSoundStorage;
+    NSTimer *timer;
+
 }
 
 @end
@@ -88,37 +90,9 @@
     
 }
 - (IBAction)recordTouchDown:(id)sender {
-    
-    
-//    
-//    AVAudioSession *session = [AVAudioSession sharedInstance];
-//    [session setActive:YES error:nil];
-//    
-//    // Start recording
-//    [recorder record];
-//    [recordPauseBtn setTitle:@"recording" forState:UIControlStateNormal];
 
-    
-    // Stop the audio player before recording
-    if (player.playing) {
-        [player stop];
-    }
-    
-    if (!recorder.recording) {
-        AVAudioSession *session = [AVAudioSession sharedInstance];
-        [session setActive:YES error:nil];
-        
-        // Start recording
-        [recorder record];
-        [recordPauseBtn setTitle:@"Pause" forState:UIControlStateNormal];
-        
-    } else {
-        
-        // Pause recording
-        [recorder pause];
-        [recordPauseBtn setTitle:@"Record" forState:UIControlStateNormal];
-    }
-    
+    [recorder recordForDuration:30];    
+
     NSLog(@"started started");
 
 }

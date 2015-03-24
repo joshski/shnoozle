@@ -79,16 +79,46 @@
         player = [[AVAudioPlayer alloc] initWithContentsOfURL:tempSoundStorage error:nil];
         [player setDelegate:self];
         [player play];
+    if ([recordPauseBtn.titleLabel  isEqual: @"Pause"]) {
+        [recordPauseBtn setTitle:@"Record" forState:UIControlStateNormal];
+
+    }
+    
 }
 - (IBAction)recordBtnClicked:(id)sender {
     
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setActive:YES error:nil];
     
-    // Start recording
-    [recorder record];
-    [recordPauseBtn setTitle:@"recording" forState:UIControlStateNormal];
+//    
+//    AVAudioSession *session = [AVAudioSession sharedInstance];
+//    [session setActive:YES error:nil];
+//    
+//    // Start recording
+//    [recorder record];
+//    [recordPauseBtn setTitle:@"recording" forState:UIControlStateNormal];
 
+    
+    // Stop the audio player before recording
+    if (player.playing) {
+        [player stop];
+    }
+    
+    if (!recorder.recording) {
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        [session setActive:YES error:nil];
+        
+        // Start recording
+        [recorder record];
+        [recordPauseBtn setTitle:@"Pause" forState:UIControlStateNormal];
+        
+    } else {
+        
+        // Pause recording
+        [recorder pause];
+        [recordPauseBtn setTitle:@"Record" forState:UIControlStateNormal];
+    }
+    
+    [stopBtn setEnabled:YES];
+    [playBtn setEnabled:YES];
 
 }
 

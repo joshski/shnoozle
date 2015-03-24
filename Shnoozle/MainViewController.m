@@ -27,13 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    // Disable Stop/Play button when application launches
-//    [stopBtn setEnabled:NO];
-//    [playBtn setEnabled:NO];
-//    
-    // Set the audio file
-    
+    [self recorderSettings];
+
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)recorderSettings {
     NSArray *pathComponents = [NSArray arrayWithObjects:
                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
                                @"MyAudioMemo.m4a",
@@ -43,8 +45,8 @@
     // Setup audio session
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord
-                                     withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
-                                           error:nil];
+             withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
+                   error:nil];
     
     // Define the recorder setting
     NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
@@ -59,10 +61,7 @@
     recorder.meteringEnabled = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 - (IBAction)uploadToParseClicked:(id)sender {
     PFObject *testObject = [PFObject objectWithClassName:@"AudioFiles"];
@@ -90,31 +89,27 @@
     
 }
 
--(void)aTime
-{
-    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    id obj = [standardUserDefaults objectForKey:@"TimerValue"];
-    int i = 0;
-    
-    if(obj != nil)
-    {
-        i = [obj intValue];
-    }
-    
-    timerLabel.text = [NSString stringWithFormat:@"%d",i];
-    i++;
-    
-    [standardUserDefaults setObject:[NSNumber numberWithInt:i] forKey:@"TimerValue"];
-    [standardUserDefaults synchronize];
-}
+
 
 - (IBAction)recordTouchDown:(id)sender {
 
     [recorder recordForDuration:30];
-     NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(aTime) userInfo:nil repeats:YES];
-
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(updateTime)
+                                           userInfo:nil
+                                            repeats:YES];
     NSLog(@"started started");
 
+}
+-(void)updateTime
+{
+    //Get the time left until the specified date
+    NSInteger seconds = 30;
+
+    
+    //Update the label with the remaining time
+    self.timerLabel.text = [NSString stringWithFormat:@"%02li sec",(long)seconds];
 }
 
 

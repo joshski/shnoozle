@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71B0481378BDBF8F46B987A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5113FF57EF7B59FD04488A9 /* libPods.a */; };
+		B319BDB41AC18B9E0091DD03 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */; };
 		B34AFF6F1AADBAD5007269C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF6E1AADBAD5007269C4 /* main.m */; };
 		B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF711AADBAD5007269C4 /* AppDelegate.m */; };
 		B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF741AADBAD5007269C4 /* LogInViewController.m */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		9BE723DECB521D630272C238 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A9008DDF8A1740655721F0F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B34AFF691AADBAD5007269C4 /* Shnoozle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shnoozle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34AFF6D1AADBAD5007269C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34AFF6E1AADBAD5007269C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B319BDB41AC18B9E0091DD03 /* AVFoundation.framework in Frameworks */,
 				71B0481378BDBF8F46B987A3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +90,7 @@
 		812B92F6B5A506ECEF6DB5F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */,
 				D5113FF57EF7B59FD04488A9 /* libPods.a */,
 			);
 			name = Frameworks;

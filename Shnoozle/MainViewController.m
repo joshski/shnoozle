@@ -17,8 +17,9 @@
 @implementation MainViewController
 
 @synthesize playBtn;
-@synthesize stopBtn;
+@synthesize playView;
 @synthesize recordPauseBtn;
+@synthesize recordView;
 
 
 - (void)viewDidLoad
@@ -30,6 +31,7 @@
 //    [playBtn setEnabled:NO];
 //    
     // Set the audio file
+    
     NSArray *pathComponents = [NSArray arrayWithObjects:
                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
                                @"MyAudioMemo.m4a",
@@ -117,16 +119,10 @@
         [recordPauseBtn setTitle:@"Record" forState:UIControlStateNormal];
     }
     
-    [stopBtn setEnabled:YES];
-    [playBtn setEnabled:YES];
     NSLog(@"started started");
 
 }
-- (IBAction)recordStopped:(id)sender {
-    [self stopBtnClicked:self];
-    NSLog(@"stopped stopped");
 
-}
 
 - (IBAction)stopBtnClicked:(id)sender {
     [recorder stop];
@@ -155,8 +151,26 @@
     [audioSession setActive:NO error:nil];
     
     NSLog(@"%@",tempSoundStorage);
+
+    
+    NSLog(@"stopped stopped");
+    playView.hidden=false;
+
+}
+- (IBAction)closeClicked:(id)sender {
+    playView.hidden=true;
+    
 }
 
+- (void)inRecordView{
+    BOOL playHidden = playView.hidden=true;
+    if (playHidden){
+     
+    }
+    if (!playHidden) {
+       
+    }
+}
 
 - (IBAction)logOutClicked:(id)sender {
     [PFUser logOut];
@@ -167,8 +181,6 @@
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
     [recordPauseBtn setTitle:@"Record" forState:UIControlStateNormal];
     
-    [stopBtn setEnabled:NO];
-    [playBtn setEnabled:YES];
 }
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"

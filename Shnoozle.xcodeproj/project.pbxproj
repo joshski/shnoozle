@@ -20,6 +20,12 @@
 		B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A321AC0575700300174 /* TableHeaderView.xib */; };
 		B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A351AC0576700300174 /* UserDetailsViewController.m */; };
 		B36E1A381AC08D0400300174 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A371AC08D0400300174 /* nav-logo.png */; };
+		B3E5FCDD1AC1C3B20043EFE7 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDB1AC1C3B20043EFE7 /* mic.png */; };
+		B3E5FCDE1AC1C3B20043EFE7 /* mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */; };
+		B3E5FCE11AC1C4B90043EFE7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDF1AC1C4B90043EFE7 /* play.png */; };
+		B3E5FCE21AC1C4B90043EFE7 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE01AC1C4B90043EFE7 /* play@2x.png */; };
+		B3E5FCE51AC1C7670043EFE7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE31AC1C7670043EFE7 /* close.png */; };
+		B3E5FCE61AC1C7670043EFE7 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE41AC1C7670043EFE7 /* close@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		B36E1A341AC0576700300174 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		B36E1A351AC0576700300174 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		B36E1A371AC08D0400300174 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
+		B3E5FCDB1AC1C3B20043EFE7 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
+		B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic@2x.png"; sourceTree = "<group>"; };
+		B3E5FCDF1AC1C4B90043EFE7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		B3E5FCE01AC1C4B90043EFE7 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		B3E5FCE31AC1C7670043EFE7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		B3E5FCE41AC1C7670043EFE7 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		D5113FF57EF7B59FD04488A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +131,7 @@
 		B34AFF6B1AADBAD5007269C4 /* Shnoozle */ = {
 			isa = PBXGroup;
 			children = (
+				B3E5FCDA1AC1C3B20043EFE7 /* images */,
 				B34AFF701AADBAD5007269C4 /* AppDelegate.h */,
 				B34AFF711AADBAD5007269C4 /* AppDelegate.m */,
 				B34AFF731AADBAD5007269C4 /* LogInViewController.h */,
@@ -161,6 +174,19 @@
 				B34AFF871AADBAD5007269C4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3E5FCDA1AC1C3B20043EFE7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5FCDB1AC1C3B20043EFE7 /* mic.png */,
+				B3E5FCDF1AC1C4B90043EFE7 /* play.png */,
+				B3E5FCE31AC1C7670043EFE7 /* close.png */,
+				B3E5FCE41AC1C7670043EFE7 /* close@2x.png */,
+				B3E5FCE01AC1C4B90043EFE7 /* play@2x.png */,
+				B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,10 +272,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */,
+				B3E5FCE11AC1C4B90043EFE7 /* play.png in Resources */,
+				B3E5FCE21AC1C4B90043EFE7 /* play@2x.png in Resources */,
+				B3E5FCDE1AC1C3B20043EFE7 /* mic@2x.png in Resources */,
 				B36E1A381AC08D0400300174 /* nav-logo.png in Resources */,
 				B34AFF781AADBAD5007269C4 /* Main.storyboard in Resources */,
+				B3E5FCDD1AC1C3B20043EFE7 /* mic.png in Resources */,
 				B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */,
+				B3E5FCE51AC1C7670043EFE7 /* close.png in Resources */,
 				B34AFF7A1AADBAD5007269C4 /* Images.xcassets in Resources */,
+				B3E5FCE61AC1C7670043EFE7 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

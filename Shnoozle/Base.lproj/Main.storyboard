@@ -62,8 +62,8 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="recordBtnClicked:" destination="kC0-Pt-0sG" eventType="touchDown" id="VnK-M5-XVa"/>
-                                            <action selector="stopBtnClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="wns-hr-aqV"/>
+                                            <action selector="recordTouchDown:" destination="kC0-Pt-0sG" eventType="touchDown" id="HD4-E8-gLr"/>
+                                            <action selector="recordTouchUp:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Izx-lS-rDj"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic.png" translatesAutoresizingMaskIntoConstraints="NO" id="zJ0-Qc-8Q8">

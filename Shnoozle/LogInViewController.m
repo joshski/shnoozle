@@ -39,7 +39,7 @@
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         logInViewController.fields= PFLogInFieldsDefault | PFLogInFieldsFacebook ;
         
-        [logInViewController.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-logo.png"]]];
+        [logInViewController.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zzz.png"]]];
         
         // Create the sign up view controller
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];

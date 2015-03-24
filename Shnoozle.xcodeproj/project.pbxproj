@@ -26,6 +26,8 @@
 		B3E5FCE21AC1C4B90043EFE7 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE01AC1C4B90043EFE7 /* play@2x.png */; };
 		B3E5FCE51AC1C7670043EFE7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE31AC1C7670043EFE7 /* close.png */; };
 		B3E5FCE61AC1C7670043EFE7 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE41AC1C7670043EFE7 /* close@2x.png */; };
+		B3E5FCE91AC1CA230043EFE7 /* zzz.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE71AC1CA230043EFE7 /* zzz.png */; };
+		B3E5FCEA1AC1CA230043EFE7 /* zzz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE81AC1CA230043EFE7 /* zzz@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		B3E5FCE01AC1C4B90043EFE7 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
 		B3E5FCE31AC1C7670043EFE7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		B3E5FCE41AC1C7670043EFE7 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		B3E5FCE71AC1CA230043EFE7 /* zzz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zzz.png; sourceTree = "<group>"; };
+		B3E5FCE81AC1CA230043EFE7 /* zzz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zzz@2x.png"; sourceTree = "<group>"; };
 		D5113FF57EF7B59FD04488A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,6 +186,8 @@
 				B3E5FCDB1AC1C3B20043EFE7 /* mic.png */,
 				B3E5FCDF1AC1C4B90043EFE7 /* play.png */,
 				B3E5FCE31AC1C7670043EFE7 /* close.png */,
+				B3E5FCE71AC1CA230043EFE7 /* zzz.png */,
+				B3E5FCE81AC1CA230043EFE7 /* zzz@2x.png */,
 				B3E5FCE41AC1C7670043EFE7 /* close@2x.png */,
 				B3E5FCE01AC1C4B90043EFE7 /* play@2x.png */,
 				B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */,
@@ -271,7 +277,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E5FCE91AC1CA230043EFE7 /* zzz.png in Resources */,
 				B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */,
+				B3E5FCEA1AC1CA230043EFE7 /* zzz@2x.png in Resources */,
 				B3E5FCE11AC1C4B90043EFE7 /* play.png in Resources */,
 				B3E5FCE21AC1C4B90043EFE7 /* play@2x.png in Resources */,
 				B3E5FCDE1AC1C3B20043EFE7 /* mic@2x.png in Resources */,

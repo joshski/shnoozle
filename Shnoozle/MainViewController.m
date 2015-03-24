@@ -87,7 +87,7 @@
     }
     
 }
-- (IBAction)recordBtnClicked:(id)sender {
+- (IBAction)recordTouchDown:(id)sender {
     
     
 //    
@@ -124,7 +124,7 @@
 }
 
 
-- (IBAction)stopBtnClicked:(id)sender {
+- (IBAction)recordTouchUp:(id)sender {
     [recorder stop];
     
     NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -162,15 +162,7 @@
     
 }
 
-- (void)inRecordView{
-    BOOL playHidden = playView.hidden=true;
-    if (playHidden){
-     
-    }
-    if (!playHidden) {
-       
-    }
-}
+
 
 - (IBAction)logOutClicked:(id)sender {
     [PFUser logOut];

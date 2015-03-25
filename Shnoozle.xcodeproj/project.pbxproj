@@ -16,7 +16,8 @@
 		B34AFF7A1AADBAD5007269C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34AFF791AADBAD5007269C4 /* Images.xcassets */; };
 		B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34AFF7B1AADBAD5007269C4 /* LaunchScreen.xib */; };
 		B34AFF891AADBAD5007269C4 /* ShnoozleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF881AADBAD5007269C4 /* ShnoozleTests.m */; };
-		B36E1A311AC0470700300174 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A301AC0470700300174 /* MainViewController.m */; };
+		B34FD6AF1AC2887100F0248F /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B34FD6AE1AC2887100F0248F /* AlarmViewController.m */; };
+		B36E1A311AC0470700300174 /* RecordPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A301AC0470700300174 /* RecordPlayViewController.m */; };
 		B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A321AC0575700300174 /* TableHeaderView.xib */; };
 		B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A351AC0576700300174 /* UserDetailsViewController.m */; };
 		B36E1A381AC08D0400300174 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A371AC08D0400300174 /* nav-logo.png */; };
@@ -57,8 +58,10 @@
 		B34AFF821AADBAD5007269C4 /* ShnoozleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShnoozleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34AFF871AADBAD5007269C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34AFF881AADBAD5007269C4 /* ShnoozleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShnoozleTests.m; sourceTree = "<group>"; };
-		B36E1A2F1AC0470700300174 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		B36E1A301AC0470700300174 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B34FD6AD1AC2887100F0248F /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
+		B34FD6AE1AC2887100F0248F /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
+		B36E1A2F1AC0470700300174 /* RecordPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordPlayViewController.h; sourceTree = "<group>"; };
+		B36E1A301AC0470700300174 /* RecordPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordPlayViewController.m; sourceTree = "<group>"; };
 		B36E1A321AC0575700300174 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		B36E1A341AC0576700300174 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		B36E1A351AC0576700300174 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
+				B34FD6AD1AC2887100F0248F /* AlarmViewController.h */,
+				B34FD6AE1AC2887100F0248F /* AlarmViewController.m */,
 				B34AFF6B1AADBAD5007269C4 /* Shnoozle */,
 				B34AFF851AADBAD5007269C4 /* ShnoozleTests */,
 				B34AFF6A1AADBAD5007269C4 /* Products */,
@@ -141,10 +146,10 @@
 				B34AFF731AADBAD5007269C4 /* LogInViewController.h */,
 				B36E1A371AC08D0400300174 /* nav-logo.png */,
 				B34AFF741AADBAD5007269C4 /* LogInViewController.m */,
-				B36E1A2F1AC0470700300174 /* MainViewController.h */,
+				B36E1A2F1AC0470700300174 /* RecordPlayViewController.h */,
 				B36E1A341AC0576700300174 /* UserDetailsViewController.h */,
 				B36E1A351AC0576700300174 /* UserDetailsViewController.m */,
-				B36E1A301AC0470700300174 /* MainViewController.m */,
+				B36E1A301AC0470700300174 /* RecordPlayViewController.m */,
 				B34AFF761AADBAD5007269C4 /* Main.storyboard */,
 				B36E1A321AC0575700300174 /* TableHeaderView.xib */,
 				B34AFF791AADBAD5007269C4 /* Images.xcassets */,
@@ -340,11 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34FD6AF1AC2887100F0248F /* AlarmViewController.m in Sources */,
 				B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */,
 				B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */,
 				B34AFF6F1AADBAD5007269C4 /* main.m in Sources */,
 				B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */,
-				B36E1A311AC0470700300174 /* MainViewController.m in Sources */,
+				B36E1A311AC0470700300174 /* RecordPlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

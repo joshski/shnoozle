@@ -1,12 +1,12 @@
 
 
-#import "MainViewController.h"
+#import "RecordPlayViewController.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface MainViewController (){
+@interface RecordPlayViewController (){
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
     NSURL *tempSoundStorage;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation MainViewController
+@implementation RecordPlayViewController
 
 @synthesize playBtn;
 @synthesize playView;

@@ -5,7 +5,7 @@
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "MainViewController.h"
+#import "RecordPlayViewController.h"
 #import "UserDetailsViewController.h"
 
 @interface LogInViewController ()

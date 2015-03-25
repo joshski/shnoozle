@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface MainViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+@interface RecordPlayViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *logOutButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordPauseBtn;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;

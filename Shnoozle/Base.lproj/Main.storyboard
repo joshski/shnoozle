@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="126.5" y="299.5"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Record Play View Controller-->
         <scene sceneID="roR-5L-dPL">
             <objects>
-                <viewController id="kC0-Pt-0sG" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController id="kC0-Pt-0sG" customClass="RecordPlayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xtZ-9F-ob3"/>
                         <viewControllerLayoutGuide type="bottom" id="cPP-aK-T1J"/>
@@ -122,7 +122,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcd-Mq-na8" userLabel="timerLabel">
                                         <rect key="frame" x="166" y="80" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -146,6 +146,16 @@
                                 </state>
                                 <connections>
                                     <action selector="logOutClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Ujd-v0-A2y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u25-r0-yA8" userLabel="alarm">
+                                <rect key="frame" x="0.0" y="306" width="92" height="56"/>
+                                <color key="backgroundColor" red="0.55367896660000004" green="1" blue="0.28208946010000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="alarm">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FjB-k4-snd" kind="presentation" id="Jgu-EJ-zAb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -175,6 +185,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwV-DT-WAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-502.5" y="1084.5"/>
+        </scene>
+        <!--Alarm View Controller-->
+        <scene sceneID="ahk-fo-gYG">
+            <objects>
+                <viewController id="FjB-k4-snd" customClass="AlarmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Noy-8Y-AGT"/>
+                        <viewControllerLayoutGuide type="bottom" id="G7J-u0-A2w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aBo-s0-XUj" userLabel="superView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
+                                <rect key="frame" x="166" y="75" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
+                                <rect key="frame" x="0.0" y="248" width="375" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="448956814.16217601">
+                                    <!--2015-03-25 06:13:34 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
+                        <outlet property="selectedDate" destination="e7j-x9-NZH" id="K1f-2F-jHO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-107.5" y="1084.5"/>
         </scene>
     </scenes>
     <resources>

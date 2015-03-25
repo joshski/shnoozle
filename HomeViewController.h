@@ -11,6 +11,7 @@
 @interface HomeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 

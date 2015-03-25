@@ -7,8 +7,11 @@
 //
 
 #import "AddAlarmViewController.h"
+#import "AlarmItem.h"
 
 @interface AddAlarmViewController ()
+
+@property NSMutableArray *alarmItems;
 
 @end
 
@@ -22,8 +25,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.datePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
+    self.alarmItems =[[NSMutableArray alloc]init];
+    [self loadInitialData];
+    
 
 }
+- (void)loadInitialData {
+    AlarmItem *item1 = [[AlarmItem alloc] init];
+    item1.alarmDate = @"Buy milk";
+    [self.alarmItems addObject:item1];
+    AlarmItem *item2 = [[AlarmItem alloc] init];
+    item2.alarmDate = @"Buy eggs";
+    [self.alarmItems addObject:item2];
+    AlarmItem *item3 = [[AlarmItem alloc] init];
+    item3.alarmDate = @"Read a book";
+    [self.alarmItems addObject:item3];
+}
+
+
 
 - (void)datePickerChanged:(UIDatePicker *)datePicker
 {
@@ -38,14 +57,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

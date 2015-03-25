@@ -11,7 +11,7 @@
 @interface AlarmItem : NSObject
 
 @property BOOL completed;
-@property (readonly) NSDate *alarmDate;
+@property  NSDate *alarmDate;
 
 
 @end

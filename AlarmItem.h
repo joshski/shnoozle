@@ -10,8 +10,7 @@
 
 @interface AlarmItem : NSObject
 
-@property BOOL completed;
-@property  NSDate *alarmDate;
+@property  NSString *alarmTime;
 
 
 @end

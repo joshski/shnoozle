@@ -183,7 +183,7 @@
             </objects>
             <point key="canvasLocation" x="-48.5" y="1018.5"/>
         </scene>
-        <!--Create an alarm-->
+        <!--Alarm-->
         <scene sceneID="ahk-fo-gYG">
             <objects>
                 <viewController id="FjB-k4-snd" customClass="HomeViewController" sceneMemberID="viewController">
@@ -195,12 +195,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
-                                <rect key="frame" x="0.0" y="248" width="375" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="448956814.16217601">
-                                    <!--2015-03-25 06:13:34 +0000-->
-                                </date>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When to wake up?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
                                 <rect key="frame" x="112" y="107" width="150" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -210,15 +204,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create an alarm" id="QPm-VR-rBz">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="I34-0p-fgu">
+                    <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jpf-QE-omL">
                             <connections>
-                                <segue destination="vep-my-JqY" kind="unwind" unwindAction="unwindToList:" id="g1U-nq-bFE"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Jpf-QE-omL">
-                            <connections>
-                                <segue destination="vep-my-JqY" kind="unwind" unwindAction="unwindToList:" id="kW5-dM-7Wz"/>
+                                <segue destination="zeU-Kw-qpo" kind="show" id="1qa-d0-XAc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -229,9 +218,54 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="vep-my-JqY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1625.5" y="-643.5"/>
+        </scene>
+        <!--Time Picker View Controller-->
+        <scene sceneID="8TJ-XT-lVs">
+            <objects>
+                <viewController id="b9Z-XH-8Qs" customClass="TimePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MPB-Tv-bb9"/>
+                        <viewControllerLayoutGuide type="bottom" id="T6n-Tg-mvz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AxR-65-ixM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
+                                <rect key="frame" x="0.0" y="253" width="375" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="448956814.16217601">
+                                    <!--2015-03-25 06:13:34 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TdJ-K9-f7H">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="B5N-gj-vSH">
+                            <connections>
+                                <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="dnK-dK-b9F"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QkK-fL-U3t">
+                            <connections>
+                                <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="6kM-eP-WXf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="saveButton" destination="QkK-fL-U3t" id="hnk-bS-ksz"/>
+                        <outlet property="timePicker" destination="WEi-Ph-hoe" id="JS2-U1-7m6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrW-BL-KMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xK9-x0-01N" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2689.5" y="-988.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bCy-fc-Vas">
@@ -250,6 +284,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-na-8ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1038.5" y="-643.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Xe-3n-QCn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zeU-Kw-qpo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xhA-aO-OIA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b9Z-XH-8Qs" kind="relationship" relationship="rootViewController" id="0QQ-bc-3tR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUc-ec-ZXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102.5" y="-988.5"/>
         </scene>
     </scenes>
     <resources>

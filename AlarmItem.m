@@ -8,6 +8,8 @@
 
 #import "AlarmItem.h"
 
-@implementation AlarmItem
+@implementation AlarmItem{
+    
+}
 
 @end

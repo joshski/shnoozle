@@ -195,7 +195,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23:23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
                                 <rect key="frame" x="71" y="90" width="233" height="113"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="87"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -207,8 +207,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-T0-MCB">
+                                <rect key="frame" x="163" y="218" width="51" height="31"/>
+                                <color key="backgroundColor" red="0.56984609249940776" green="0.76438168350656033" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="biw-ii-xvm"/>
+                                </connections>
+                            </switch>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jpf-QE-omL">
@@ -219,6 +226,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="alarmToggle" destination="nGM-T0-MCB" id="mDU-eW-OPu"/>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
                         <outlet property="selectedTimeLabel" destination="e7j-x9-NZH" id="OPH-ZK-6jv"/>
                         <outlet property="titleLabel" destination="bJy-OJ-6mB" id="rGo-gI-W8f"/>

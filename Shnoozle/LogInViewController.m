@@ -163,7 +163,6 @@
     [self dismissModalViewControllerAnimated:YES];
      [self _presentHomeViewControllerAnimated:YES];
     
-    [self loginButtonTouchHandler:self];
 }
 
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{

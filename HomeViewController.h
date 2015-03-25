@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *alarmToggle;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 

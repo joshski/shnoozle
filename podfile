@@ -1,3 +1,6 @@
 pod 'Parse'
 pod 'ParseUI'
 pod 'Facebook-iOS-SDK'
+target :ShnoozleTests, :exclusive => true do
+    pod 'Kiwi'
+end

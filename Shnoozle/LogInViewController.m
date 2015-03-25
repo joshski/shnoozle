@@ -57,7 +57,7 @@
 //        [loggedInAlert show];
 //        [PFUser logOut];
 //        [self viewDidAppear:YES];
-        [self _presentUserDetailsViewControllerAnimated:YES];
+        [self _presentHomeViewControllerAnimated:YES];
 
     }
 }
@@ -161,23 +161,23 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissModalViewControllerAnimated:YES];
-     [self _presentUserDetailsViewControllerAnimated:YES];
+     [self _presentHomeViewControllerAnimated:YES];
     
     [self loginButtonTouchHandler:self];
 }
 
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
     [self dismissModalViewControllerAnimated:YES];
-    [self _presentUserDetailsViewControllerAnimated:YES];
+    [self _presentHomeViewControllerAnimated:YES];
     
     [self loginButtonTouchHandler:self];
 }
 
-- (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
+- (void)_presentHomeViewControllerAnimated:(BOOL)animated {
 //    UserDetailsViewController *detailsViewController = [[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped];
 //    [self.navigationController pushViewController:detailsViewController animated:animated];
     
-    [self performSegueWithIdentifier:@"transitionToMainController" sender:self];
+    [self performSegueWithIdentifier:@"transitionToHomeController" sender:self];
     
     
 }

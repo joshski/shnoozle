@@ -198,13 +198,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
                                 <rect key="frame" x="71" y="90" width="233" height="113"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="87"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Alarm Set " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJy-OJ-6mB">
-                                <rect key="frame" x="134" y="135" width="107" height="21"/>
-                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.5179542855" green="1" blue="0.36587700969999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-T0-MCB">
@@ -214,6 +208,11 @@
                                     <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="biw-ii-xvm"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Alarm Set " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJy-OJ-6mB">
+                                <rect key="frame" x="82" y="126" width="210" height="41"/>
+                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="32"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>

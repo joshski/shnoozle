@@ -15,11 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CABasicAnimation *basic=[CABasicAnimation animationWithKeyPath:@"transform"];
-    [basic setToValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.25, 1.25, 1.25)]];
-    [basic setAutoreverses:YES];
-    [basic setRepeatCount:MAXFLOAT];
-    [basic setDuration:0.25];
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
 
     if (selectedTimeLabel.text.length > 0) {
@@ -56,8 +51,10 @@
     if([sender isOn]){
         NSLog(@"Alarm ON!!");
          isOn = true;
+        selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
     } else{
         NSLog(@"Alarm OFF!!");
+        selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
     }
 }
 

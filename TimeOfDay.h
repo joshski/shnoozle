@@ -2,7 +2,7 @@
 
 @interface TimeOfDay : NSObject
 
-@property (nonatomic, assign) NSUInteger hourPart;
+@property (nonatomic, assign) NSUInteger hours;
 @property (nonatomic, assign) NSUInteger minutePart;
 
 + (instancetype)timeOfDayFromDate:(NSDate*)date;

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *selectedDate;
+@property (weak, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;

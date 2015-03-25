@@ -21,7 +21,6 @@
 		B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A321AC0575700300174 /* TableHeaderView.xib */; };
 		B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A351AC0576700300174 /* UserDetailsViewController.m */; };
 		B36E1A381AC08D0400300174 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A371AC08D0400300174 /* nav-logo.png */; };
-		B387FEEB1AC2CE9100613352 /* AlarmItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEEA1AC2CE9100613352 /* AlarmItem.m */; };
 		B387FEF31AC2D76800613352 /* TimeOfDaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */; };
 		B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF51AC2D78600613352 /* TimeOfDay.m */; };
 		B3D540721AC30C3700706F6E /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerViewController.m */; };
@@ -72,8 +71,6 @@
 		B36E1A341AC0576700300174 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		B36E1A351AC0576700300174 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		B36E1A371AC08D0400300174 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
-		B387FEE91AC2CE9100613352 /* AlarmItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmItem.h; sourceTree = "<group>"; };
-		B387FEEA1AC2CE9100613352 /* AlarmItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmItem.m; sourceTree = "<group>"; };
 		B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOfDaySpec.m; sourceTree = "<group>"; };
 		B387FEF41AC2D78600613352 /* TimeOfDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeOfDay.h; sourceTree = "<group>"; };
 		B387FEF51AC2D78600613352 /* TimeOfDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOfDay.m; sourceTree = "<group>"; };
@@ -139,8 +136,6 @@
 				B3D540711AC30C3700706F6E /* TimePickerViewController.m */,
 				B387FEF41AC2D78600613352 /* TimeOfDay.h */,
 				B387FEF51AC2D78600613352 /* TimeOfDay.m */,
-				B387FEE91AC2CE9100613352 /* AlarmItem.h */,
-				B387FEEA1AC2CE9100613352 /* AlarmItem.m */,
 				B34FD6AD1AC2887100F0248F /* HomeViewController.h */,
 				B34FD6AE1AC2887100F0248F /* HomeViewController.m */,
 				B34AFF6B1AADBAD5007269C4 /* Shnoozle */,
@@ -401,7 +396,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B34FD6AF1AC2887100F0248F /* HomeViewController.m in Sources */,
-				B387FEEB1AC2CE9100613352 /* AlarmItem.m in Sources */,
 				B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */,
 				B3D540721AC30C3700706F6E /* TimePickerViewController.m in Sources */,
 				B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */,

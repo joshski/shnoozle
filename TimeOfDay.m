@@ -2,7 +2,7 @@
 
 @implementation TimeOfDay
 
-@synthesize hourPart;
+@synthesize hours;
 @synthesize minutePart;
 
 + (instancetype)timeOfDayFromDate:(NSDate*)date {
@@ -10,7 +10,7 @@
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
-    instance.hourPart = [components hour];
+    instance.hours = [components hour];
     instance.minutePart = [components minute];
 
     return instance;

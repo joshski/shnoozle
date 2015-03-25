@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Leo. All rights reserved.
 //
 
-#import "AlarmViewController.h"
+#import "AddAlarmViewController.h"
 
-@interface AlarmViewController ()
+@interface AddAlarmViewController ()
 
 @end
 
 
 
-@implementation AlarmViewController
+@implementation AddAlarmViewController
 
 @synthesize datePicker;
 @synthesize selectedDate;

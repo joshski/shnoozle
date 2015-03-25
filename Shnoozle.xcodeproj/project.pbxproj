@@ -16,11 +16,13 @@
 		B34AFF7A1AADBAD5007269C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34AFF791AADBAD5007269C4 /* Images.xcassets */; };
 		B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34AFF7B1AADBAD5007269C4 /* LaunchScreen.xib */; };
 		B34AFF891AADBAD5007269C4 /* ShnoozleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF881AADBAD5007269C4 /* ShnoozleTests.m */; };
-		B34FD6AF1AC2887100F0248F /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B34FD6AE1AC2887100F0248F /* AlarmViewController.m */; };
+		B34FD6AF1AC2887100F0248F /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B34FD6AE1AC2887100F0248F /* AddAlarmViewController.m */; };
 		B36E1A311AC0470700300174 /* RecordPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A301AC0470700300174 /* RecordPlayViewController.m */; };
 		B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A321AC0575700300174 /* TableHeaderView.xib */; };
 		B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A351AC0576700300174 /* UserDetailsViewController.m */; };
 		B36E1A381AC08D0400300174 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A371AC08D0400300174 /* nav-logo.png */; };
+		B387FEE81AC2CB9500613352 /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEE71AC2CB9500613352 /* AlarmTableViewController.m */; };
+		B387FEEB1AC2CE9100613352 /* AlarmItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEEA1AC2CE9100613352 /* AlarmItem.m */; };
 		B3E5FCDD1AC1C3B20043EFE7 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDB1AC1C3B20043EFE7 /* mic.png */; };
 		B3E5FCDE1AC1C3B20043EFE7 /* mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */; };
 		B3E5FCE11AC1C4B90043EFE7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDF1AC1C4B90043EFE7 /* play.png */; };
@@ -58,14 +60,18 @@
 		B34AFF821AADBAD5007269C4 /* ShnoozleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShnoozleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34AFF871AADBAD5007269C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34AFF881AADBAD5007269C4 /* ShnoozleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShnoozleTests.m; sourceTree = "<group>"; };
-		B34FD6AD1AC2887100F0248F /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
-		B34FD6AE1AC2887100F0248F /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
+		B34FD6AD1AC2887100F0248F /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
+		B34FD6AE1AC2887100F0248F /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		B36E1A2F1AC0470700300174 /* RecordPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordPlayViewController.h; sourceTree = "<group>"; };
 		B36E1A301AC0470700300174 /* RecordPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordPlayViewController.m; sourceTree = "<group>"; };
 		B36E1A321AC0575700300174 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		B36E1A341AC0576700300174 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		B36E1A351AC0576700300174 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		B36E1A371AC08D0400300174 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
+		B387FEE61AC2CB9500613352 /* AlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewController.h; sourceTree = "<group>"; };
+		B387FEE71AC2CB9500613352 /* AlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewController.m; sourceTree = "<group>"; };
+		B387FEE91AC2CE9100613352 /* AlarmItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmItem.h; sourceTree = "<group>"; };
+		B387FEEA1AC2CE9100613352 /* AlarmItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmItem.m; sourceTree = "<group>"; };
 		B3E5FCDB1AC1C3B20043EFE7 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
 		B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic@2x.png"; sourceTree = "<group>"; };
 		B3E5FCDF1AC1C4B90043EFE7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -118,8 +124,12 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
-				B34FD6AD1AC2887100F0248F /* AlarmViewController.h */,
-				B34FD6AE1AC2887100F0248F /* AlarmViewController.m */,
+				B387FEE91AC2CE9100613352 /* AlarmItem.h */,
+				B387FEEA1AC2CE9100613352 /* AlarmItem.m */,
+				B387FEE61AC2CB9500613352 /* AlarmTableViewController.h */,
+				B387FEE71AC2CB9500613352 /* AlarmTableViewController.m */,
+				B34FD6AD1AC2887100F0248F /* AddAlarmViewController.h */,
+				B34FD6AE1AC2887100F0248F /* AddAlarmViewController.m */,
 				B34AFF6B1AADBAD5007269C4 /* Shnoozle */,
 				B34AFF851AADBAD5007269C4 /* ShnoozleTests */,
 				B34AFF6A1AADBAD5007269C4 /* Products */,
@@ -345,7 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B34FD6AF1AC2887100F0248F /* AlarmViewController.m in Sources */,
+				B34FD6AF1AC2887100F0248F /* AddAlarmViewController.m in Sources */,
+				B387FEE81AC2CB9500613352 /* AlarmTableViewController.m in Sources */,
+				B387FEEB1AC2CE9100613352 /* AlarmItem.m in Sources */,
 				B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */,
 				B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */,
 				B34AFF6F1AADBAD5007269C4 /* main.m in Sources */,

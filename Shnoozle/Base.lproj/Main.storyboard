@@ -7,7 +7,7 @@
         <!--Alarms-->
         <scene sceneID="IGO-gy-ZnH">
             <objects>
-                <tableViewController id="qRw-CS-mcf" sceneMemberID="viewController">
+                <tableViewController id="qRw-CS-mcf" customClass="AlarmTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="x9X-zC-1MF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                     <navigationItem key="navigationItem" title="Alarms" id="bcJ-7Y-5Qf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UtK-Hb-Yq2">
                             <connections>
-                                <segue destination="m8F-w7-ZUg" kind="show" id="wZ9-K9-mwj"/>
+                                <segue destination="m8F-w7-ZUg" kind="presentation" id="wZ9-K9-mwj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="-502.5" y="1084.5"/>
         </scene>
-        <!--Alarm View Controller-->
+        <!--Create an alarm-->
         <scene sceneID="ahk-fo-gYG">
             <objects>
-                <viewController id="FjB-k4-snd" customClass="AlarmViewController" sceneMemberID="viewController">
+                <viewController id="FjB-k4-snd" customClass="AddAlarmViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Noy-8Y-AGT"/>
                         <viewControllerLayoutGuide type="bottom" id="G7J-u0-A2w"/>
@@ -243,7 +243,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QPm-VR-rBz"/>
+                    <navigationItem key="navigationItem" title="Create an alarm" id="QPm-VR-rBz">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="I34-0p-fgu">
+                            <connections>
+                                <segue destination="vep-my-JqY" kind="unwind" unwindAction="unwindToList:" id="g1U-nq-bFE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Jpf-QE-omL">
+                            <connections>
+                                <segue destination="vep-my-JqY" kind="unwind" unwindAction="unwindToList:" id="kW5-dM-7Wz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
@@ -251,6 +262,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vep-my-JqY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1038.5" y="-643.5"/>
         </scene>

@@ -28,7 +28,7 @@
 - (void)datePickerChanged:(UIDatePicker *)datePicker
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    [dateFormatter setDateFormat:@"HH:mm"];
     NSString *strDate = [dateFormatter stringFromDate:datePicker.date];
     self.selectedDate.text = strDate;
 }

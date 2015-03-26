@@ -12,7 +12,9 @@
 
 @interface PlayMemoViewController ()
 
-@property (strong, nonatomic)  RecordPlayViewController *recordVC;
+{
+    AVAudioPlayer *player;
+}
 
 @end
 
@@ -20,7 +22,6 @@
 
 
 @synthesize memoURL;
-@synthesize recordVC;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +32,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)playBtnClicked:(id)sender {
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:memoURL error:nil];
+    [player setDelegate:self];
+    [player play];
 }
 
 

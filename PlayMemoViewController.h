@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface PlayMemoViewController : UIViewController
+@interface PlayMemoViewController : UIViewController<AVAudioPlayerDelegate>
 @property (strong, nonatomic) NSURL *memoURL;
 
 

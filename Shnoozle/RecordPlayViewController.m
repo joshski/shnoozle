@@ -9,7 +9,6 @@
 #import "PlayMemoViewController.h"
 @interface RecordPlayViewController (){
     AVAudioRecorder *recorder;
-    AVAudioPlayer *player;
     NSTimer *timer;
 
 }
@@ -19,7 +18,7 @@
 @implementation RecordPlayViewController
 
 
-@synthesize recordPauseBtn;
+@synthesize recordButton;
 @synthesize recordView;
 
 @synthesize tempSoundStorage;
@@ -79,16 +78,6 @@
     [testObject saveInBackground];
 }
 
-- (IBAction)playBtnClicked:(id)sender {
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:tempSoundStorage error:nil];
-        [player setDelegate:self];
-        [player play];
-    if ([recordPauseBtn.titleLabel  isEqual: @"Pause"]) {
-        [recordPauseBtn setTitle:@"Record" forState:UIControlStateNormal];
-
-    }
-    
-}
 
 
 
@@ -162,7 +151,7 @@
 
 }
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
-    [recordPauseBtn setTitle:@"Record" forState:UIControlStateNormal];
+    [recordButton setTitle:@"Record" forState:UIControlStateNormal];
     
 }
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{

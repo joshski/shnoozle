@@ -110,9 +110,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="logOutButton" destination="TT9-yz-cz0" id="AHS-s1-ggE"/>
-                        <outlet property="playBtn" destination="sfx-6V-ipX" id="Izq-4Y-yRI"/>
-                        <outlet property="playView" destination="d6d-lf-4xO" id="qmr-ga-CzW"/>
-                        <outlet property="recordPauseBtn" destination="zky-DF-Nxf" id="Obh-FG-gey"/>
+                        <outlet property="recordButton" destination="zky-DF-Nxf" id="2o5-WW-wc4"/>
                         <outlet property="recordView" destination="AYu-yi-yo4" id="YJN-z8-9sC"/>
                         <outlet property="uploadToParse" destination="x9m-zc-EuL" id="64Q-ju-EvU"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutClicked" id="fuz-00-iPx"/>
@@ -212,8 +210,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="playBtnClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="EGA-5L-O3Z"/>
-                                            <segue destination="r5R-Zs-RqR" kind="push" identifier="playMemo" id="4SW-Jf-lAP"/>
+                                            <action selector="playBtnClicked:" destination="r5R-Zs-RqR" eventType="touchUpInside" id="kfL-1F-sTl"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-es-CVf">
@@ -384,6 +381,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fuz-00-iPx"/>
-        <segue reference="ZOt-Jv-Vux"/>
     </inferredMetricsTieBreakers>
 </document>

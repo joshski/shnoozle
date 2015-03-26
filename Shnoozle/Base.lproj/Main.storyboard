@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-401" y="275"/>
         </scene>
-        <!--Log In View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" sceneMemberID="viewController">
                     <activityIndicatorView key="view" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="1Mo-EK-m9k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="618.5" y="157.5"/>
         </scene>
-        <!--Record Play View Controller-->
+        <!--Record MemoVC-->
         <scene sceneID="roR-5L-dPL">
             <objects>
-                <viewController id="kC0-Pt-0sG" customClass="RecordPlayViewController" sceneMemberID="viewController">
+                <viewController id="kC0-Pt-0sG" customClass="RecordMemoVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xtZ-9F-ob3"/>
                         <viewControllerLayoutGuide type="bottom" id="cPP-aK-T1J"/>
@@ -52,6 +52,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT9-yz-cz0">
+                                <rect key="frame" x="0.0" y="0.0" width="91" height="52"/>
+                                <color key="backgroundColor" red="1" green="0.16243877176535937" blue="0.96726548337937734" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Ujd-v0-A2y"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYu-yi-yo4" userLabel="recordView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
@@ -62,6 +72,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="recordButtonUpInside:" destination="kC0-Pt-0sG" eventType="touchUpOutside" id="HUY-Yd-UUl"/>
                                             <action selector="recordTouchDown:" destination="kC0-Pt-0sG" eventType="touchDown" id="HD4-E8-gLr"/>
                                             <action selector="recordTouchUp:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Izx-lS-rDj"/>
                                             <segue destination="r5R-Zs-RqR" kind="push" identifier="playMemo" id="ZOt-Jv-Vux"/>
@@ -81,23 +92,6 @@
                                     <constraint firstAttribute="centerY" secondItem="zJ0-Qc-8Q8" secondAttribute="centerY" id="vOW-LQ-ea6"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT9-yz-cz0">
-                                <rect key="frame" x="0.0" y="0.0" width="91" height="52"/>
-                                <color key="backgroundColor" red="1" green="0.16243877176535937" blue="0.96726548337937734" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOutClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Ujd-v0-A2y"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u25-r0-yA8" userLabel="alarm">
-                                <rect key="frame" x="0.0" y="306" width="92" height="56"/>
-                                <color key="backgroundColor" red="0.55367896660000004" green="1" blue="0.28208946010000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="alarm">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.55367896655610593" green="1" blue="0.28208946008731928" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -123,7 +117,7 @@
         <!--Alarm-->
         <scene sceneID="ahk-fo-gYG">
             <objects>
-                <viewController id="FjB-k4-snd" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="FjB-k4-snd" customClass="HomeVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Noy-8Y-AGT"/>
                         <viewControllerLayoutGuide type="bottom" id="G7J-u0-A2w"/>
@@ -188,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1625.5" y="-643.5"/>
         </scene>
-        <!--Play Memo View Controller-->
+        <!--Play MemoVC-->
         <scene sceneID="KLb-AE-iEg">
             <objects>
-                <viewController id="r5R-Zs-RqR" customClass="PlayMemoViewController" sceneMemberID="viewController">
+                <viewController id="r5R-Zs-RqR" customClass="PlayMemoVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vzM-oY-ws6"/>
                         <viewControllerLayoutGuide type="bottom" id="CbY-ve-OWQ"/>
@@ -257,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="1782.5" y="612.5"/>
         </scene>
-        <!--Find Friends View Controller-->
+        <!--Find FriendsVC-->
         <scene sceneID="AEx-AA-Weg">
             <objects>
-                <viewController id="uvg-x5-UNE" customClass="FindFriendsViewController" sceneMemberID="viewController">
+                <viewController id="uvg-x5-UNE" customClass="FindFriendsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KJV-j6-RFk"/>
                         <viewControllerLayoutGuide type="bottom" id="w1R-3x-QBp"/>
@@ -292,10 +286,10 @@
             </objects>
             <point key="canvasLocation" x="2136.5" y="104.5"/>
         </scene>
-        <!--Time Picker View Controller-->
+        <!--Time PickerVC-->
         <scene sceneID="8TJ-XT-lVs">
             <objects>
-                <viewController id="b9Z-XH-8Qs" customClass="TimePickerViewController" sceneMemberID="viewController">
+                <viewController id="b9Z-XH-8Qs" customClass="TimePickerVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MPB-Tv-bb9"/>
                         <viewControllerLayoutGuide type="bottom" id="T6n-Tg-mvz"/>

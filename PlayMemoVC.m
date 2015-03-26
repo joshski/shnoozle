@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Leo. All rights reserved.
 //
 
-#import "PlayMemoViewController.h"
-#import "RecordPlayViewController.h"
+#import "PlayMemoVC.h"
+#import "RecordMemoVC.h"
 
 
-@interface PlayMemoViewController ()
+@interface PlayMemoVC ()
 
 {
     AVAudioPlayer *player;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation PlayMemoViewController
+@implementation PlayMemoVC
 
 
 @synthesize memoURL;

@@ -1,20 +1,19 @@
 
 
-#import "LogInViewController.h"
+#import "LoginVC.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "RecordPlayViewController.h"
-#import "UserDetailsViewController.h"
+#import "RecordMemoVC.h"
 #import "SCLAlertView.h"
 
-@interface LogInViewController ()
+@interface LoginVC ()
 
 @end
 
 
-@implementation LogInViewController
+@implementation LoginVC
 
 
 

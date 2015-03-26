@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FindFriendsViewController : UIViewController
+@interface FindFriendsVC : UIViewController
 
 @end

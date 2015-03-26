@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "TimeOfDay.h"
 
-@interface TimePickerViewController : UIViewController
+@interface TimePickerVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 

@@ -1,13 +1,13 @@
 
 
-#import "RecordPlayViewController.h"
+#import "RecordMemoVC.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "SCLAlertView.h"
-#import "PlayMemoViewController.h"
-@interface RecordPlayViewController (){
+#import "PlayMemoVC.h"
+@interface RecordMemoVC (){
     AVAudioRecorder *recorder;
     NSTimer *timer;
 
@@ -15,14 +15,18 @@
 
 @end
 
-@implementation RecordPlayViewController
+@implementation RecordMemoVC
 
 
 @synthesize recordButton;
 @synthesize recordView;
 
-@synthesize tempSoundStorage;
+@synthesize tempMemoURL;
 
+- (IBAction)recordButtonUpInside:(id)sender {
+    [self performSegueWithIdentifier:@"playMemo" sender:self];
+
+}
 
 - (void)viewDidLoad
 {
@@ -67,7 +71,7 @@
     PFObject *testObject = [PFObject objectWithClassName:@"AudioFiles"];
     
     //get the audio in NSData format
-    NSData *audioData = [NSData dataWithContentsOfURL:tempSoundStorage];
+    NSData *audioData = [NSData dataWithContentsOfURL:tempMemoURL];
     NSLog(@"audioData = %@", audioData);
     
     //create audiofile as a property
@@ -99,7 +103,6 @@
 
     
     //Update the label with the remaining time
-    self.timerLabel.text = [NSString stringWithFormat:@"%02li sec",(long)seconds];
 }
 
 
@@ -111,7 +114,7 @@
     NSString *soundFilePath = [docsDir
                                stringByAppendingPathComponent:@"tmpSound.caf"];
     
-    self.tempSoundStorage = [NSURL fileURLWithPath:soundFilePath];
+    self.tempMemoURL = [NSURL fileURLWithPath:soundFilePath];
     
     NSDictionary *recSettings = [NSDictionary
                                  dictionaryWithObjectsAndKeys:
@@ -125,11 +128,11 @@
                                  AVSampleRateKey,
                                  nil];
     
-    recorder = [[AVAudioRecorder alloc] initWithURL:tempSoundStorage settings:recSettings error:nil];
+    recorder = [[AVAudioRecorder alloc] initWithURL:tempMemoURL settings:recSettings error:nil];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
     
-    NSLog(@"%@",tempSoundStorage);
+    NSLog(@"%@",tempMemoURL);
 
     
     NSLog(@"stopped stopped");
@@ -138,7 +141,6 @@
 //    
 //    [alert showSuccess:self title:@"Voice Memo" subTitle:@"Finished" closeButtonTitle:@"Done" duration:0.0f]; // Notice
     
-    [self performSegueWithIdentifier:@"playMemo" sender:self];
 
 }
 
@@ -162,8 +164,8 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PlayMemoViewController *vc = segue.destinationViewController;
-    vc.memoURL = tempSoundStorage;
+    PlayMemoVC *vc = segue.destinationViewController;
+    vc.memoURL = tempMemoURL;
 }
 
 

@@ -1,14 +1,14 @@
-#import "FindFriendsViewController.h"
+#import "FindFriendsVC.h"
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "SCLAlertView.h"
 
 
-@interface FindFriendsViewController ()
+@interface FindFriendsVC ()
 
 @end
 
-@implementation FindFriendsViewController
+@implementation FindFriendsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

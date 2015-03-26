@@ -10,22 +10,21 @@
 		5015C20B8BB18DADCD6BCA91 /* libPods-ShnoozleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB08187669FD6E571DB47F1 /* libPods-ShnoozleTests.a */; };
 		71B0481378BDBF8F46B987A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5113FF57EF7B59FD04488A9 /* libPods.a */; };
 		B319BDB41AC18B9E0091DD03 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */; };
-		B33614531AC44AC4001CE51F /* PlayMemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33614521AC44AC4001CE51F /* PlayMemoViewController.m */; };
+		B33614531AC44AC4001CE51F /* PlayMemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B33614521AC44AC4001CE51F /* PlayMemoVC.m */; };
 		B34AFF6F1AADBAD5007269C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF6E1AADBAD5007269C4 /* main.m */; };
 		B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF711AADBAD5007269C4 /* AppDelegate.m */; };
-		B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF741AADBAD5007269C4 /* LogInViewController.m */; };
+		B34AFF751AADBAD5007269C4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF741AADBAD5007269C4 /* LoginVC.m */; };
 		B34AFF781AADBAD5007269C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34AFF761AADBAD5007269C4 /* Main.storyboard */; };
 		B34AFF7A1AADBAD5007269C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34AFF791AADBAD5007269C4 /* Images.xcassets */; };
 		B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34AFF7B1AADBAD5007269C4 /* LaunchScreen.xib */; };
-		B34FD6AF1AC2887100F0248F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B34FD6AE1AC2887100F0248F /* HomeViewController.m */; };
-		B36E1A311AC0470700300174 /* RecordPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A301AC0470700300174 /* RecordPlayViewController.m */; };
+		B34FD6AF1AC2887100F0248F /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B34FD6AE1AC2887100F0248F /* HomeVC.m */; };
+		B36E1A311AC0470700300174 /* RecordMemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A301AC0470700300174 /* RecordMemoVC.m */; };
 		B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A321AC0575700300174 /* TableHeaderView.xib */; };
-		B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A351AC0576700300174 /* UserDetailsViewController.m */; };
 		B36E1A381AC08D0400300174 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A371AC08D0400300174 /* nav-logo.png */; };
 		B387FEF31AC2D76800613352 /* TimeOfDaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */; };
 		B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF51AC2D78600613352 /* TimeOfDay.m */; };
-		B3D540721AC30C3700706F6E /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerViewController.m */; };
-		B3DFE23C1AC421DF00225DBF /* FindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DFE23B1AC421DF00225DBF /* FindFriendsViewController.m */; };
+		B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerVC.m */; };
+		B3DFE23C1AC421DF00225DBF /* FindFriendsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DFE23B1AC421DF00225DBF /* FindFriendsVC.m */; };
 		B3E5FCDD1AC1C3B20043EFE7 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDB1AC1C3B20043EFE7 /* mic.png */; };
 		B3E5FCDE1AC1C3B20043EFE7 /* mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */; };
 		B3E5FCE11AC1C4B90043EFE7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDF1AC1C4B90043EFE7 /* play.png */; };
@@ -53,35 +52,33 @@
 		9BE723DECB521D630272C238 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A9008DDF8A1740655721F0F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		B33614511AC44AC4001CE51F /* PlayMemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayMemoViewController.h; sourceTree = "<group>"; };
-		B33614521AC44AC4001CE51F /* PlayMemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMemoViewController.m; sourceTree = "<group>"; };
+		B33614511AC44AC4001CE51F /* PlayMemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayMemoVC.h; sourceTree = "<group>"; };
+		B33614521AC44AC4001CE51F /* PlayMemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMemoVC.m; sourceTree = "<group>"; };
 		B34AFF691AADBAD5007269C4 /* Shnoozle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shnoozle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34AFF6D1AADBAD5007269C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34AFF6E1AADBAD5007269C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B34AFF701AADBAD5007269C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B34AFF711AADBAD5007269C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B34AFF731AADBAD5007269C4 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
-		B34AFF741AADBAD5007269C4 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		B34AFF731AADBAD5007269C4 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		B34AFF741AADBAD5007269C4 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		B34AFF771AADBAD5007269C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B34AFF791AADBAD5007269C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B34AFF7C1AADBAD5007269C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B34AFF821AADBAD5007269C4 /* ShnoozleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShnoozleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34AFF871AADBAD5007269C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B34FD6AD1AC2887100F0248F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		B34FD6AE1AC2887100F0248F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		B36E1A2F1AC0470700300174 /* RecordPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordPlayViewController.h; sourceTree = "<group>"; };
-		B36E1A301AC0470700300174 /* RecordPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordPlayViewController.m; sourceTree = "<group>"; };
+		B34FD6AD1AC2887100F0248F /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		B34FD6AE1AC2887100F0248F /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		B36E1A2F1AC0470700300174 /* RecordMemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordMemoVC.h; sourceTree = "<group>"; };
+		B36E1A301AC0470700300174 /* RecordMemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordMemoVC.m; sourceTree = "<group>"; };
 		B36E1A321AC0575700300174 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
-		B36E1A341AC0576700300174 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
-		B36E1A351AC0576700300174 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		B36E1A371AC08D0400300174 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
 		B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOfDaySpec.m; sourceTree = "<group>"; };
 		B387FEF41AC2D78600613352 /* TimeOfDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeOfDay.h; sourceTree = "<group>"; };
 		B387FEF51AC2D78600613352 /* TimeOfDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOfDay.m; sourceTree = "<group>"; };
-		B3D540701AC30C3700706F6E /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
-		B3D540711AC30C3700706F6E /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
-		B3DFE23A1AC421DF00225DBF /* FindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindFriendsViewController.h; sourceTree = "<group>"; };
-		B3DFE23B1AC421DF00225DBF /* FindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindFriendsViewController.m; sourceTree = "<group>"; };
+		B3D540701AC30C3700706F6E /* TimePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerVC.h; sourceTree = "<group>"; };
+		B3D540711AC30C3700706F6E /* TimePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerVC.m; sourceTree = "<group>"; };
+		B3DFE23A1AC421DF00225DBF /* FindFriendsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindFriendsVC.h; sourceTree = "<group>"; };
+		B3DFE23B1AC421DF00225DBF /* FindFriendsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindFriendsVC.m; sourceTree = "<group>"; };
 		B3E5FCDB1AC1C3B20043EFE7 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
 		B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic@2x.png"; sourceTree = "<group>"; };
 		B3E5FCDF1AC1C4B90043EFE7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -138,16 +135,16 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
-				B33614511AC44AC4001CE51F /* PlayMemoViewController.h */,
-				B33614521AC44AC4001CE51F /* PlayMemoViewController.m */,
-				B3DFE23A1AC421DF00225DBF /* FindFriendsViewController.h */,
-				B3DFE23B1AC421DF00225DBF /* FindFriendsViewController.m */,
-				B3D540701AC30C3700706F6E /* TimePickerViewController.h */,
-				B3D540711AC30C3700706F6E /* TimePickerViewController.m */,
+				B33614511AC44AC4001CE51F /* PlayMemoVC.h */,
+				B33614521AC44AC4001CE51F /* PlayMemoVC.m */,
+				B3DFE23A1AC421DF00225DBF /* FindFriendsVC.h */,
+				B3DFE23B1AC421DF00225DBF /* FindFriendsVC.m */,
+				B3D540701AC30C3700706F6E /* TimePickerVC.h */,
+				B3D540711AC30C3700706F6E /* TimePickerVC.m */,
 				B387FEF41AC2D78600613352 /* TimeOfDay.h */,
 				B387FEF51AC2D78600613352 /* TimeOfDay.m */,
-				B34FD6AD1AC2887100F0248F /* HomeViewController.h */,
-				B34FD6AE1AC2887100F0248F /* HomeViewController.m */,
+				B34FD6AD1AC2887100F0248F /* HomeVC.h */,
+				B34FD6AE1AC2887100F0248F /* HomeVC.m */,
 				B34AFF6B1AADBAD5007269C4 /* Shnoozle */,
 				B34AFF851AADBAD5007269C4 /* ShnoozleTests */,
 				B34AFF6A1AADBAD5007269C4 /* Products */,
@@ -171,17 +168,15 @@
 				B3E5FCDA1AC1C3B20043EFE7 /* images */,
 				B34AFF701AADBAD5007269C4 /* AppDelegate.h */,
 				B34AFF711AADBAD5007269C4 /* AppDelegate.m */,
-				B34AFF731AADBAD5007269C4 /* LogInViewController.h */,
-				B36E1A371AC08D0400300174 /* nav-logo.png */,
-				B34AFF741AADBAD5007269C4 /* LogInViewController.m */,
-				B36E1A2F1AC0470700300174 /* RecordPlayViewController.h */,
-				B36E1A341AC0576700300174 /* UserDetailsViewController.h */,
-				B36E1A351AC0576700300174 /* UserDetailsViewController.m */,
-				B36E1A301AC0470700300174 /* RecordPlayViewController.m */,
+				B34AFF731AADBAD5007269C4 /* LoginVC.h */,
+				B34AFF741AADBAD5007269C4 /* LoginVC.m */,
+				B36E1A2F1AC0470700300174 /* RecordMemoVC.h */,
+				B36E1A301AC0470700300174 /* RecordMemoVC.m */,
 				B34AFF761AADBAD5007269C4 /* Main.storyboard */,
 				B36E1A321AC0575700300174 /* TableHeaderView.xib */,
 				B34AFF791AADBAD5007269C4 /* Images.xcassets */,
 				B34AFF7B1AADBAD5007269C4 /* LaunchScreen.xib */,
+				B36E1A371AC08D0400300174 /* nav-logo.png */,
 				B34AFF6C1AADBAD5007269C4 /* Supporting Files */,
 			);
 			path = Shnoozle;
@@ -405,16 +400,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B33614531AC44AC4001CE51F /* PlayMemoViewController.m in Sources */,
-				B34FD6AF1AC2887100F0248F /* HomeViewController.m in Sources */,
-				B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */,
-				B3D540721AC30C3700706F6E /* TimePickerViewController.m in Sources */,
+				B33614531AC44AC4001CE51F /* PlayMemoVC.m in Sources */,
+				B34FD6AF1AC2887100F0248F /* HomeVC.m in Sources */,
+				B34AFF751AADBAD5007269C4 /* LoginVC.m in Sources */,
+				B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */,
 				B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */,
-				B3DFE23C1AC421DF00225DBF /* FindFriendsViewController.m in Sources */,
+				B3DFE23C1AC421DF00225DBF /* FindFriendsVC.m in Sources */,
 				B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */,
 				B34AFF6F1AADBAD5007269C4 /* main.m in Sources */,
-				B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */,
-				B36E1A311AC0470700300174 /* RecordPlayViewController.m in Sources */,
+				B36E1A311AC0470700300174 /* RecordMemoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

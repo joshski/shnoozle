@@ -1,12 +1,12 @@
-#import "TimePickerViewController.h"
+#import "TimePickerVC.h"
 
-@interface TimePickerViewController (){
+@interface TimePickerVC (){
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @end
 
-@implementation TimePickerViewController
+@implementation TimePickerVC
 
 @synthesize timePicker;
 

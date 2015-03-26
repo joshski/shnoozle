@@ -1,12 +1,12 @@
-#import "HomeViewController.h"
-#import "TimePickerViewController.h"
+#import "HomeVC.h"
+#import "TimePickerVC.h"
 #import "SCLAlertView.h"
 
-@interface HomeViewController (){
+@interface HomeVC (){
 }
 @end
 
-@implementation HomeViewController
+@implementation HomeVC
 
 @synthesize datePicker;
 @synthesize selectedTimeLabel;
@@ -33,7 +33,7 @@
 }
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-    TimePickerViewController *source = [segue sourceViewController];
+    TimePickerVC *source = [segue sourceViewController];
     if (source.timeOfDay != nil) {
         selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)source.timeOfDay.hours, (unsigned long)source.timeOfDay.minutePart];
         titleLabel.text=@"";

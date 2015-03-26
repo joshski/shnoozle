@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shnoozle/RecordMemoVC.m"
-            timestampString = "449076591.647127"
+            timestampString = "449078243.070048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-logOutClicked:"
             landmarkType = "5">
          </BreakpointContent>

@@ -23,20 +23,23 @@
 
 @synthesize tempMemoURL;
 
-- (IBAction)recordButtonUpInside:(id)sender {
-    [self performSegueWithIdentifier:@"playMemo" sender:self];
-
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self recorderSettings];
+    
 
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)recordButtonUpInside:(id)sender {
+    [self performSegueWithIdentifier:@"playMemo" sender:self];
+    
 }
 
 - (void)recorderSettings {
@@ -80,8 +83,29 @@
                                            userInfo:nil
                                             repeats:YES];
     NSLog(@"started started");
-
+    
+    [self animateColors];
+    
 }
+
+- (void)animateColors {
+ 
+    
+    [UIView animateWithDuration:1
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut |
+                                 UIViewAnimationOptionRepeat |
+                                 UIViewAnimationOptionAutoreverse |
+                                 UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         [recordView setBackgroundColor: [UIColor whiteColor]];
+                     }
+                     completion:nil];
+    
+}
+
+
+
 -(void)updateTime
 {
     //Get the time left until the specified date
@@ -118,15 +142,12 @@
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
     
-    NSLog(@"%@",tempMemoURL);
-
     
     NSLog(@"stopped stopped");
     
-//    SCLAlertView *alert = [[SCLAlertView alloc] init];
-//    
-//    [alert showSuccess:self title:@"Voice Memo" subTitle:@"Finished" closeButtonTitle:@"Done" duration:0.0f]; // Notice
-    
+    [recordView.layer removeAllAnimations];
+    [recordView setBackgroundColor: [UIColor redColor]];
+
 
 }
 

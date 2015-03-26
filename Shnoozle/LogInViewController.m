@@ -7,6 +7,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "RecordPlayViewController.h"
 #import "UserDetailsViewController.h"
+#import "SCLAlertView.h"
 
 @interface LogInViewController ()
 
@@ -107,12 +108,9 @@
                 NSLog(@"Uh oh. An error occurred: %@", error);
                 errorMessage = [error localizedDescription];
             }
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error"
-                                                            message:errorMessage
-                                                           delegate:nil
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:@"Dismiss", nil];
-            [alert show];
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            
+            [alert showError:self title:@"Log In Error" subTitle:errorMessage closeButtonTitle:@"Done" duration:0.0f]; // Notice
         }
         else {
             if (user.isNew) {

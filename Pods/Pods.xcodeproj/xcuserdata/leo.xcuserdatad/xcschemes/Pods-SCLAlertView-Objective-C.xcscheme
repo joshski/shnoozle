@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B49E91DCD01A104BC47DC879"
-               BuildableName = "libPods-RESideMenu.a"
-               BlueprintName = "Pods-RESideMenu"
+               BlueprintIdentifier = "E39BBFEDBBE36BE4959E7E60"
+               BuildableName = "libPods-SCLAlertView-Objective-C.a"
+               BlueprintName = "Pods-SCLAlertView-Objective-C"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

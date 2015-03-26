@@ -1,6 +1,7 @@
 #import "FindFriendsViewController.h"
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "SCLAlertView.h"
 
 
 @interface FindFriendsViewController ()
@@ -18,7 +19,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)fbTapped:(id)sender {
+    [self connectToFB];
+    
+}
+
+
+- (void)connectToFB {
     // Set permissions required from the facebook user account
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location",@"user_friends"];
     
@@ -34,12 +42,11 @@
                 NSLog(@"Uh oh. An error occurred: %@", error);
                 errorMessage = [error localizedDescription];
             }
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error"
-                                                            message:errorMessage
-                                                           delegate:nil
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:@"Dismiss", nil];
-            [alert show];
+      
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            
+            [alert showError:self title:@"Log In Error" subTitle:errorMessage closeButtonTitle:@"Done" duration:0.0f]; // Notice
+            
         }
         else {
             if (user.isNew) {
@@ -61,38 +68,36 @@
                 }
             }];
             
-                        FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+            FBRequest* friendsRequest = [FBRequest requestForMyFriends];
             
-                        [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
-            
-                                                                      NSDictionary* result,
-                                                                      NSError *error) {
-                            if(!error){
-                                NSMutableArray *facebookUIDs = [NSMutableArray array];
-                                NSArray* friends = [result objectForKey:@"data"];
-                                NSLog(@"Found: %i friends", friends.count);
-                                
-                                if (friends.count < 1) {
-                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook"
-                                                                                    message:@"No one on your friends list is currently using snoozle"
-                                                                                   delegate:nil
-                                                                          cancelButtonTitle:nil
-                                                                          otherButtonTitles:@"Ok", nil];
-                                    [alert show];
-                                }
-                                // STUFFS
-                                for (NSDictionary<FBGraphUser>* friend in friends) {
-                                    [facebookUIDs addObject:friend.id];
-                                }
-            
-            
-                            }
-                        }];
+            [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                          
+                                                          NSDictionary* result,
+                                                          NSError *error) {
+                if(!error){
+                    NSMutableArray *facebookUIDs = [NSMutableArray array];
+                    NSArray* friends = [result objectForKey:@"data"];
+                    NSLog(@"Found: %i friends", friends.count);
+                    
+                    if (friends.count < 1) {
+                        SCLAlertView *alert = [[SCLAlertView alloc] init];
+
+                        [alert showNotice:self title:@"Facebook" subTitle:@"No one on your friends list is currently using snoozle." closeButtonTitle:@"Done" duration:0.0f]; // Notice
+                        
+                    }
+                    // STUFFS
+                    for (NSDictionary<FBGraphUser>* friend in friends) {
+                        [facebookUIDs addObject:friend.id];
+                    }
+                    
+                    
+                }
+            }];
             
         }
     }];
-    
 }
+
 
 
 

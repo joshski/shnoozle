@@ -5,6 +5,7 @@
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "SCLAlertView.h"
 
 @interface RecordPlayViewController (){
     AVAudioRecorder *recorder;
@@ -143,6 +144,11 @@
 
     
     NSLog(@"stopped stopped");
+    
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    [alert showSuccess:self title:@"Voice Memo" subTitle:@"Finished" closeButtonTitle:@"Done" duration:0.0f]; // Notice
+    
     playView.hidden=false;
 
 }
@@ -164,12 +170,10 @@
     
 }
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
-                                                    message: @"Finish playing the recording!"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    [alert showSuccess:self title:@"Done" subTitle:@"Finish playing the recording" closeButtonTitle:@"OK" duration:0.0f]; // Notice
 }
 
 

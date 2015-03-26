@@ -1,8 +1,8 @@
 #import "HomeViewController.h"
 #import "TimePickerViewController.h"
+#import "SCLAlertView.h"
 
 @interface HomeViewController (){
-    BOOL isOn;
 }
 @end
 
@@ -39,6 +39,9 @@
         titleLabel.text=@"";
         [alarmToggle setOn:YES animated:YES];
         alarmToggle.enabled = true;
+        SCLAlertView *alert = [[SCLAlertView alloc] init];
+        
+        [alert showSuccess:self title:@"Alarm" subTitle:@"On" closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
 
     }
@@ -49,11 +52,10 @@
 }
 - (void)changeSwitch:(id)sender{
     if([sender isOn]){
-        NSLog(@"Alarm ON!!");
-         isOn = true;
+        
         selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
     } else{
-        NSLog(@"Alarm OFF!!");
+
         selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
     }
 }

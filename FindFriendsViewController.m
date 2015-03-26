@@ -12,6 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -32,7 +33,8 @@
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        
+    
+
         if (!user) {
             NSString *errorMessage = nil;
             if (!error) {
@@ -67,6 +69,9 @@
                     
                 }
             }];
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            
+            [alert hideView];
             
             FBRequest* friendsRequest = [FBRequest requestForMyFriends];
             
@@ -96,6 +101,10 @@
             
         }
     }];
+    
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    [alert showWaiting:self title:@"Facebook" subTitle:@"Connecting" closeButtonTitle:nil duration:5.f];
 }
 
 

@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindFriendsViewController.m"
-            timestampString = "449062488.497693"
+            timestampString = "449063878.717167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "-connectToFB"
             landmarkType = "5">
          </BreakpointContent>

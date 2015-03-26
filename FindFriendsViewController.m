@@ -103,7 +103,7 @@
     }];
     
     SCLAlertView *alert = [[SCLAlertView alloc] init];
-    
+    alert.shouldDismissOnTapOutside = YES;
     [alert showWaiting:self title:@"Facebook" subTitle:@"Connecting" closeButtonTitle:nil duration:5.f];
 }
 

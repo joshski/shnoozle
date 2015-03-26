@@ -8,7 +8,9 @@
 
 #import "PlayMemoVC.h"
 #import "RecordMemoVC.h"
-
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+#import "SCLAlertView.h"
 
 @interface PlayMemoVC ()
 
@@ -40,5 +42,25 @@
     [player play];
 }
 
+- (IBAction)uploadToParseClicked:(id)sender {
+    PFObject *testObject = [PFObject objectWithClassName:@"AudioFiles"];
+    
+    //get the audio in NSData format
+    NSData *audioData = [NSData dataWithContentsOfURL:memoURL];
+    NSLog(@"audioData being sent.... = %@", audioData);
+    
+    //create audiofile as a property
+    PFFile *audioFile = [PFFile fileWithName:@"audio.caf" data:audioData];
+    testObject[@"audioFile"] = audioFile;
+    
+    //save
+    [testObject saveInBackground];
+}
 
+- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    [alert showSuccess:self title:@"Done" subTitle:@"Finish playing the recording" closeButtonTitle:@"OK" duration:0.0f]; // Notice
+}
 @end

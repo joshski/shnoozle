@@ -67,20 +67,6 @@
 
 
 
-- (IBAction)uploadToParseClicked:(id)sender {
-    PFObject *testObject = [PFObject objectWithClassName:@"AudioFiles"];
-    
-    //get the audio in NSData format
-    NSData *audioData = [NSData dataWithContentsOfURL:tempMemoURL];
-    NSLog(@"audioData = %@", audioData);
-    
-    //create audiofile as a property
-    PFFile *audioFile = [PFFile fileWithName:@"audio.caf" data:audioData];
-    testObject[@"audioFile"] = audioFile;
-    
-    //save
-    [testObject saveInBackground];
-}
 
 
 
@@ -152,16 +138,12 @@
 
 
 }
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
-    [recordButton setTitle:@"Record" forState:UIControlStateNormal];
-    
-}
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
 
-    SCLAlertView *alert = [[SCLAlertView alloc] init];
+
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
     
-    [alert showSuccess:self title:@"Done" subTitle:@"Finish playing the recording" closeButtonTitle:@"OK" duration:0.0f]; // Notice
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     PlayMemoVC *vc = segue.destinationViewController;

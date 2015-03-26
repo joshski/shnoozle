@@ -106,7 +106,6 @@
                         <outlet property="logOutButton" destination="TT9-yz-cz0" id="AHS-s1-ggE"/>
                         <outlet property="recordButton" destination="zky-DF-Nxf" id="2o5-WW-wc4"/>
                         <outlet property="recordView" destination="AYu-yi-yo4" id="YJN-z8-9sC"/>
-                        <outlet property="uploadToParse" destination="x9m-zc-EuL" id="64Q-ju-EvU"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutClicked" id="fuz-00-iPx"/>
                     </connections>
                 </viewController>
@@ -217,7 +216,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="uploadToParseClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="zWE-YO-p9t"/>
+                                            <action selector="uploadToParseClicked:" destination="r5R-Zs-RqR" eventType="touchUpInside" id="fBH-xK-jtp"/>
                                         </connections>
                                     </button>
                                 </subviews>

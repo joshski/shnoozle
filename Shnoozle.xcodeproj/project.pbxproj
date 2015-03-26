@@ -24,6 +24,7 @@
 		B387FEF31AC2D76800613352 /* TimeOfDaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */; };
 		B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF51AC2D78600613352 /* TimeOfDay.m */; };
 		B3D540721AC30C3700706F6E /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerViewController.m */; };
+		B3DFE23C1AC421DF00225DBF /* FindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DFE23B1AC421DF00225DBF /* FindFriendsViewController.m */; };
 		B3E5FCDD1AC1C3B20043EFE7 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDB1AC1C3B20043EFE7 /* mic.png */; };
 		B3E5FCDE1AC1C3B20043EFE7 /* mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */; };
 		B3E5FCE11AC1C4B90043EFE7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDF1AC1C4B90043EFE7 /* play.png */; };
@@ -76,6 +77,8 @@
 		B387FEF51AC2D78600613352 /* TimeOfDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOfDay.m; sourceTree = "<group>"; };
 		B3D540701AC30C3700706F6E /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		B3D540711AC30C3700706F6E /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
+		B3DFE23A1AC421DF00225DBF /* FindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindFriendsViewController.h; sourceTree = "<group>"; };
+		B3DFE23B1AC421DF00225DBF /* FindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindFriendsViewController.m; sourceTree = "<group>"; };
 		B3E5FCDB1AC1C3B20043EFE7 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
 		B3E5FCDC1AC1C3B20043EFE7 /* mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic@2x.png"; sourceTree = "<group>"; };
 		B3E5FCDF1AC1C4B90043EFE7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
+				B3DFE23A1AC421DF00225DBF /* FindFriendsViewController.h */,
+				B3DFE23B1AC421DF00225DBF /* FindFriendsViewController.m */,
 				B3D540701AC30C3700706F6E /* TimePickerViewController.h */,
 				B3D540711AC30C3700706F6E /* TimePickerViewController.m */,
 				B387FEF41AC2D78600613352 /* TimeOfDay.h */,
@@ -399,6 +404,7 @@
 				B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */,
 				B3D540721AC30C3700706F6E /* TimePickerViewController.m in Sources */,
 				B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */,
+				B3DFE23C1AC421DF00225DBF /* FindFriendsViewController.m in Sources */,
 				B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */,
 				B34AFF6F1AADBAD5007269C4 /* main.m in Sources */,
 				B36E1A361AC0576700300174 /* UserDetailsViewController.m in Sources */,

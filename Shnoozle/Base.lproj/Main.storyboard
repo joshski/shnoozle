@@ -213,6 +213,17 @@
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="32"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-Em-nsk">
+                                <rect key="frame" x="80" y="396" width="214" height="67"/>
+                                <color key="backgroundColor" red="0.5179542855" green="1" blue="0.36587700969999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="27"/>
+                                <state key="normal" title="Find My Friends">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uvg-x5-UNE" kind="show" id="2KR-tf-peN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -234,6 +245,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1625.5" y="-643.5"/>
+        </scene>
+        <!--Find Friends View Controller-->
+        <scene sceneID="AEx-AA-Weg">
+            <objects>
+                <viewController id="uvg-x5-UNE" customClass="FindFriendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KJV-j6-RFk"/>
+                        <viewControllerLayoutGuide type="bottom" id="w1R-3x-QBp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Fh-df-aIX" userLabel="superView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="vw5-LQ-XXX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDB-za-pOg">
+                                <rect key="frame" x="122" y="292" width="131" height="62"/>
+                                <color key="backgroundColor" red="0.56984609249999996" green="0.76438168350000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbTapped:" destination="uvg-x5-UNE" eventType="touchUpInside" id="Zn8-JF-7L2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CrF-pf-Hw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846.5" y="155.5"/>
         </scene>
         <!--Time Picker View Controller-->
         <scene sceneID="8TJ-XT-lVs">
@@ -324,6 +370,6 @@
         <image name="play.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fuz-00-iPx"/>
+        <segue reference="sy0-bo-pQj"/>
     </inferredMetricsTieBreakers>
 </document>

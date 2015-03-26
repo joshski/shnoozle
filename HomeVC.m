@@ -1,12 +1,15 @@
 #import "HomeVC.h"
 #import "TimePickerVC.h"
 #import "SCLAlertView.h"
+#import <RESideMenu/RESideMenu.h>
 
 @interface HomeVC (){
 }
 @end
 
 @implementation HomeVC
+
+
 
 @synthesize datePicker;
 @synthesize selectedTimeLabel;
@@ -28,8 +31,12 @@
         alarmToggle.enabled = FALSE;
         
     }
+
     
     
+}
+- (IBAction)btnClicked:(id)sender {
+    [self.sideMenuViewController presentLeftMenuViewController];
 }
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {

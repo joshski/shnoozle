@@ -11,6 +11,7 @@ PODS:
   - ParseUI (1.1.1):
     - Parse (~> 1.6)
     - ParseFacebookUtils (~> 1.6)
+  - RESideMenu (4.0.7)
   - SCLAlertView-Objective-C (0.6.1)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Kiwi
   - Parse
   - ParseUI
+  - RESideMenu (~> 4.0.7)
   - SCLAlertView-Objective-C
 
 SPEC CHECKSUMS:
@@ -27,6 +29,7 @@ SPEC CHECKSUMS:
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
   ParseFacebookUtils: 00833ccf6fec7d6429e2403fe457496a5089358b
   ParseUI: f7e9e0e5271f75a19c74ead8fdd95d36160e268e
+  RESideMenu: a9c1cd2e64e60e1d3166ddac01a83e215a0e4d30
   SCLAlertView-Objective-C: da92da8bfd193d813e71b13ed11b6d5aa3b96cc3
 
 COCOAPODS: 0.35.0

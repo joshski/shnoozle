@@ -17,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIView *recordView;
 @property (weak, nonatomic) IBOutlet UIView *playView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
-@property (weak, nonatomic) IBOutlet NSURL *tempSoundStorage;
+@property (strong, nonatomic) NSURL *tempSoundStorage;
 
 @end

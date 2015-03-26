@@ -6,11 +6,10 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "SCLAlertView.h"
-
+#import "PlayMemoViewController.h"
 @interface RecordPlayViewController (){
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
-    NSURL *tempSoundStorage;
     NSTimer *timer;
 
 }
@@ -19,11 +18,12 @@
 
 @implementation RecordPlayViewController
 
-@synthesize playBtn;
-@synthesize playView;
+
 @synthesize recordPauseBtn;
 @synthesize recordView;
-@synthesize timerLabel;
+
+@synthesize tempSoundStorage;
+
 
 - (void)viewDidLoad
 {
@@ -122,7 +122,7 @@
     NSString *soundFilePath = [docsDir
                                stringByAppendingPathComponent:@"tmpSound.caf"];
     
-    tempSoundStorage = [NSURL fileURLWithPath:soundFilePath];
+    self.tempSoundStorage = [NSURL fileURLWithPath:soundFilePath];
     
     NSDictionary *recSettings = [NSDictionary
                                  dictionaryWithObjectsAndKeys:
@@ -145,16 +145,12 @@
     
     NSLog(@"stopped stopped");
     
-    SCLAlertView *alert = [[SCLAlertView alloc] init];
+//    SCLAlertView *alert = [[SCLAlertView alloc] init];
+//    
+//    [alert showSuccess:self title:@"Voice Memo" subTitle:@"Finished" closeButtonTitle:@"Done" duration:0.0f]; // Notice
     
-    [alert showSuccess:self title:@"Voice Memo" subTitle:@"Finished" closeButtonTitle:@"Done" duration:0.0f]; // Notice
-    
-    playView.hidden=false;
+    [self performSegueWithIdentifier:@"playMemo" sender:self];
 
-}
-- (IBAction)closeClicked:(id)sender {
-    playView.hidden=true;
-    
 }
 
 
@@ -175,7 +171,11 @@
     
     [alert showSuccess:self title:@"Done" subTitle:@"Finish playing the recording" closeButtonTitle:@"OK" duration:0.0f]; // Notice
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    PlayMemoViewController *vc = segue.destinationViewController;
+    vc.memoURL = tempSoundStorage;
+}
 
 
 @end

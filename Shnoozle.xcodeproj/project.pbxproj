@@ -10,6 +10,7 @@
 		5015C20B8BB18DADCD6BCA91 /* libPods-ShnoozleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB08187669FD6E571DB47F1 /* libPods-ShnoozleTests.a */; };
 		71B0481378BDBF8F46B987A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5113FF57EF7B59FD04488A9 /* libPods.a */; };
 		B319BDB41AC18B9E0091DD03 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */; };
+		B33614531AC44AC4001CE51F /* PlayMemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33614521AC44AC4001CE51F /* PlayMemoViewController.m */; };
 		B34AFF6F1AADBAD5007269C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF6E1AADBAD5007269C4 /* main.m */; };
 		B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF711AADBAD5007269C4 /* AppDelegate.m */; };
 		B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF741AADBAD5007269C4 /* LogInViewController.m */; };
@@ -52,6 +53,8 @@
 		9BE723DECB521D630272C238 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A9008DDF8A1740655721F0F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B33614511AC44AC4001CE51F /* PlayMemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayMemoViewController.h; sourceTree = "<group>"; };
+		B33614521AC44AC4001CE51F /* PlayMemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMemoViewController.m; sourceTree = "<group>"; };
 		B34AFF691AADBAD5007269C4 /* Shnoozle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shnoozle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34AFF6D1AADBAD5007269C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34AFF6E1AADBAD5007269C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
+				B33614511AC44AC4001CE51F /* PlayMemoViewController.h */,
+				B33614521AC44AC4001CE51F /* PlayMemoViewController.m */,
 				B3DFE23A1AC421DF00225DBF /* FindFriendsViewController.h */,
 				B3DFE23B1AC421DF00225DBF /* FindFriendsViewController.m */,
 				B3D540701AC30C3700706F6E /* TimePickerViewController.h */,
@@ -400,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33614531AC44AC4001CE51F /* PlayMemoViewController.m in Sources */,
 				B34FD6AF1AC2887100F0248F /* HomeViewController.m in Sources */,
 				B34AFF751AADBAD5007269C4 /* LogInViewController.m in Sources */,
 				B3D540721AC30C3700706F6E /* TimePickerViewController.m in Sources */,

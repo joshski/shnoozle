@@ -64,6 +64,7 @@
                                         <connections>
                                             <action selector="recordTouchDown:" destination="kC0-Pt-0sG" eventType="touchDown" id="HD4-E8-gLr"/>
                                             <action selector="recordTouchUp:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Izx-lS-rDj"/>
+                                            <segue destination="r5R-Zs-RqR" kind="push" identifier="playMemo" id="ZOt-Jv-Vux"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic.png" translatesAutoresizingMaskIntoConstraints="NO" id="zJ0-Qc-8Q8">
@@ -78,64 +79,6 @@
                                     <constraint firstAttribute="trailing" secondItem="zky-DF-Nxf" secondAttribute="trailing" id="eZb-lz-B7A"/>
                                     <constraint firstItem="zky-DF-Nxf" firstAttribute="leading" secondItem="AYu-yi-yo4" secondAttribute="leading" id="nFc-y9-nvt"/>
                                     <constraint firstAttribute="centerY" secondItem="zJ0-Qc-8Q8" secondAttribute="centerY" id="vOW-LQ-ea6"/>
-                                </constraints>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-lf-4xO" userLabel="playView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfx-6V-ipX" userLabel="playButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                                        <color key="backgroundColor" red="0.14215941213569894" green="0.32623802477338593" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="playBtnClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="EGA-5L-O3Z"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9m-zc-EuL">
-                                        <rect key="frame" x="139" y="564" width="97" height="30"/>
-                                        <color key="backgroundColor" red="0.55367896660000004" green="1" blue="0.28208946010000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Send to Parse">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="uploadToParseClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="zWE-YO-p9t"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-es-CVf">
-                                        <rect key="frame" x="59" y="173" width="256" height="256"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPH-5m-6Sl" userLabel="closeButton">
-                                        <rect key="frame" x="303" y="8" width="64" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="EHD-Kr-B0d"/>
-                                            <constraint firstAttribute="height" constant="64" id="vD3-U6-Sq9"/>
-                                        </constraints>
-                                        <state key="normal" image="close.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="closeClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="9Hj-hf-ch6"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcd-Mq-na8" userLabel="timerLabel">
-                                        <rect key="frame" x="166" y="80" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="leading" secondItem="d6d-lf-4xO" secondAttribute="leading" id="D2w-QT-PNd"/>
-                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="top" id="MhF-LV-hfx"/>
-                                    <constraint firstAttribute="trailing" secondItem="gPH-5m-6Sl" secondAttribute="trailing" constant="5" id="Q9c-uG-rO7"/>
-                                    <constraint firstItem="gPH-5m-6Sl" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="top" constant="5" id="X5V-Gk-X26"/>
-                                    <constraint firstAttribute="trailing" secondItem="sfx-6V-ipX" secondAttribute="trailing" id="cen-Mx-7T1"/>
-                                    <constraint firstAttribute="centerX" secondItem="Zcj-es-CVf" secondAttribute="centerX" id="dEj-i6-45D"/>
-                                    <constraint firstAttribute="centerY" secondItem="Zcj-es-CVf" secondAttribute="centerY" id="hDV-i7-1Ru"/>
-                                    <constraint firstAttribute="bottom" secondItem="sfx-6V-ipX" secondAttribute="bottom" id="mDH-Mk-LEO"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT9-yz-cz0">
@@ -159,13 +102,9 @@
                         <color key="backgroundColor" red="0.55367896655610593" green="1" blue="0.28208946008731928" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="AYu-yi-yo4" firstAttribute="leading" secondItem="X9N-Td-rWo" secondAttribute="leading" id="7Tn-Gt-fyZ"/>
-                            <constraint firstItem="d6d-lf-4xO" firstAttribute="top" secondItem="xtZ-9F-ob3" secondAttribute="bottom" id="IJW-kh-mqr"/>
                             <constraint firstItem="cPP-aK-T1J" firstAttribute="top" secondItem="AYu-yi-yo4" secondAttribute="bottom" id="REF-AV-jsl"/>
                             <constraint firstAttribute="trailing" secondItem="AYu-yi-yo4" secondAttribute="trailing" id="q8p-VL-wYJ"/>
-                            <constraint firstItem="cPP-aK-T1J" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="bottom" id="vYM-YX-d0H"/>
                             <constraint firstItem="AYu-yi-yo4" firstAttribute="top" secondItem="xtZ-9F-ob3" secondAttribute="bottom" id="vgd-Qt-VBe"/>
-                            <constraint firstAttribute="trailing" secondItem="d6d-lf-4xO" secondAttribute="trailing" id="yEk-tx-sWT"/>
-                            <constraint firstItem="d6d-lf-4xO" firstAttribute="leading" secondItem="X9N-Td-rWo" secondAttribute="leading" id="yd3-ei-BKA"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -175,7 +114,6 @@
                         <outlet property="playView" destination="d6d-lf-4xO" id="qmr-ga-CzW"/>
                         <outlet property="recordPauseBtn" destination="zky-DF-Nxf" id="Obh-FG-gey"/>
                         <outlet property="recordView" destination="AYu-yi-yo4" id="YJN-z8-9sC"/>
-                        <outlet property="timerLabel" destination="Qcd-Mq-na8" id="jcd-fw-5Jk"/>
                         <outlet property="uploadToParse" destination="x9m-zc-EuL" id="64Q-ju-EvU"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutClicked" id="fuz-00-iPx"/>
                     </connections>
@@ -252,6 +190,76 @@
             </objects>
             <point key="canvasLocation" x="1625.5" y="-643.5"/>
         </scene>
+        <!--Play Memo View Controller-->
+        <scene sceneID="KLb-AE-iEg">
+            <objects>
+                <viewController id="r5R-Zs-RqR" customClass="PlayMemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vzM-oY-ws6"/>
+                        <viewControllerLayoutGuide type="bottom" id="CbY-ve-OWQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0tq-Oy-UwS" userLabel="superView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-lf-4xO" userLabel="playView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfx-6V-ipX" userLabel="playButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" red="0.14215941213569894" green="0.32623802477338593" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playBtnClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="EGA-5L-O3Z"/>
+                                            <segue destination="r5R-Zs-RqR" kind="push" identifier="playMemo" id="4SW-Jf-lAP"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-es-CVf">
+                                        <rect key="frame" x="59" y="205.5" width="256" height="256"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9m-zc-EuL">
+                                        <rect key="frame" x="113" y="562" width="149" height="44"/>
+                                        <color key="backgroundColor" red="0.55367896660000004" green="1" blue="0.28208946010000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Send to Parse">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadToParseClicked:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="zWE-YO-p9t"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="leading" secondItem="d6d-lf-4xO" secondAttribute="leading" id="D2w-QT-PNd"/>
+                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="top" id="Gx2-lV-L8u"/>
+                                    <constraint firstAttribute="bottom" secondItem="sfx-6V-ipX" secondAttribute="bottom" id="ILn-DF-BpY"/>
+                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="top" id="MhF-LV-hfx"/>
+                                    <constraint firstAttribute="trailing" secondItem="sfx-6V-ipX" secondAttribute="trailing" id="NsT-dG-8pt"/>
+                                    <constraint firstAttribute="trailing" secondItem="sfx-6V-ipX" secondAttribute="trailing" id="cen-Mx-7T1"/>
+                                    <constraint firstAttribute="centerX" secondItem="Zcj-es-CVf" secondAttribute="centerX" id="dEj-i6-45D"/>
+                                    <constraint firstAttribute="centerY" secondItem="Zcj-es-CVf" secondAttribute="centerY" id="hDV-i7-1Ru"/>
+                                    <constraint firstAttribute="bottom" secondItem="sfx-6V-ipX" secondAttribute="bottom" id="mDH-Mk-LEO"/>
+                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="leading" secondItem="d6d-lf-4xO" secondAttribute="leading" id="qS3-PE-DnB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="d6d-lf-4xO" secondAttribute="trailing" id="jkC-CD-bcv"/>
+                            <constraint firstItem="d6d-lf-4xO" firstAttribute="leading" secondItem="0tq-Oy-UwS" secondAttribute="leading" id="sL6-eB-Ny2"/>
+                            <constraint firstItem="d6d-lf-4xO" firstAttribute="top" secondItem="0tq-Oy-UwS" secondAttribute="top" id="shl-Fd-4tD"/>
+                            <constraint firstItem="CbY-ve-OWQ" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="bottom" id="z9m-OO-JcK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tof-la-Lg5"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pN-p0-QW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782.5" y="612.5"/>
+        </scene>
         <!--Find Friends View Controller-->
         <scene sceneID="AEx-AA-Weg">
             <objects>
@@ -285,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrF-pf-Hw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846.5" y="155.5"/>
+            <point key="canvasLocation" x="2136.5" y="104.5"/>
         </scene>
         <!--Time Picker View Controller-->
         <scene sceneID="8TJ-XT-lVs">
@@ -371,11 +379,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close.png" width="128" height="128"/>
         <image name="mic.png" width="256" height="256"/>
         <image name="play.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fuz-00-iPx"/>
+        <segue reference="ZOt-Jv-Vux"/>
     </inferredMetricsTieBreakers>
 </document>

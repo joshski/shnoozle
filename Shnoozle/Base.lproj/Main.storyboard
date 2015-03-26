@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618.5" y="157.5"/>
+            <point key="canvasLocation" x="186.5" y="-2.5"/>
         </scene>
         <!--Record MemoVC-->
         <scene sceneID="roR-5L-dPL">
@@ -143,7 +143,24 @@
                     <view key="view" contentMode="scaleToFill" id="DKY-iK-SPh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.51764705879999995" green="1" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stars.png" translatesAutoresizingMaskIntoConstraints="NO" id="ruP-JM-JW7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ruP-JM-JW7" secondAttribute="bottom" id="7Gv-Xs-bfa"/>
+                            <constraint firstItem="ruP-JM-JW7" firstAttribute="top" secondItem="90L-qH-c4h" secondAttribute="bottom" id="8Ez-rT-TcA"/>
+                            <constraint firstItem="ruP-JM-JW7" firstAttribute="top" secondItem="DKY-iK-SPh" secondAttribute="top" id="CfI-Dj-rxn"/>
+                            <constraint firstItem="ruP-JM-JW7" firstAttribute="leading" secondItem="DKY-iK-SPh" secondAttribute="leading" id="XuN-8W-OfM"/>
+                            <constraint firstAttribute="trailing" secondItem="ruP-JM-JW7" secondAttribute="trailing" id="r1B-Yf-LWD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Ez-rT-TcA"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -173,7 +190,7 @@
         <!--View Controller-->
         <scene sceneID="XRG-N0-UDr">
             <objects>
-                <viewController id="lvU-L5-fu4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="contentViewController" id="lvU-L5-fu4" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sd0-YD-r0r"/>
                         <viewControllerLayoutGuide type="bottom" id="TQx-BJ-MhK"/>
@@ -181,18 +198,26 @@
                     <view key="view" contentMode="scaleToFill" id="YGv-Pm-Tlt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hp5-Q1-WhN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="lES-Y1-pr5"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5w-Vv-wtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606.5" y="-1240.5"/>
+            <point key="canvasLocation" x="618.5" y="-1236.5"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="ahk-fo-gYG">
             <objects>
-                <viewController storyboardIdentifier="contentViewController" id="FjB-k4-snd" customClass="HomeVC" sceneMemberID="viewController">
+                <viewController id="FjB-k4-snd" customClass="HomeVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Noy-8Y-AGT"/>
                         <viewControllerLayoutGuide type="bottom" id="G7J-u0-A2w"/>
@@ -427,7 +452,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="FjB-k4-snd" kind="relationship" relationship="rootViewController" id="Nag-oR-19K"/>
+                        <segue destination="FjB-k4-snd" kind="relationship" relationship="rootViewController" id="Jts-sB-Fb0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-na-8ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -454,10 +479,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Stars.png" width="320" height="568"/>
         <image name="mic.png" width="256" height="256"/>
         <image name="play.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fuz-00-iPx"/>
+        <segue reference="lES-Y1-pr5"/>
     </inferredMetricsTieBreakers>
 </document>

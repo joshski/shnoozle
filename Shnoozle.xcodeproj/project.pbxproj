@@ -22,6 +22,7 @@
 		B36E1A311AC0470700300174 /* RecordMemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B36E1A301AC0470700300174 /* RecordMemoVC.m */; };
 		B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A321AC0575700300174 /* TableHeaderView.xib */; };
 		B36E1A381AC08D0400300174 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B36E1A371AC08D0400300174 /* nav-logo.png */; };
+		B383ECCE1AC5C66600031438 /* LeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B383ECCD1AC5C66600031438 /* LeftMenuVC.m */; };
 		B387FEF31AC2D76800613352 /* TimeOfDaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */; };
 		B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF51AC2D78600613352 /* TimeOfDay.m */; };
 		B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerVC.m */; };
@@ -76,6 +77,8 @@
 		B36E1A301AC0470700300174 /* RecordMemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordMemoVC.m; sourceTree = "<group>"; };
 		B36E1A321AC0575700300174 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		B36E1A371AC08D0400300174 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
+		B383ECCC1AC5C66600031438 /* LeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuVC.h; sourceTree = "<group>"; };
+		B383ECCD1AC5C66600031438 /* LeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuVC.m; sourceTree = "<group>"; };
 		B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOfDaySpec.m; sourceTree = "<group>"; };
 		B387FEF41AC2D78600613352 /* TimeOfDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeOfDay.h; path = ../TimeOfDay.h; sourceTree = "<group>"; };
 		B387FEF51AC2D78600613352 /* TimeOfDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeOfDay.m; path = ../TimeOfDay.m; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
+				B383ECCC1AC5C66600031438 /* LeftMenuVC.h */,
+				B383ECCD1AC5C66600031438 /* LeftMenuVC.m */,
 				B36735C11AC497BD00D6444E /* DEMORootViewController.h */,
 				B36735C21AC497BD00D6444E /* DEMORootViewController.m */,
 				B34AFF761AADBAD5007269C4 /* Main.storyboard */,
@@ -410,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33614531AC44AC4001CE51F /* PlayMemoVC.m in Sources */,
+				B383ECCE1AC5C66600031438 /* LeftMenuVC.m in Sources */,
 				B34FD6AF1AC2887100F0248F /* HomeVC.m in Sources */,
 				B34AFF751AADBAD5007269C4 /* LoginVC.m in Sources */,
 				B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */,

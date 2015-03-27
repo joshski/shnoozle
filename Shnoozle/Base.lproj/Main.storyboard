@@ -23,7 +23,7 @@
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" sceneMemberID="viewController">
                     <activityIndicatorView key="view" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="1Mo-EK-m9k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -120,15 +120,15 @@
             </objects>
             <point key="canvasLocation" x="-406.5" y="-484.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Left MenuVC-->
         <scene sceneID="bed-C4-oN8">
             <objects>
-                <viewController storyboardIdentifier="leftMenuViewController" id="q6Y-Sg-aoD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="leftMenuViewController" id="q6Y-Sg-aoD" customClass="LeftMenuVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="90L-qH-c4h"/>
                         <viewControllerLayoutGuide type="bottom" id="mVi-2Z-TtH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DKY-iK-SPh">
+                    <view key="view" contentMode="scaleToFill" id="DKY-iK-SPh" userLabel="superView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -159,7 +159,7 @@
         <!--Alarm-->
         <scene sceneID="ahk-fo-gYG">
             <objects>
-                <viewController id="FjB-k4-snd" customClass="HomeVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="FjB-k4-snd" customClass="HomeVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Noy-8Y-AGT"/>
                         <viewControllerLayoutGuide type="bottom" id="G7J-u0-A2w"/>
@@ -229,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.5" y="-1107.5"/>
+            <point key="canvasLocation" x="589.5" y="-1143.5"/>
         </scene>
         <!--Play MemoVC-->
         <scene sceneID="KLb-AE-iEg">
@@ -303,7 +303,7 @@
         <!--Find FriendsVC-->
         <scene sceneID="AEx-AA-Weg">
             <objects>
-                <viewController id="uvg-x5-UNE" customClass="FindFriendsVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindFriendsVC" id="uvg-x5-UNE" customClass="FindFriendsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KJV-j6-RFk"/>
                         <viewControllerLayoutGuide type="bottom" id="w1R-3x-QBp"/>

@@ -174,6 +174,7 @@
 //    [self.navigationController pushViewController:detailsViewController animated:animated];
     
     [self performSegueWithIdentifier:@"transitionToHomeController" sender:self];
+
     
     
 }

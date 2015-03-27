@@ -232,6 +232,12 @@
                                     <segue destination="uvg-x5-UNE" kind="show" id="2KR-tf-peN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5S-0I-Zyz">
+                                <rect key="frame" x="313" y="90" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -245,9 +251,9 @@
                                 <action selector="menuTapped:" destination="FjB-k4-snd" id="vna-FW-T8R"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jpf-QE-omL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gew-0T-AGg">
                             <connections>
-                                <segue destination="b9Z-XH-8Qs" kind="show" id="ZXV-qX-mZh"/>
+                                <segue destination="b9Z-XH-8Qs" kind="show" id="hWi-j4-igU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -400,12 +406,12 @@
                     <navigationItem key="navigationItem" id="TdJ-K9-f7H">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="B5N-gj-vSH">
                             <connections>
-                                <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="dnK-dK-b9F"/>
+                                <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="YfH-bU-qqL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="QkK-fL-U3t">
                             <connections>
-                                <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="6kM-eP-WXf"/>
+                                <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="m7W-fF-ikL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

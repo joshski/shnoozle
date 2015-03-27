@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimePickerVC.m"
-            timestampString = "449009032.732909"
+            timestampString = "449180526.591488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51">
+            startingLineNumber = "52"
+            endingLineNumber = "52">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimePickerVC.m"
-            timestampString = "449009032.732909"
+            timestampString = "449180526.591488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50">
+            startingLineNumber = "51"
+            endingLineNumber = "51">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -134,11 +134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimePickerVC.m"
-            timestampString = "449009032.732909"
+            timestampString = "449180526.591488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66">
+            startingLineNumber = "67"
+            endingLineNumber = "67">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,7 +160,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimePickerVC.m"
@@ -314,6 +314,22 @@
             startingLineNumber = "87"
             endingLineNumber = "87"
             landmarkName = "-recordButtonUpOutside:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TimePickerVC.m"
+            timestampString = "449176801.03416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

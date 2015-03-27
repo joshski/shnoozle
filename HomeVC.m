@@ -184,11 +184,15 @@
     [self animateColors];
 }
 
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PlayMemoVC *vc = segue.destinationViewController;
-    vc.memoURL = tempMemoURL;
     
+    if ([segue.identifier  isEqual:@"playMemo"]){
+        PlayMemoVC *vc = segue.destinationViewController;
+        vc.memoURL = tempMemoURL;
+    }
 }
 
 

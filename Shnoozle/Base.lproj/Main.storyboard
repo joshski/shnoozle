@@ -156,25 +156,6 @@
             </objects>
             <point key="canvasLocation" x="-227.5" y="-1253.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="PpN-ho-YiU">
-            <objects>
-                <viewController storyboardIdentifier="rightMenuViewController" id="ZRw-Vv-hxy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ePy-Ky-FV1"/>
-                        <viewControllerLayoutGuide type="bottom" id="i9N-VV-K74"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="39y-BF-TKB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ML-Om-upu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="178.5" y="-1262.5"/>
-        </scene>
         <!--Alarm-->
         <scene sceneID="ahk-fo-gYG">
             <objects>
@@ -221,17 +202,14 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="FjB-k4-snd" eventType="touchUpInside" id="DVo-1z-iIg"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
-                        <barButtonItem key="leftBarButtonItem" title="Record" id="s4h-L4-EyV">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="s4h-L4-EyV">
                             <connections>
-                                <segue destination="kC0-Pt-0sG" kind="show" id="DI3-vg-D9N"/>
+                                <action selector="menuTapped:" destination="FjB-k4-snd" id="vna-FW-T8R"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jpf-QE-omL">

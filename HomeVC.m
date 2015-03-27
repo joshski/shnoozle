@@ -35,9 +35,11 @@
     
     
 }
-- (IBAction)btnClicked:(id)sender {
+- (IBAction)menuTapped:(id)sender {
     [self.sideMenuViewController presentLeftMenuViewController];
+
 }
+
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     TimePickerVC *source = [segue sourceViewController];

@@ -153,12 +153,7 @@
 
 
 
-- (IBAction)logOutClicked:(id)sender {
-    [PFUser logOut];
-    [self performSegueWithIdentifier:@"logOutClicked" sender:self];
 
-
-}
 
 
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{

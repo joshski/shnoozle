@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *alarmToggle;
+@property (weak, nonatomic) IBOutlet UIView *recordView;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
+@property (strong, nonatomic) NSURL *tempMemoURL;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 

@@ -37,7 +37,7 @@
 }
 
 
-- (IBAction)recordButtonUpInside:(id)sender {
+- (IBAction)recordButtonUpOutside:(id)sender {
     [self performSegueWithIdentifier:@"playMemo" sender:self];
     
 }

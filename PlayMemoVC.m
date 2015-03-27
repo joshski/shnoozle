@@ -8,6 +8,7 @@
 
 #import "PlayMemoVC.h"
 #import "RecordMemoVC.h"
+#import "HomeVC.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "SCLAlertView.h"

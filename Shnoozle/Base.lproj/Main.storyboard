@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SzQ-Yz-9sC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -62,10 +63,10 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="recordButtonUpInside:" destination="kC0-Pt-0sG" eventType="touchUpOutside" id="HUY-Yd-UUl"/>
+                                            <action selector="recordButtonUpOutside:" destination="kC0-Pt-0sG" eventType="touchUpOutside" id="pm5-Gd-WsK"/>
                                             <action selector="recordTouchDown:" destination="kC0-Pt-0sG" eventType="touchDown" id="HD4-E8-gLr"/>
                                             <action selector="recordTouchUp:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Izx-lS-rDj"/>
-                                            <segue destination="r5R-Zs-RqR" kind="push" identifier="playMemo" id="ZOt-Jv-Vux"/>
+                                            <segue destination="vot-0I-KbH" kind="push" identifier="playMemo" id="ZOt-Jv-Vux"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mic.png" translatesAutoresizingMaskIntoConstraints="NO" id="zJ0-Qc-8Q8">
@@ -186,8 +187,42 @@
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="32"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-8r-Mih" userLabel="recordButtonView">
+                                <rect key="frame" x="107" y="493" width="162" height="127"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-F8-yXU" userLabel="recordButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="127"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="recordButtonUpOutside:" destination="FjB-k4-snd" eventType="touchUpOutside" id="BKs-lN-FJr"/>
+                                            <action selector="recordTouchDown:" destination="FjB-k4-snd" eventType="touchDown" id="7Jl-UT-HYj"/>
+                                            <action selector="recordTouchUp:" destination="FjB-k4-snd" eventType="touchUpInside" id="WZf-7N-5Gv"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic.png" translatesAutoresizingMaskIntoConstraints="NO" id="WHx-eQ-5d8" userLabel="recordImage">
+                                        <rect key="frame" x="47" y="29" width="69" height="69"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="69" id="5Pw-vy-khg"/>
+                                            <constraint firstAttribute="height" constant="69" id="SFV-DB-MMB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="WHx-eQ-5d8" secondAttribute="centerX" id="0Le-zb-MvD"/>
+                                    <constraint firstItem="Cyq-F8-yXU" firstAttribute="leading" secondItem="mIS-8r-Mih" secondAttribute="leading" id="GgP-73-Yto"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cyq-F8-yXU" secondAttribute="trailing" id="IIo-A4-9uf"/>
+                                    <constraint firstItem="Cyq-F8-yXU" firstAttribute="top" secondItem="mIS-8r-Mih" secondAttribute="top" id="KdP-3r-cRK"/>
+                                    <constraint firstAttribute="width" constant="162" id="fbE-3p-LBE"/>
+                                    <constraint firstAttribute="height" constant="127" id="pCU-p5-Sn8"/>
+                                    <constraint firstAttribute="centerY" secondItem="WHx-eQ-5d8" secondAttribute="centerY" id="pK4-9w-xKZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cyq-F8-yXU" secondAttribute="bottom" id="td8-yn-utX"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-Em-nsk">
-                                <rect key="frame" x="80" y="396" width="214" height="67"/>
+                                <rect key="frame" x="80" y="347" width="214" height="67"/>
                                 <color key="backgroundColor" red="0.5179542855" green="1" blue="0.36587700969999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="27"/>
                                 <state key="normal" title="Find My Friends">
@@ -197,14 +232,12 @@
                                     <segue destination="uvg-x5-UNE" kind="show" id="2KR-tf-peN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-F8-yXU">
-                                <rect key="frame" x="89" y="331" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="mIS-8r-Mih" secondAttribute="centerY" multiplier="0.6" id="Vpe-K5-LfQ"/>
+                            <constraint firstAttribute="centerX" secondItem="mIS-8r-Mih" secondAttribute="centerX" id="c2c-Y8-MZ5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="s4h-L4-EyV">
@@ -223,18 +256,21 @@
                     <connections>
                         <outlet property="alarmToggle" destination="nGM-T0-MCB" id="mDU-eW-OPu"/>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
+                        <outlet property="recordButton" destination="Cyq-F8-yXU" id="fr7-KV-Xos"/>
+                        <outlet property="recordView" destination="mIS-8r-Mih" id="DYa-Bh-msr"/>
                         <outlet property="selectedTimeLabel" destination="e7j-x9-NZH" id="OPH-ZK-6jv"/>
                         <outlet property="titleLabel" destination="bJy-OJ-6mB" id="rGo-gI-W8f"/>
+                        <segue destination="r5R-Zs-RqR" kind="show" identifier="playMemo" id="hUC-yl-tsB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="431.5" y="-122.5"/>
         </scene>
-        <!--Play MemoVC-->
+        <!--playMemoVC-->
         <scene sceneID="KLb-AE-iEg">
             <objects>
-                <viewController id="r5R-Zs-RqR" customClass="PlayMemoVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playMemoVC" title="playMemoVC" id="r5R-Zs-RqR" customClass="PlayMemoVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vzM-oY-ws6"/>
                         <viewControllerLayoutGuide type="bottom" id="CbY-ve-OWQ"/>
@@ -277,11 +313,15 @@
                                     <constraint firstAttribute="bottom" secondItem="sfx-6V-ipX" secondAttribute="bottom" id="ILn-DF-BpY"/>
                                     <constraint firstItem="sfx-6V-ipX" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="top" id="MhF-LV-hfx"/>
                                     <constraint firstAttribute="trailing" secondItem="sfx-6V-ipX" secondAttribute="trailing" id="NsT-dG-8pt"/>
+                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="top" secondItem="d6d-lf-4xO" secondAttribute="top" id="WJ8-sa-ftd"/>
                                     <constraint firstAttribute="trailing" secondItem="sfx-6V-ipX" secondAttribute="trailing" id="cen-Mx-7T1"/>
                                     <constraint firstAttribute="centerX" secondItem="Zcj-es-CVf" secondAttribute="centerX" id="dEj-i6-45D"/>
+                                    <constraint firstItem="sfx-6V-ipX" firstAttribute="leading" secondItem="d6d-lf-4xO" secondAttribute="leading" id="eOW-T1-rxL"/>
                                     <constraint firstAttribute="centerY" secondItem="Zcj-es-CVf" secondAttribute="centerY" id="hDV-i7-1Ru"/>
+                                    <constraint firstAttribute="trailing" secondItem="sfx-6V-ipX" secondAttribute="trailing" id="his-DK-moQ"/>
                                     <constraint firstAttribute="bottom" secondItem="sfx-6V-ipX" secondAttribute="bottom" id="mDH-Mk-LEO"/>
                                     <constraint firstItem="sfx-6V-ipX" firstAttribute="leading" secondItem="d6d-lf-4xO" secondAttribute="leading" id="qS3-PE-DnB"/>
+                                    <constraint firstAttribute="bottom" secondItem="sfx-6V-ipX" secondAttribute="bottom" id="zpE-d4-k6p"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -298,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pN-p0-QW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.5" y="685.5"/>
+            <point key="canvasLocation" x="1507.5" y="685.5"/>
         </scene>
         <!--Find FriendsVC-->
         <scene sceneID="AEx-AA-Weg">
@@ -333,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrF-pf-Hw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.5" y="-189.5"/>
+            <point key="canvasLocation" x="1235.5" y="-149.5"/>
         </scene>
         <!--Time PickerVC-->
         <scene sceneID="8TJ-XT-lVs">
@@ -381,10 +421,32 @@
             </objects>
             <point key="canvasLocation" x="857.5" y="-919.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gw2-6u-to7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vot-0I-KbH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="f4n-V7-V90"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BT0-GV-iOb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="r5R-Zs-RqR" kind="relationship" relationship="rootViewController" id="OYe-AK-S4p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utO-AK-qAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920.5" y="685.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Stars.png" width="320" height="568"/>
         <image name="mic.png" width="256" height="256"/>
         <image name="play.png" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hUC-yl-tsB"/>
+    </inferredMetricsTieBreakers>
 </document>

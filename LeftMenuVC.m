@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
+
 @interface LeftMenuVC ()
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 
@@ -43,6 +44,7 @@
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
+            
             break;
         case 1:
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"MessageVC"]]
@@ -69,6 +71,9 @@
             break;
     }
 }
+
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -107,7 +112,9 @@
     
     return cell;
 }
-
+- (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController;{
+    NSLog(@"menu did close");
+}
 
 
 - (void)didReceiveMemoryWarning {

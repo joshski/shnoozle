@@ -324,9 +324,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ATp-ag-qPu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
                                 <rect key="frame" x="71" y="90" width="233" height="113"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="87"/>
@@ -380,6 +377,9 @@
                                     <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="biw-ii-xvm"/>
                                 </connections>
                             </switch>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ATp-ag-qPu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -392,11 +392,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="s4h-L4-EyV">
-                            <color key="tintColor" red="1" green="0.062338048889999997" blue="0.10071189480000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="menuTapped:" destination="FjB-k4-snd" id="vna-FW-T8R"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="dPl-mh-xK6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Mh-Zl-nv4" customClass="JTHamburgerButton">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="0.094088714729999995" blue="0.1609453528" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didCloseButtonTouch:" destination="FjB-k4-snd" eventType="touchUpInside" id="vNz-Cf-Sxk"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gew-0T-AGg">
                             <color key="tintColor" red="0.51764705879999995" green="1" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -410,6 +417,7 @@
                     <connections>
                         <outlet property="alarmToggle" destination="nGM-T0-MCB" id="mDU-eW-OPu"/>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
+                        <outlet property="hamburgerMenuButton" destination="8Mh-Zl-nv4" id="X5J-c8-BnY"/>
                         <outlet property="recordButton" destination="Cyq-F8-yXU" id="fr7-KV-Xos"/>
                         <outlet property="recordView" destination="mIS-8r-Mih" id="DYa-Bh-msr"/>
                         <outlet property="selectedTimeLabel" destination="e7j-x9-NZH" id="OPH-ZK-6jv"/>

@@ -6,6 +6,7 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "PlayMemoVC.h"
+#import "LeftMenuVC.h"
 
 @interface HomeVC (){
     AVAudioRecorder *recorder;
@@ -27,6 +28,7 @@
 @synthesize recordButton;
 @synthesize recordView;
 @synthesize tempMemoURL;
+@synthesize hamburgerMenuButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,16 +50,29 @@
         
     }
     
-    
-
+    hamburgerMenuButton.lineColor=[UIColor redColor];
+    [hamburgerMenuButton updateAppearance];
 
     
     
 }
-- (IBAction)menuTapped:(id)sender {
-    [self.sideMenuViewController presentLeftMenuViewController];
 
+
+- (IBAction)didCloseButtonTouch:(JTHamburgerButton *)sender
+{
+    if(sender.currentMode == JTHamburgerButtonModeHamburger){
+        [sender setCurrentMode:JTHamburgerButtonModeCross withAnimation:.3];
+        [self.sideMenuViewController presentLeftMenuViewController];
+
+
+    }
+    else{
+        [sender setCurrentMode:JTHamburgerButtonModeHamburger withAnimation:.3];
+
+    }
 }
+
+
 - (BOOL)date:(NSDate *)date hour:(NSInteger)h minute:(NSInteger)m {
     
     NSCalendar *calendar = [[NSCalendar alloc] init];

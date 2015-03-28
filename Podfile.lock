@@ -2,6 +2,7 @@ PODS:
   - Bolts (1.1.4)
   - Facebook-iOS-SDK (3.23.0):
     - Bolts (~> 1.0)
+  - JTHamburgerButton (1.0.1)
   - Kiwi (2.3.1)
   - Parse (1.6.4):
     - Bolts (~> 1.1)
@@ -16,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
+  - JTHamburgerButton (~> 1.0)
   - Kiwi
   - Parse
   - ParseUI
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
   Facebook-iOS-SDK: 3d65f685348b789e46a9aacf92bfa85b60b63755
+  JTHamburgerButton: 1b3d18fd88aee45174c1bf20ae07f130783d497a
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
   ParseFacebookUtils: 00833ccf6fec7d6429e2403fe457496a5089358b

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-JTHamburgerButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,52 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>40566BB62984D02AEDF2B4B9</key>
+		<key>217EF927D1E887AFAAF6B070</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>440C9613A2C5C997A08AD7D8</key>
+		<key>31EF2844B6A63BD0EDB586B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B484D059B09545A8390BB31</key>
+		<key>432217FA6C7C84E1F016629E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6760D607D06C784E15A885BD</key>
+		<key>4FC57979FF8CD9B6EC884943</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7399B545C8F51E7EADDD89EC</key>
+		<key>5727EC3DC8E40D78F7F63E93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CADB73A3E2FE25936389ADD</key>
+		<key>8E9B868132D8574AA2E8CFA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDF6AC75021F115270803B93</key>
+		<key>A2C0D583A74693E79429FFA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D299F1F300AE0E2E27E73C11</key>
+		<key>C5B6D328C1C08EEBBDBEB2FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E8DD74D187B36BAFDC2FF124</key>
+		<key>C9994F3370658E8E73D5D799</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED78DBBDA984E121D8D254E6</key>
+		<key>CD24C28E8E03CA413C82DA0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1BB613628A0E271623A3A46</key>
 		<dict>
 			<key>primary</key>
 			<true/>

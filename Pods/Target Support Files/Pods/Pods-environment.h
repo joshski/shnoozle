@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 23
 #define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
 
+// JTHamburgerButton
+#define COCOAPODS_POD_AVAILABLE_JTHamburgerButton
+#define COCOAPODS_VERSION_MAJOR_JTHamburgerButton 1
+#define COCOAPODS_VERSION_MINOR_JTHamburgerButton 0
+#define COCOAPODS_VERSION_PATCH_JTHamburgerButton 1
+
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 #define COCOAPODS_VERSION_MAJOR_Parse 1

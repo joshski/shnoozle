@@ -7,6 +7,8 @@
 
 @interface FindFriendsVC (){
     NSMutableArray *searchResults;
+    SCLAlertView *alert ;
+
 }
 
 @end
@@ -14,9 +16,10 @@
 @implementation FindFriendsVC
 
 @synthesize searchBar;
+@synthesize friendsTable;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    searchResults=[[NSMutableArray alloc]init];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -47,10 +50,16 @@
             NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
             searchResults = [objects valueForKey:@"username"];
             NSLog(@"%@",searchResults);
+            [friendsTable reloadData];
+            if ([searchResults count] == 0) {
+                
+                [alert showCustom:self image:[UIImage imageNamed:@"fb.png"] color:[UIColor blueColor] title:@"Friends" subTitle:@"No one with that username is on snoozle" closeButtonTitle:@"OK" duration:2.0f];
+            }
 
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
+            
         }
     }];
 
@@ -133,7 +142,6 @@
         }
     }];
     
-    SCLAlertView *alert = [[SCLAlertView alloc] init];
     alert.shouldDismissOnTapOutside = YES;
     [alert showCustom:self image:[UIImage imageNamed:@"fb.png"] color:[UIColor blueColor] title:@"Facebook" subTitle:@"Connecting" closeButtonTitle:@"OK" duration:2.0f];
 }
@@ -145,6 +153,21 @@
     // Do the search...
     [self queryParseUsers];
 }
-
-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [searchResults count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"friendsTable";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+    return cell;
+}
 @end

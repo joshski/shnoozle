@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FindFriendsVC : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface FindFriendsVC : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate,UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *friendsTable;
 
 @end

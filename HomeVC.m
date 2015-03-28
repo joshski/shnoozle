@@ -42,6 +42,9 @@
         alarmToggle.enabled = FALSE;
         
     }
+    
+    
+
 
     
     
@@ -60,6 +63,19 @@
         [alarmToggle setOn:YES animated:YES];
         alarmToggle.enabled = true;
         SCLAlertView *alert = [[SCLAlertView alloc] init];
+        
+        
+        
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"<HH:mm"];
+        NSDate *date = [dateFormatter dateFromString:selectedTimeLabel.text];
+
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = date;
+        localNotification.alertBody = @"Wake Up!!";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
         
         [alert showSuccess:self title:@"Alarm" subTitle:@"On" closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
@@ -156,7 +172,7 @@
 - (void)animateColors {
     
     
-    [UIView animateWithDuration:1
+    [UIView animateWithDuration:0.25
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut |
      UIViewAnimationOptionRepeat |
@@ -164,6 +180,7 @@
      UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          [recordView setBackgroundColor: [UIColor whiteColor]];
+                         
                      }
                      completion:nil];
     

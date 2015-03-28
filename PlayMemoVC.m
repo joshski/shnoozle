@@ -17,6 +17,8 @@
 
 {
     AVAudioPlayer *player;
+    SCLAlertView *alert;
+
 }
 
 @end
@@ -28,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    alert =  [[SCLAlertView alloc] init];
     NSLog(@"temp sound bla bla bla %@",memoURL);
     
 }
@@ -56,12 +59,26 @@
     
     //save
     [testObject saveInBackground];
+    
+    
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (!error) {
+            [alert showSuccess:self title:@"Success" subTitle:@"Memo has been uploaded to parse" closeButtonTitle:@"OK" duration:0.0f];
+
+            
+        } else {
+            [alert showError:self title:@"Error" subTitle:@"Error Sending" closeButtonTitle:@"OK" duration:0.0f];
+
+            
+        }
+        
+    }];
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     
-    SCLAlertView *alert = [[SCLAlertView alloc] init];
     
-    [alert showSuccess:self title:@"Done" subTitle:@"Finish playing the recording" closeButtonTitle:@"OK" duration:0.0f]; // Notice
+    [alert showSuccess:self title:@"Done" subTitle:@"Finish playing the recording" closeButtonTitle:@"OK" duration:0.0f];
 }
 @end

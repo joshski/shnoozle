@@ -41,6 +41,7 @@
 		B3E5FCE61AC1C7670043EFE7 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE41AC1C7670043EFE7 /* close@2x.png */; };
 		B3E5FCE91AC1CA230043EFE7 /* zzz.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE71AC1CA230043EFE7 /* zzz.png */; };
 		B3E5FCEA1AC1CA230043EFE7 /* zzz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCE81AC1CA230043EFE7 /* zzz@2x.png */; };
+		B3E8899C1AC6ACF300A9ECF2 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3E8899B1AC6ACF300A9ECF2 /* alarm.wav */; };
 		B3EBE9811AC4AF8200ED8BE3 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		B3E5FCE41AC1C7670043EFE7 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		B3E5FCE71AC1CA230043EFE7 /* zzz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zzz.png; sourceTree = "<group>"; };
 		B3E5FCE81AC1CA230043EFE7 /* zzz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zzz@2x.png"; sourceTree = "<group>"; };
+		B3E8899B1AC6ACF300A9ECF2 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm.wav; sourceTree = "<group>"; };
 		B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stars@2x.png"; sourceTree = "<group>"; };
 		D5113FF57EF7B59FD04488A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -171,6 +173,7 @@
 				B3695DD51AC62DFF00B38D5C /* menu@2x.png */,
 				B3695DDB1AC6358C00B38D5C /* fb@2x.png */,
 				B3C7949D1AC5F713008A6B9B /* messages@2x.png */,
+				B3E8899B1AC6ACF300A9ECF2 /* alarm.wav */,
 				B34AFF6B1AADBAD5007269C4 /* Shnoozle */,
 				B34AFF851AADBAD5007269C4 /* ShnoozleTests */,
 				B34AFF6A1AADBAD5007269C4 /* Products */,
@@ -356,6 +359,7 @@
 				B3695DDC1AC6358C00B38D5C /* fb@2x.png in Resources */,
 				B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */,
 				B3E5FCE51AC1C7670043EFE7 /* close.png in Resources */,
+				B3E8899C1AC6ACF300A9ECF2 /* alarm.wav in Resources */,
 				B3695DD61AC62DFF00B38D5C /* menu@2x.png in Resources */,
 				B39ADEE01AC6389C005048F3 /* MenuBackground@2x.png in Resources */,
 				B34AFF7A1AADBAD5007269C4 /* Images.xcassets in Resources */,

@@ -6,9 +6,13 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "PlayMemoVC.h"
+
 @interface HomeVC (){
     AVAudioRecorder *recorder;
     NSTimer *timer;
+    SCLAlertView *alert;
+    BOOL *date;
+
 }
 @end
 
@@ -27,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self recorderSettings];
+    alert = [[SCLAlertView alloc] init];
     self.recordView.layer.cornerRadius = 80;
 
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
@@ -53,6 +58,31 @@
     [self.sideMenuViewController presentLeftMenuViewController];
 
 }
+- (BOOL)date:(NSDate *)date hour:(NSInteger)h minute:(NSInteger)m {
+    
+    NSCalendar *calendar = [[NSCalendar alloc] init];
+    
+    NSDateComponents *componets = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit )fromDate:[NSDate date]];
+    if ([componets hour ] == h && [componets minute] == m) {
+        
+        return YES;
+    }
+    return NO;
+}
+
+
+- (void)updateNewDate {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"<HH:mm"];
+    NSDate *alarmDate = [dateFormatter dateFromString:selectedTimeLabel.text];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:alarmDate];
+    NSInteger *hour = [components hour];
+    NSInteger *minute = [components minute];
+//    if ([self date:[NSDate date] hour:hour minute:(NSInteger)]) {
+//        NSLog(@"alarm 123123123");
+//    }
+}
 
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
@@ -62,7 +92,6 @@
         titleLabel.text=@"";
         [alarmToggle setOn:YES animated:YES];
         alarmToggle.enabled = true;
-        SCLAlertView *alert = [[SCLAlertView alloc] init];
         
         
         
@@ -70,12 +99,21 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"<HH:mm"];
         NSDate *date = [dateFormatter dateFromString:selectedTimeLabel.text];
+       
 
         UILocalNotification* localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = date;
         localNotification.alertBody = @"Wake Up!!";
+        localNotification.userInfo = @{@"123" : @"some id"};
+        localNotification.alertAction = @"Show me the item";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.soundName=@"alarm.wav";
+        localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+
+        
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
+        
         
         [alert showSuccess:self title:@"Alarm" subTitle:@"On" closeButtonTitle:@"Done" duration:0.0f]; // Notice
 

@@ -324,7 +324,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ATp-ag-qPu">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ATp-ag-qPu">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
@@ -600,10 +600,13 @@
                         <viewControllerLayoutGuide type="top" id="MPB-Tv-bb9"/>
                         <viewControllerLayoutGuide type="bottom" id="T6n-Tg-mvz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AxR-65-ixM">
+                    <view key="view" contentMode="scaleToFill" id="AxR-65-ixM" userLabel="superView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tu4-Zp-qad">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
                                 <rect key="frame" x="0.0" y="253" width="375" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="448956814.16217601">
@@ -612,6 +615,10 @@
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Tu4-Zp-qad" secondAttribute="width" id="4rf-tk-mcA"/>
+                            <constraint firstAttribute="height" secondItem="Tu4-Zp-qad" secondAttribute="height" id="Wfh-Sb-5QF"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="TdJ-K9-f7H">

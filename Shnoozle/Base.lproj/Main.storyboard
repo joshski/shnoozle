@@ -5,18 +5,75 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Messages-->
+        <scene sceneID="Vv5-ek-8fY">
+            <objects>
+                <viewController storyboardIdentifier="MessageVC" id="SiY-IJ-ANY" customClass="MessageVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3hb-Uc-fZd"/>
+                        <viewControllerLayoutGuide type="bottom" id="tZ6-8r-PuM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oSt-eg-30h" userLabel="superVIew">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Messages" id="BUz-i8-Lj1">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="WWV-8y-KEL">
+                            <color key="tintColor" red="1" green="0.094088714729999995" blue="0.1609453528" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="menuTapped:" destination="SiY-IJ-ANY" id="00a-EV-QlA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKi-PJ-RIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-864.5" y="-1016.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ZOR-nZ-Lb9">
+            <objects>
+                <viewController storyboardIdentifier="SettingsVC" id="DPW-gx-d9Z" customClass="SettingsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UTs-wK-HeZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ms-bH-8sz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WLG-js-yGn" userLabel="superView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="jTQ-6M-pmQ">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="EHU-x3-gCH">
+                            <color key="tintColor" red="1" green="0.094088714729999995" blue="0.1609453528" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="menuTapped:" destination="DPW-gx-d9Z" id="by0-RK-bQy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bK3-Za-lWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="-999"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="J86-Nw-xQr">
             <objects>
                 <navigationController storyboardIdentifier="contentViewController" id="SHS-KL-jBl" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzP-Qy-uxb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dzP-Qy-uxb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.36862745098039218" green="0.094117647058823528" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6fQ-3V-tmV"/>
                         <segue destination="uvg-x5-UNE" kind="push" id="QrT-Pi-uP4"/>
+                        <segue destination="SiY-IJ-ANY" kind="push" id="hl5-Qv-ZMb"/>
+                        <segue destination="DPW-gx-d9Z" kind="push" id="yf4-aJ-Hpu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQC-dV-4Lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,15 +84,9 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" sceneMemberID="viewController">
-                    <activityIndicatorView key="view" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="1Mo-EK-m9k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="color" red="1" green="0.062338048889999997" blue="0.10071189480000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </activityIndicatorView>
                     <navigationItem key="navigationItem" id="Yf2-wz-HqE"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="1Mo-EK-m9k" id="vk6-aP-YAJ"/>
                         <segue destination="FjB-k4-snd" kind="show" identifier="transitionToHomeController" id="cBL-9a-Nrb"/>
                     </connections>
                 </viewController>
@@ -103,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="165.5" y="659.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--RootVC-->
         <scene sceneID="iHF-jh-dFf">
             <objects>
-                <viewController id="SzQ-Yz-9sC" customClass="DEMORootViewController" sceneMemberID="viewController">
+                <viewController id="SzQ-Yz-9sC" customClass="RERootVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sKA-UH-95n"/>
                         <viewControllerLayoutGuide type="bottom" id="DX8-tO-faL"/>
@@ -120,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXU-Hx-QMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-621.5" y="-1253.5"/>
+            <point key="canvasLocation" x="-2045.5" y="-156.5"/>
         </scene>
         <!--Left MenuVC-->
         <scene sceneID="bed-C4-oN8">
@@ -156,12 +207,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAD-tW-E52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-227.5" y="-1253.5"/>
+            <point key="canvasLocation" x="-1571.5" y="-165.5"/>
         </scene>
-        <!--Alarm-->
+        <!--HomeVC-->
         <scene sceneID="ahk-fo-gYG">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="FjB-k4-snd" customClass="HomeVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" title="HomeVC" id="FjB-k4-snd" customClass="HomeVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Noy-8Y-AGT"/>
                         <viewControllerLayoutGuide type="bottom" id="G7J-u0-A2w"/>
@@ -170,29 +221,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ATp-ag-qPu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-x9-NZH">
                                 <rect key="frame" x="71" y="90" width="233" height="113"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="87"/>
                                 <color key="textColor" red="0.5179542855" green="1" blue="0.36587700969999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-T0-MCB">
-                                <rect key="frame" x="163" y="218" width="51" height="31"/>
-                                <color key="backgroundColor" red="0.56984609249940776" green="0.76438168350656033" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="biw-ii-xvm"/>
-                                </connections>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Alarm Set " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJy-OJ-6mB">
                                 <rect key="frame" x="82" y="126" width="210" height="41"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-8r-Mih" userLabel="recordButtonView">
-                                <rect key="frame" x="107" y="493" width="162" height="127"/>
+                                <rect key="frame" x="107" y="476" width="160" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-F8-yXU" userLabel="recordButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="127"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -203,47 +251,52 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic.png" translatesAutoresizingMaskIntoConstraints="NO" id="WHx-eQ-5d8" userLabel="recordImage">
-                                        <rect key="frame" x="47" y="29" width="69" height="69"/>
+                                        <rect key="frame" x="45" y="45" width="69" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="69" id="5Pw-vy-khg"/>
                                             <constraint firstAttribute="height" constant="69" id="SFV-DB-MMB"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.094088714729999995" blue="0.1609453528" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="WHx-eQ-5d8" secondAttribute="centerX" id="0Le-zb-MvD"/>
                                     <constraint firstItem="Cyq-F8-yXU" firstAttribute="leading" secondItem="mIS-8r-Mih" secondAttribute="leading" id="GgP-73-Yto"/>
                                     <constraint firstAttribute="trailing" secondItem="Cyq-F8-yXU" secondAttribute="trailing" id="IIo-A4-9uf"/>
                                     <constraint firstItem="Cyq-F8-yXU" firstAttribute="top" secondItem="mIS-8r-Mih" secondAttribute="top" id="KdP-3r-cRK"/>
-                                    <constraint firstAttribute="width" constant="162" id="fbE-3p-LBE"/>
-                                    <constraint firstAttribute="height" constant="127" id="pCU-p5-Sn8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="NFY-Bq-bei"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="eZc-tz-vHc"/>
                                     <constraint firstAttribute="centerY" secondItem="WHx-eQ-5d8" secondAttribute="centerY" id="pK4-9w-xKZ"/>
                                     <constraint firstAttribute="bottom" secondItem="Cyq-F8-yXU" secondAttribute="bottom" id="td8-yn-utX"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-Em-nsk">
-                                <rect key="frame" x="80" y="347" width="214" height="67"/>
-                                <color key="backgroundColor" red="0.5179542855" green="1" blue="0.36587700969999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="27"/>
-                                <state key="normal" title="Find My Friends">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-T0-MCB">
+                                <rect key="frame" x="163" y="218" width="51" height="31"/>
+                                <color key="backgroundColor" red="0.56984609249940776" green="0.76438168350656033" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="biw-ii-xvm"/>
+                                </connections>
+                            </switch>
                         </subviews>
-                        <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ATp-ag-qPu" firstAttribute="leading" secondItem="aBo-s0-XUj" secondAttribute="leading" id="6zy-YG-LYK"/>
+                            <constraint firstAttribute="trailing" secondItem="ATp-ag-qPu" secondAttribute="trailing" id="HS9-J5-6Ss"/>
+                            <constraint firstItem="ATp-ag-qPu" firstAttribute="top" secondItem="Noy-8Y-AGT" secondAttribute="bottom" id="PLH-FH-p51"/>
                             <constraint firstAttribute="centerY" secondItem="mIS-8r-Mih" secondAttribute="centerY" multiplier="0.6" id="Vpe-K5-LfQ"/>
                             <constraint firstAttribute="centerX" secondItem="mIS-8r-Mih" secondAttribute="centerX" id="c2c-Y8-MZ5"/>
+                            <constraint firstItem="G7J-u0-A2w" firstAttribute="top" secondItem="ATp-ag-qPu" secondAttribute="bottom" id="dV0-BP-gSq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="s4h-L4-EyV">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="s4h-L4-EyV">
+                            <color key="tintColor" red="1" green="0.062338048889999997" blue="0.10071189480000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="menuTapped:" destination="FjB-k4-snd" id="vna-FW-T8R"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gew-0T-AGg">
+                            <color key="tintColor" red="0.51764705879999995" green="1" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="b9Z-XH-8Qs" kind="show" id="hWi-j4-igU"/>
                             </connections>
@@ -338,7 +391,7 @@
             </objects>
             <point key="canvasLocation" x="1507.5" y="685.5"/>
         </scene>
-        <!--Find FriendsVC-->
+        <!--Find Friends-->
         <scene sceneID="AEx-AA-Weg">
             <objects>
                 <viewController storyboardIdentifier="FindFriendsVC" id="uvg-x5-UNE" customClass="FindFriendsVC" sceneMemberID="viewController">
@@ -347,23 +400,9 @@
                         <viewControllerLayoutGuide type="bottom" id="w1R-3x-QBp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Fh-df-aIX" userLabel="superView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDB-za-pOg">
-                                <rect key="frame" x="122" y="292" width="131" height="62"/>
-                                <color key="backgroundColor" red="0.56984609249999996" green="0.76438168350000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Facebook">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="fbTapped:" destination="uvg-x5-UNE" eventType="touchUpInside" id="Zn8-JF-7L2"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="vw5-LQ-XXX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKN-md-pKp">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
@@ -373,14 +412,24 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="vw5-LQ-XXX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="CbG-ZZ-0hH">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="gYd-GT-9oj">
+                    <navigationItem key="navigationItem" title="Find Friends" id="CbG-ZZ-0hH">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="gYd-GT-9oj">
+                            <color key="tintColor" red="1" green="0.094088714729999995" blue="0.1609453528" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="menuTapped:" destination="uvg-x5-UNE" id="NPv-W8-c3e"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="fb.png" id="xZu-ZN-hfp">
+                            <connections>
+                                <action selector="fbTapped:" destination="uvg-x5-UNE" id="c5v-pT-y7r"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -415,11 +464,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="TdJ-K9-f7H">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="B5N-gj-vSH">
+                            <color key="tintColor" red="1" green="0.094088714729999995" blue="0.1609453528" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="YfH-bU-qqL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="QkK-fL-U3t">
+                            <color key="tintColor" red="0.51764705879999995" green="1" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="m7W-fF-ikL"/>
                             </connections>
@@ -439,7 +490,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MenuBackground.png" width="520" height="768"/>
         <image name="Stars.png" width="320" height="568"/>
+        <image name="fb.png" width="32" height="32"/>
+        <image name="menu.png" width="16" height="16"/>
         <image name="mic.png" width="256" height="256"/>
         <image name="play.png" width="256" height="256"/>
     </resources>

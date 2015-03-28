@@ -11,7 +11,6 @@
 #import <ParseUI/ParseUI.h>
   
 @interface LoginVC : UIViewController <PFLogInViewControllerDelegate,PFSignUpViewControllerDelegate> 
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 

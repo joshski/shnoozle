@@ -1,14 +1,8 @@
-//
-//  DEMORootViewController.m
-//  Shnoozle
-//
-//  Created by Leo on 26/03/2015.
-//  Copyright (c) 2015 Leo. All rights reserved.
-//
 
-#import "DEMORootViewController.h"
 
-@implementation DEMORootViewController
+#import "RERootVC.h"
+
+@implementation RERootVC
 
 - (void)awakeFromNib
 {

@@ -2,6 +2,6 @@
 #import <UIKit/UIKit.h>
 #import <RESideMenu/RESideMenu.h>
 
-@interface DEMORootViewController : RESideMenu
+@interface RERootVC : RESideMenu
 
 @end

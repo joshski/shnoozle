@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self recorderSettings];
+    self.recordView.layer.cornerRadius = 80;
 
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
 
@@ -172,7 +173,8 @@
 
 
 - (IBAction)recordTouchDown:(id)sender {
-    
+    [self animateColors];
+
     [recorder recordForDuration:30];
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                              target:self
@@ -181,7 +183,6 @@
                                             repeats:YES];
     NSLog(@"started started");
     
-    [self animateColors];
 }
 
 

@@ -52,11 +52,6 @@
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
     else {
-//        UIAlertView *loggedInAlert =[[UIAlertView alloc] initWithTitle:@"Logged In" message:@"Log me out?" delegate:nil cancelButtonTitle:@"Log me out!" otherButtonTitles:nil, nil];
-//        
-//        [loggedInAlert show];
-//        [PFUser logOut];
-//        [self viewDidAppear:YES];
         [self _presentHomeViewControllerAnimated:YES];
 
     }
@@ -96,7 +91,6 @@
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        [_activityIndicator stopAnimating]; // Hide loading indicator
         
         if (!user) {
             NSString *errorMessage = nil;
@@ -153,12 +147,12 @@
         }
     }];
     
-    [_activityIndicator startAnimating]; // Show loading indicator until login is finished
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissModalViewControllerAnimated:YES];
      [self _presentHomeViewControllerAnimated:YES];
+    NSLog(@"yoyoy");
     
 }
 

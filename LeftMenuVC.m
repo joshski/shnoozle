@@ -45,8 +45,8 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
-//            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@""]]
-//                                                         animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"MessageVC"]]
+                                                         animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 2:
@@ -55,8 +55,8 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 3:
-//            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"FindFriendsVC"]]
-//                                                         animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SettingsVC"]]
+                                                         animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 4:

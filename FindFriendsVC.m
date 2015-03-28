@@ -2,7 +2,7 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "SCLAlertView.h"
-
+#import <RESideMenu/RESideMenu.h>
 
 @interface FindFriendsVC ()
 
@@ -26,6 +26,10 @@
     
 }
 
+- (IBAction)menuTapped:(id)sender {
+    [self.sideMenuViewController presentLeftMenuViewController];
+
+}
 
 - (void)connectToFB {
     // Set permissions required from the facebook user account

@@ -9,17 +9,19 @@
         <scene sceneID="J86-Nw-xQr">
             <objects>
                 <navigationController storyboardIdentifier="contentViewController" id="SHS-KL-jBl" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzP-Qy-uxb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6fQ-3V-tmV"/>
+                        <segue destination="uvg-x5-UNE" kind="push" id="QrT-Pi-uP4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQC-dV-4Lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-582" y="-156"/>
+            <point key="canvasLocation" x="-898" y="-156"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
@@ -44,7 +46,7 @@
         <!--Record MemoVC-->
         <scene sceneID="roR-5L-dPL">
             <objects>
-                <viewController id="kC0-Pt-0sG" customClass="RecordMemoVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordMemoVC" id="kC0-Pt-0sG" customClass="RecordMemoVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xtZ-9F-ob3"/>
                         <viewControllerLayoutGuide type="bottom" id="cPP-aK-T1J"/>
@@ -66,7 +68,6 @@
                                             <action selector="recordButtonUpOutside:" destination="kC0-Pt-0sG" eventType="touchUpOutside" id="pm5-Gd-WsK"/>
                                             <action selector="recordTouchDown:" destination="kC0-Pt-0sG" eventType="touchDown" id="HD4-E8-gLr"/>
                                             <action selector="recordTouchUp:" destination="kC0-Pt-0sG" eventType="touchUpInside" id="Izx-lS-rDj"/>
-                                            <segue destination="vot-0I-KbH" kind="push" identifier="playMemo" id="ZOt-Jv-Vux"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mic.png" translatesAutoresizingMaskIntoConstraints="NO" id="zJ0-Qc-8Q8">
@@ -100,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwV-DT-WAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431.5" y="685.5"/>
+            <point key="canvasLocation" x="165.5" y="659.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="iHF-jh-dFf">
@@ -228,18 +229,9 @@
                                 <state key="normal" title="Find My Friends">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="uvg-x5-UNE" kind="show" id="2KR-tf-peN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5S-0I-Zyz">
-                                <rect key="frame" x="313" y="90" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.58044293642131239" green="0.7682734293910638" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="mIS-8r-Mih" secondAttribute="centerY" multiplier="0.6" id="Vpe-K5-LfQ"/>
                             <constraint firstAttribute="centerX" secondItem="mIS-8r-Mih" secondAttribute="centerX" id="c2c-Y8-MZ5"/>
@@ -266,7 +258,7 @@
                         <outlet property="recordView" destination="mIS-8r-Mih" id="DYa-Bh-msr"/>
                         <outlet property="selectedTimeLabel" destination="e7j-x9-NZH" id="OPH-ZK-6jv"/>
                         <outlet property="titleLabel" destination="bJy-OJ-6mB" id="rGo-gI-W8f"/>
-                        <segue destination="r5R-Zs-RqR" kind="show" identifier="playMemo" id="hUC-yl-tsB"/>
+                        <segue destination="r5R-Zs-RqR" kind="push" identifier="playMemo" id="hUC-yl-tsB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,10 +350,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="vw5-LQ-XXX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDB-za-pOg">
                                 <rect key="frame" x="122" y="292" width="131" height="62"/>
                                 <color key="backgroundColor" red="0.56984609249999996" green="0.76438168350000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -372,14 +360,36 @@
                                     <action selector="fbTapped:" destination="uvg-x5-UNE" eventType="touchUpInside" id="Zn8-JF-7L2"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="vw5-LQ-XXX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKN-md-pKp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="ePD-2d-106">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="KD5-Vm-dne"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="yF3-qo-t68"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="CbG-ZZ-0hH">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="gYd-GT-9oj">
+                            <connections>
+                                <action selector="menuTapped:" destination="uvg-x5-UNE" id="NPv-W8-c3e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrF-pf-Hw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235.5" y="-149.5"/>
+            <point key="canvasLocation" x="1043.5" y="-122.5"/>
         </scene>
         <!--Time PickerVC-->
         <scene sceneID="8TJ-XT-lVs">
@@ -415,7 +425,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="saveButton" destination="QkK-fL-U3t" id="hnk-bS-ksz"/>
@@ -425,26 +435,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrW-BL-KMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xK9-x0-01N" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="857.5" y="-919.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gw2-6u-to7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vot-0I-KbH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="f4n-V7-V90"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BT0-GV-iOb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="r5R-Zs-RqR" kind="relationship" relationship="rootViewController" id="OYe-AK-S4p"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="utO-AK-qAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="920.5" y="685.5"/>
+            <point key="canvasLocation" x="837.5" y="-1071.5"/>
         </scene>
     </scenes>
     <resources>
@@ -452,7 +443,4 @@
         <image name="mic.png" width="256" height="256"/>
         <image name="play.png" width="256" height="256"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="hUC-yl-tsB"/>
-    </inferredMetricsTieBreakers>
 </document>

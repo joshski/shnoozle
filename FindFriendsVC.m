@@ -50,7 +50,8 @@
             NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
             searchResults = [objects valueForKey:@"username"];
             NSLog(@"%@",searchResults);
-            [friendsTable reloadData];
+            [friendsTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft];
+
             if ([searchResults count] == 0) {
                 
                 [alert showCustom:self image:[UIImage imageNamed:@"fb.png"] color:[UIColor blueColor] title:@"Friends" subTitle:@"No one with that username is on snoozle" closeButtonTitle:@"OK" duration:2.0f];

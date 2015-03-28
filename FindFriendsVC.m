@@ -91,7 +91,9 @@
                     if (friends.count < 1) {
                         SCLAlertView *alert = [[SCLAlertView alloc] init];
 
-                        [alert showNotice:self title:@"Facebook" subTitle:@"No one on your friends list is currently using snoozle." closeButtonTitle:@"Done" duration:0.0f]; // Notice
+                  
+                        [alert showCustom:self image:[UIImage imageNamed:@"fb.png"] color:[UIColor blueColor] title:@"Facebook" subTitle:@"No one on your friends list is currently using snoozle." closeButtonTitle:@"OK" duration:2.0f];
+
                         
                     }
                     // STUFFS
@@ -108,7 +110,7 @@
     
     SCLAlertView *alert = [[SCLAlertView alloc] init];
     alert.shouldDismissOnTapOutside = YES;
-    [alert showWaiting:self title:@"Facebook" subTitle:@"Connecting" closeButtonTitle:nil duration:5.f];
+    [alert showCustom:self image:[UIImage imageNamed:@"fb.png"] color:[UIColor blueColor] title:@"Facebook" subTitle:@"Connecting" closeButtonTitle:@"OK" duration:2.0f];
 }
 
 

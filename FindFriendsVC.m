@@ -5,7 +5,9 @@
 #import <RESideMenu/RESideMenu.h>
 #import <Parse/Parse.h>
 
-@interface FindFriendsVC ()
+@interface FindFriendsVC (){
+    NSMutableArray *searchResults;
+}
 
 @end
 
@@ -14,7 +16,7 @@
 @synthesize searchBar;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    searchResults=[[NSMutableArray alloc]init];
     // Do any additional setup after loading the view.
 }
 
@@ -33,12 +35,8 @@
 
 }
 
-- (IBAction)blaButton:(id)sender {
-    [self queryParseUsers];
-}
-
 -(void)queryParseUsers{
-    NSString* searchText = searchBar.text;
+    NSString* searchText = searchBar.text.lowercaseString;
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     [query whereKey:@"username" equalTo:searchText];
     
@@ -47,6 +45,9 @@
         if (!error) {
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
+            searchResults = [objects valueForKey:@"username"];
+            NSLog(@"%@",searchResults);
+
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -138,7 +139,12 @@
 }
 
 
-
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    // Do the search...
+    [self queryParseUsers];
+}
 
 
 @end

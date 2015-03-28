@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FindFriendsVC : UIViewController
+@interface FindFriendsVC : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

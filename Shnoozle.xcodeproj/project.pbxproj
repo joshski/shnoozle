@@ -30,6 +30,8 @@
 		B387FEF31AC2D76800613352 /* TimeOfDaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */; };
 		B387FEF61AC2D78600613352 /* TimeOfDay.m in Sources */ = {isa = PBXBuildFile; fileRef = B387FEF51AC2D78600613352 /* TimeOfDay.m */; };
 		B38CFF5F1AC72D26003FC9A7 /* alarm1.wav in Resources */ = {isa = PBXBuildFile; fileRef = B38CFF5E1AC72D26003FC9A7 /* alarm1.wav */; };
+		B38CFF641AC751E2003FC9A7 /* FindFriendsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B38CFF631AC751E2003FC9A7 /* FindFriendsTVC.m */; };
+		B38CFF661AC7523E003FC9A7 /* FindFriendsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38CFF651AC7523E003FC9A7 /* FindFriendsTVC.xib */; };
 		B39ADEE01AC6389C005048F3 /* MenuBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */; };
 		B3C7949E1AC5F713008A6B9B /* messages@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C7949D1AC5F713008A6B9B /* messages@2x.png */; };
 		B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerVC.m */; };
@@ -79,26 +81,29 @@
 		B34AFF871AADBAD5007269C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34FD6AD1AC2887100F0248F /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeVC.h; path = ../HomeVC.h; sourceTree = "<group>"; };
 		B34FD6AE1AC2887100F0248F /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeVC.m; path = ../HomeVC.m; sourceTree = "<group>"; };
-		B36735C11AC497BD00D6444E /* RERootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERootVC.h; sourceTree = "<group>"; };
-		B36735C21AC497BD00D6444E /* RERootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RERootVC.m; sourceTree = "<group>"; };
-		B3695DCB1AC62BB600B38D5C /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
-		B3695DCC1AC62BB600B38D5C /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
-		B3695DCE1AC62BC900B38D5C /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
-		B3695DCF1AC62BC900B38D5C /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
-		B3695DD51AC62DFF00B38D5C /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
-		B3695DDB1AC6358C00B38D5C /* fb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb@2x.png"; sourceTree = "<group>"; };
+		B36735C11AC497BD00D6444E /* RERootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RERootVC.h; path = ../RERootVC.h; sourceTree = "<group>"; };
+		B36735C21AC497BD00D6444E /* RERootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RERootVC.m; path = ../RERootVC.m; sourceTree = "<group>"; };
+		B3695DCB1AC62BB600B38D5C /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageVC.h; path = ../MessageVC.h; sourceTree = "<group>"; };
+		B3695DCC1AC62BB600B38D5C /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageVC.m; path = ../MessageVC.m; sourceTree = "<group>"; };
+		B3695DCE1AC62BC900B38D5C /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsVC.h; path = ../SettingsVC.h; sourceTree = "<group>"; };
+		B3695DCF1AC62BC900B38D5C /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsVC.m; path = ../SettingsVC.m; sourceTree = "<group>"; };
+		B3695DD51AC62DFF00B38D5C /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "../../menu@2x.png"; sourceTree = "<group>"; };
+		B3695DDB1AC6358C00B38D5C /* fb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fb@2x.png"; path = "../../fb@2x.png"; sourceTree = "<group>"; };
 		B36E1A2F1AC0470700300174 /* RecordMemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordMemoVC.h; sourceTree = "<group>"; };
 		B36E1A301AC0470700300174 /* RecordMemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordMemoVC.m; sourceTree = "<group>"; };
 		B36E1A321AC0575700300174 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		B36E1A371AC08D0400300174 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
-		B383ECCC1AC5C66600031438 /* LeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuVC.h; sourceTree = "<group>"; };
-		B383ECCD1AC5C66600031438 /* LeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuVC.m; sourceTree = "<group>"; };
+		B383ECCC1AC5C66600031438 /* LeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuVC.h; path = ../LeftMenuVC.h; sourceTree = "<group>"; };
+		B383ECCD1AC5C66600031438 /* LeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuVC.m; path = ../LeftMenuVC.m; sourceTree = "<group>"; };
 		B387FEF21AC2D76800613352 /* TimeOfDaySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOfDaySpec.m; sourceTree = "<group>"; };
 		B387FEF41AC2D78600613352 /* TimeOfDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeOfDay.h; path = ../TimeOfDay.h; sourceTree = "<group>"; };
 		B387FEF51AC2D78600613352 /* TimeOfDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeOfDay.m; path = ../TimeOfDay.m; sourceTree = "<group>"; };
 		B38CFF5E1AC72D26003FC9A7 /* alarm1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm1.wav; sourceTree = "<group>"; };
-		B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuBackground@2x.png"; sourceTree = "<group>"; };
-		B3C7949D1AC5F713008A6B9B /* messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages@2x.png"; sourceTree = "<group>"; };
+		B38CFF621AC751E2003FC9A7 /* FindFriendsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindFriendsTVC.h; sourceTree = "<group>"; };
+		B38CFF631AC751E2003FC9A7 /* FindFriendsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindFriendsTVC.m; sourceTree = "<group>"; };
+		B38CFF651AC7523E003FC9A7 /* FindFriendsTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindFriendsTVC.xib; sourceTree = "<group>"; };
+		B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuBackground@2x.png"; path = "../../MenuBackground@2x.png"; sourceTree = "<group>"; };
+		B3C7949D1AC5F713008A6B9B /* messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "messages@2x.png"; path = "../../messages@2x.png"; sourceTree = "<group>"; };
 		B3D540701AC30C3700706F6E /* TimePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerVC.h; path = ../TimePickerVC.h; sourceTree = "<group>"; };
 		B3D540711AC30C3700706F6E /* TimePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePickerVC.m; path = ../TimePickerVC.m; sourceTree = "<group>"; };
 		B3DFE23A1AC421DF00225DBF /* FindFriendsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindFriendsVC.h; path = ../FindFriendsVC.h; sourceTree = "<group>"; };
@@ -112,7 +117,7 @@
 		B3E5FCE71AC1CA230043EFE7 /* zzz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zzz.png; sourceTree = "<group>"; };
 		B3E5FCE81AC1CA230043EFE7 /* zzz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zzz@2x.png"; sourceTree = "<group>"; };
 		B3E8899B1AC6ACF300A9ECF2 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm.wav; sourceTree = "<group>"; };
-		B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stars@2x.png"; sourceTree = "<group>"; };
+		B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stars@2x.png"; path = "../../Stars@2x.png"; sourceTree = "<group>"; };
 		D5113FF57EF7B59FD04488A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,22 +166,10 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
-				B3695DCE1AC62BC900B38D5C /* SettingsVC.h */,
-				B3695DCF1AC62BC900B38D5C /* SettingsVC.m */,
-				B3695DCB1AC62BB600B38D5C /* MessageVC.h */,
-				B3695DCC1AC62BB600B38D5C /* MessageVC.m */,
-				B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */,
-				B383ECCC1AC5C66600031438 /* LeftMenuVC.h */,
-				B383ECCD1AC5C66600031438 /* LeftMenuVC.m */,
-				B36735C11AC497BD00D6444E /* RERootVC.h */,
-				B36735C21AC497BD00D6444E /* RERootVC.m */,
+				B38CFF651AC7523E003FC9A7 /* FindFriendsTVC.xib */,
+				B38CFF621AC751E2003FC9A7 /* FindFriendsTVC.h */,
+				B38CFF631AC751E2003FC9A7 /* FindFriendsTVC.m */,
 				B34AFF761AADBAD5007269C4 /* Main.storyboard */,
-				B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */,
-				B3695DD51AC62DFF00B38D5C /* menu@2x.png */,
-				B3695DDB1AC6358C00B38D5C /* fb@2x.png */,
-				B3C7949D1AC5F713008A6B9B /* messages@2x.png */,
-				B38CFF5E1AC72D26003FC9A7 /* alarm1.wav */,
-				B3E8899B1AC6ACF300A9ECF2 /* alarm.wav */,
 				B34AFF6B1AADBAD5007269C4 /* Shnoozle */,
 				B34AFF851AADBAD5007269C4 /* ShnoozleTests */,
 				B34AFF6A1AADBAD5007269C4 /* Products */,
@@ -200,6 +193,14 @@
 				B33614511AC44AC4001CE51F /* PlayMemoVC.h */,
 				B36E1A2F1AC0470700300174 /* RecordMemoVC.h */,
 				B33614521AC44AC4001CE51F /* PlayMemoVC.m */,
+				B383ECCC1AC5C66600031438 /* LeftMenuVC.h */,
+				B3695DCE1AC62BC900B38D5C /* SettingsVC.h */,
+				B3695DCF1AC62BC900B38D5C /* SettingsVC.m */,
+				B3695DCB1AC62BB600B38D5C /* MessageVC.h */,
+				B3695DCC1AC62BB600B38D5C /* MessageVC.m */,
+				B383ECCD1AC5C66600031438 /* LeftMenuVC.m */,
+				B36735C11AC497BD00D6444E /* RERootVC.h */,
+				B36735C21AC497BD00D6444E /* RERootVC.m */,
 				B3DFE23A1AC421DF00225DBF /* FindFriendsVC.h */,
 				B3DFE23B1AC421DF00225DBF /* FindFriendsVC.m */,
 				B3D540701AC30C3700706F6E /* TimePickerVC.h */,
@@ -208,6 +209,7 @@
 				B387FEF51AC2D78600613352 /* TimeOfDay.m */,
 				B34FD6AD1AC2887100F0248F /* HomeVC.h */,
 				B34FD6AE1AC2887100F0248F /* HomeVC.m */,
+				B38CFF611AC751A9003FC9A7 /* sounds */,
 				B3E5FCDA1AC1C3B20043EFE7 /* images */,
 				B34AFF701AADBAD5007269C4 /* AppDelegate.h */,
 				B34AFF711AADBAD5007269C4 /* AppDelegate.m */,
@@ -249,9 +251,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B38CFF611AC751A9003FC9A7 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B38CFF5E1AC72D26003FC9A7 /* alarm1.wav */,
+				B3E8899B1AC6ACF300A9ECF2 /* alarm.wav */,
+			);
+			name = sounds;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		B3E5FCDA1AC1C3B20043EFE7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */,
+				B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */,
+				B3695DD51AC62DFF00B38D5C /* menu@2x.png */,
+				B3695DDB1AC6358C00B38D5C /* fb@2x.png */,
+				B3C7949D1AC5F713008A6B9B /* messages@2x.png */,
 				B3E5FCDB1AC1C3B20043EFE7 /* mic.png */,
 				B3E5FCDF1AC1C4B90043EFE7 /* play.png */,
 				B3E5FCE31AC1C7670043EFE7 /* close.png */,
@@ -363,6 +380,7 @@
 				B3695DDC1AC6358C00B38D5C /* fb@2x.png in Resources */,
 				B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */,
 				B3E5FCE51AC1C7670043EFE7 /* close.png in Resources */,
+				B38CFF661AC7523E003FC9A7 /* FindFriendsTVC.xib in Resources */,
 				B3E8899C1AC6ACF300A9ECF2 /* alarm.wav in Resources */,
 				B3695DD61AC62DFF00B38D5C /* menu@2x.png in Resources */,
 				B39ADEE01AC6389C005048F3 /* MenuBackground@2x.png in Resources */,
@@ -458,6 +476,7 @@
 				B3DFE23C1AC421DF00225DBF /* FindFriendsVC.m in Sources */,
 				B3695DCD1AC62BB600B38D5C /* MessageVC.m in Sources */,
 				B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */,
+				B38CFF641AC751E2003FC9A7 /* FindFriendsTVC.m in Sources */,
 				B3695DD01AC62BC900B38D5C /* SettingsVC.m in Sources */,
 				B34AFF6F1AADBAD5007269C4 /* main.m in Sources */,
 				B36E1A311AC0470700300174 /* RecordMemoVC.m in Sources */,

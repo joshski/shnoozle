@@ -4,6 +4,7 @@
 #import "SCLAlertView.h"
 #import <RESideMenu/RESideMenu.h>
 #import <Parse/Parse.h>
+#import "FindFriendsTVC.h"
 
 @interface FindFriendsVC (){
     NSMutableArray *searchResults;
@@ -160,15 +161,22 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"friendsTable";
+    static NSString *simpleTableIdentifier = @"FindFriendsTVC";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
+    FindFriendsTVC *cell = (FindFriendsTVC*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[FindFriendsTVC alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FindFriendsTVC" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+
     }
     
-    cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+    cell.userNameLabel.text = [searchResults objectAtIndex:indexPath.row];
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 78;
 }
 @end

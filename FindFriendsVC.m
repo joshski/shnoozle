@@ -3,6 +3,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "SCLAlertView.h"
 #import <RESideMenu/RESideMenu.h>
+#import <Parse/Parse.h>
 
 @interface FindFriendsVC ()
 
@@ -10,6 +11,7 @@
 
 @implementation FindFriendsVC
 
+@synthesize searchBar;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,6 +33,28 @@
 
 }
 
+- (IBAction)blaButton:(id)sender {
+    [self queryParseUsers];
+}
+
+-(void)queryParseUsers{
+    NSString* searchText = searchBar.text;
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query whereKey:@"username" equalTo:searchText];
+    
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+
+}
 - (void)connectToFB {
     // Set permissions required from the facebook user account
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location",@"user_friends"];

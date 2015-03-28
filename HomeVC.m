@@ -119,13 +119,9 @@
         UILocalNotification* localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = date;
         localNotification.alertBody = @"Wake Up!!";
-        localNotification.userInfo = @{@"123" : @"some id"};
         localNotification.alertAction = @"Show me the item";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
-        localNotification.soundName=@"alarm.wav";
-        localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-
-        
+        localNotification.soundName=@"alarm1.wav";
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
         
         

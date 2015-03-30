@@ -111,9 +111,23 @@
         NSDate *now = [NSDate date];
         
         NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
+        
+        
         [comps setMinute:source.timeOfDay.minutePart];
         [comps setHour:source.timeOfDay.hours];
-        
+        NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
+
+        if (now > newDatefromComp) {
+            NSDate *tomorrowAlarm = [now dateByAddingTimeInterval:60*60*24*1];
+            NSDateComponents *tomorrowAlarmComps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:tomorrowAlarm];
+            
+            
+            NSInteger day = [tomorrowAlarmComps day];
+            [comps setDay:day];
+
+            
+        }
+      
         NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
         
         UILocalNotification* localNotification = [[UILocalNotification alloc] init];

@@ -8,7 +8,6 @@
 
 @interface FindFriendsVC (){
     NSMutableArray *searchResults;
-    SCLAlertView *alert ;
 
 }
 
@@ -54,7 +53,8 @@
             [friendsTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft];
 
             if ([searchResults count] == 0) {
-                
+                SCLAlertView *alert = [[SCLAlertView alloc] init];
+
                 [alert showCustom:self image:[UIImage imageNamed:@"fb.png"] color:[UIColor blueColor] title:@"Friends" subTitle:@"No one with that username is on snoozle" closeButtonTitle:@"OK" duration:2.0f];
             }
 
@@ -143,7 +143,8 @@
             
         }
     }];
-    
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+
     alert.shouldDismissOnTapOutside = YES;
     [alert showCustom:self image:[UIImage imageNamed:@"fb.png"] color:[UIColor blueColor] title:@"Facebook" subTitle:@"Connecting" closeButtonTitle:@"OK" duration:2.0f];
 }

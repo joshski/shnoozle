@@ -21,7 +21,7 @@ describe(@"TimeOfDay", ^{
             
             TimeOfDay *timeOfDay = [TimeOfDay timeOfDayFromDate: date];
             [[theValue(timeOfDay.hours) should] equal: theValue(2)];
-            [[theValue(timeOfDay.minutePart) should] equal: theValue(7)];
+            [[theValue(timeOfDay.minutes) should] equal: theValue(7)];
             
         });
         
@@ -31,7 +31,7 @@ describe(@"TimeOfDay", ^{
             
             TimeOfDay *timeOfDay = [TimeOfDay timeOfDayFromDate: date];
             [[theValue(timeOfDay.hours) should] equal: theValue(1)];
-            [[theValue(timeOfDay.minutePart) should] equal: theValue(5)];
+            [[theValue(timeOfDay.minutes) should] equal: theValue(5)];
             
         });
     

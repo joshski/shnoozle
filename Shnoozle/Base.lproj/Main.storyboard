@@ -377,7 +377,7 @@
                                 <rect key="frame" x="163" y="218" width="51" height="31"/>
                                 <color key="backgroundColor" red="0.56984609249940776" green="0.76438168350656033" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="biw-ii-xvm"/>
+                                    <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="gnU-y3-Ztq"/>
                                 </connections>
                             </switch>
                         </subviews>

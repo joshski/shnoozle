@@ -16,7 +16,7 @@
 }
 
 @property (strong, nonatomic) TimeOfDay *timeOfDay;
-@property (strong, nonatomic) UIWebView *webView;
+
 
 @end
 
@@ -24,24 +24,42 @@
 
 
 @synthesize datePicker;
-@synthesize selectedTimeLabel;
 @synthesize titleLabel;
 @synthesize alarmToggle;
 @synthesize recordButton;
 @synthesize recordView;
 @synthesize tempMemoURL;
 @synthesize hamburgerMenuButton;
+@synthesize savedAlarmTime;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self recorderSettings];
     self.recordView.layer.cornerRadius = 80;
-
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
+    [self isAlarmSwitchToggled];
+  
+    NSUInteger *savedAlarmHour = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmHour"];
+    NSUInteger *savedAlarmMinute = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmMinute"];
+   
+    NSLog(@"saved AlarmHour %lu",savedAlarmHour);
+    NSLog(@"Saved Alarm Minute %lu",savedAlarmMinute);
 
-    if (selectedTimeLabel.text.length > 0) {
+     savedAlarmTime = [TimeOfDay createFromHours:savedAlarmHour minutes:savedAlarmMinute];
+    
+    _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
+    
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+
+    hamburgerMenuButton.lineColor=[UIColor redColor];
+    [hamburgerMenuButton updateAppearance];
+}
+
+-(void)isAlarmSwitchToggled {
+    if (_selectedTimeLabel.text.length > 0) {
         [alarmToggle setOn:YES animated:YES];
         alarmToggle.enabled = true;
+        [self alarm];
         
     }
     else {
@@ -50,11 +68,7 @@
         alarmToggle.enabled = FALSE;
         
     }
-    
-    hamburgerMenuButton.lineColor=[UIColor redColor];
-    [hamburgerMenuButton updateAppearance];
 }
-
 
 - (IBAction)didCloseButtonTouch:(JTHamburgerButton *)sender
 {
@@ -84,24 +98,19 @@
 }
 
 
-- (void)updateNewDate {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"<HH:mm"];
-    NSDate *alarmDate = [dateFormatter dateFromString:selectedTimeLabel.text];
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:alarmDate];
-    NSInteger *hour = [components hour];
-    NSInteger *minute = [components minute];
-//    if ([self date:[NSDate date] hour:hour minute:(NSInteger)]) {
-//        NSLog(@"alarm 123123123");
-//    }
-}
 
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     TimePickerVC *source = [segue sourceViewController];
     if (source.timeOfDay != nil) {
         _timeOfDay = source.timeOfDay;
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:source.timeOfDay.hours forKey:@"AlarmHour"];
+        [[NSUserDefaults standardUserDefaults] setInteger:source.timeOfDay.minutes forKey:@"AlarmMinute"];
+       NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+
         [self alarm];
         
 
@@ -111,7 +120,7 @@
 
 
 -(void)alarm {
-    selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)_timeOfDay.hours, (unsigned long)_timeOfDay.minutePart];
+    _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
     titleLabel.text=@"";
     [alarmToggle setOn:YES animated:YES];
     alarmToggle.enabled = true;
@@ -122,8 +131,8 @@
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
     
     
-    [comps setMinute:_timeOfDay.minutePart];
-    [comps setHour:_timeOfDay.hours];
+    [comps setMinute:savedAlarmTime.minutes];
+    [comps setHour:savedAlarmTime.hours];
     NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
     
     if ([now compare:newDatefromComp] == NSOrderedDescending ) {
@@ -132,13 +141,13 @@
         NSInteger day = [tomorrowAlarmComps day];
         [comps setDay:day];
         SCLAlertView *alert = [[SCLAlertView alloc] init];
-        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for tomorrow %1$@",selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
     }
     else {
         SCLAlertView *alert = [[SCLAlertView alloc] init];
 
-        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for %1$@",selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
         
     }
@@ -165,10 +174,10 @@
 - (void)changeSwitch:(id)sender{
     if([sender isOn]){
         
-        selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
+        _selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
     } else{
 
-        selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
+        _selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
     }
 }
 

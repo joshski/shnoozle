@@ -3,7 +3,7 @@
 #import "TimeOfDay.h"
 
 @interface HomeVC : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *selectedTimeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *alarmToggle;
@@ -11,6 +11,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (strong, nonatomic) NSURL *tempMemoURL;
 @property (strong, nonatomic) IBOutlet JTHamburgerButton *hamburgerMenuButton;
+@property (strong, nonatomic) TimeOfDay *savedAlarmTime;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 

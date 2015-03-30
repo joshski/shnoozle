@@ -41,14 +41,7 @@
     self.recordView.layer.cornerRadius = 80;
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     [self updateAlarmTime];
-    
     [self isTimeLabelEmpty];
-    
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
-                                                             bundle: nil];
-    RERootVC *reRootVC;
-    reRootVC= (RERootVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"RERootVC"];
-    reRootVC.delegate=self;
     
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
@@ -78,26 +71,13 @@
 
 
 
-- (IBAction)didCloseButtonTouch:(JTHamburgerButton *)sender
-{
-    if(sender.currentMode == JTHamburgerButtonModeHamburger){
-        [sender setCurrentMode:JTHamburgerButtonModeCross withAnimation:.3];
-        [self.sideMenuViewController presentLeftMenuViewController];
-
-
-    }
-    else{
-        [sender setCurrentMode:JTHamburgerButtonModeHamburger withAnimation:.3];
-
-    }
-}
 
 
 - (BOOL)date:(NSDate *)date hour:(NSInteger)h minute:(NSInteger)m {
     
     NSCalendar *calendar = [[NSCalendar alloc] init];
     
-    NSDateComponents *componets = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit )fromDate:[NSDate date]];
+    NSDateComponents *componets = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute )fromDate:[NSDate date]];
     if ([componets hour ] == h && [componets minute] == m) {
         
         return YES;
@@ -107,22 +87,6 @@
 
 
 
-
-- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-    TimePickerVC *source = [segue sourceViewController];
-    if (source.timeOfDay != nil) {
-        _timeOfDay = source.timeOfDay;
-        
-        [[NSUserDefaults standardUserDefaults] setInteger:source.timeOfDay.hours forKey:@"AlarmHour"];
-        [[NSUserDefaults standardUserDefaults] setInteger:source.timeOfDay.minutes forKey:@"AlarmMinute"];
- 
-        
-
-        [self alarm];
-        
-
-    }
-}
 
 
 
@@ -139,8 +103,8 @@
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
     
     
-    [comps setMinute:savedAlarmTime.minutes];
-    [comps setHour:savedAlarmTime.hours];
+    [comps setMinute:(unsigned long)savedAlarmTime.minutes];
+    [comps setHour:(unsigned long)savedAlarmTime.hours];
     NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
     
     if ([now compare:newDatefromComp] == NSOrderedDescending ) {
@@ -148,14 +112,14 @@
         NSDateComponents *tomorrowAlarmComps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:tomorrowAlarm];
         NSInteger day = [tomorrowAlarmComps day];
         [comps setDay:day];
-        SCLAlertView *alert = [[SCLAlertView alloc] init];
-        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        SCLAlertView *alarmOnAlertTom = [[SCLAlertView alloc] init];
+        [alarmOnAlertTom showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
     }
     else {
-        SCLAlertView *alert = [[SCLAlertView alloc] init];
+        SCLAlertView *alarmOnAlertTo = [[SCLAlertView alloc] init];
 
-        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        [alarmOnAlertTo showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
         
     }
@@ -180,11 +144,10 @@
 }
 
 -(void)playAlarmSound:(NSTimer *)timer{
-    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    SCLAlertView *foregroundAlarmAlert = [[SCLAlertView alloc] init];
     
-    alert.soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/alarm1.wav", [[NSBundle mainBundle] resourcePath]]];
-    [alert addButton:@"Snooze" actionBlock:^(void) {
-        NSDate *now = [NSDate date];
+    foregroundAlarmAlert.soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/alarm1.wav", [[NSBundle mainBundle] resourcePath]]];
+    [foregroundAlarmAlert addButton:@"Snooze" actionBlock:^(void) {
         
         NSTimeInterval snoozeInterval = 900;
         [NSTimer scheduledTimerWithTimeInterval:snoozeInterval
@@ -192,7 +155,7 @@
     }];
 
 
-    [alert showSuccess:self title:@"Alarm!!" subTitle:@"Wake Up" closeButtonTitle:@"Ok" duration:30.0f];
+    [foregroundAlarmAlert showSuccess:self title:@"Alarm!!" subTitle:@"Wake Up" closeButtonTitle:@"Ok" duration:30.0f];
 
 }
 
@@ -205,6 +168,81 @@
     } else{
 
         _selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
+    }
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier  isEqual:@"playMemo"]){
+        PlayMemoVC *vc = segue.destinationViewController;
+        vc.memoURL = tempMemoURL;
+    }
+}
+
+
+- (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController {
+    
+    NSLog(@"Bitch");
+}
+
+- (void)recorderSettings {
+    NSArray *pathComponents = [NSArray arrayWithObjects:
+                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                               @"MyAudioMemo.m4a",
+                               nil];
+    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
+    // Setup audio session
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord
+             withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
+                   error:nil];
+    
+    // Define the recorder setting
+    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
+    
+    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
+    
+    // Initiate and prepare the recorder
+    recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
+    recorder.delegate = self;
+    recorder.meteringEnabled = YES;
+}
+- (void)animateColors {
+    
+    
+    [UIView animateWithDuration:0.25
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut |
+     UIViewAnimationOptionRepeat |
+     UIViewAnimationOptionAutoreverse |
+     UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         [recordView setBackgroundColor: [UIColor whiteColor]];
+                         
+                     }
+                     completion:nil];
+    
+}
+
+
+
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    TimePickerVC *source = [segue sourceViewController];
+    if (source.timeOfDay != nil) {
+        _timeOfDay = source.timeOfDay;
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:(unsigned long)source.timeOfDay.hours forKey:@"AlarmHour"];
+        [[NSUserDefaults standardUserDefaults] setInteger:(unsigned long)source.timeOfDay.minutes forKey:@"AlarmMinute"];
+        
+        
+        
+        [self alarm];
+        
+        
     }
 }
 
@@ -255,49 +293,19 @@
     [self recordButtonUpOutside:self];
 }
 
-
-- (void)recorderSettings {
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"MyAudioMemo.m4a",
-                               nil];
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
-    // Setup audio session
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord
-             withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
-                   error:nil];
-    
-    // Define the recorder setting
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
-    
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
-    
-    // Initiate and prepare the recorder
-    recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
-    recorder.delegate = self;
-    recorder.meteringEnabled = YES;
+- (IBAction)didCloseButtonTouch:(JTHamburgerButton *)sender
+{
+    if(sender.currentMode == JTHamburgerButtonModeHamburger){
+        [sender setCurrentMode:JTHamburgerButtonModeCross withAnimation:.3];
+        [self.sideMenuViewController presentLeftMenuViewController];
+        
+        
+    }
+    else{
+        [sender setCurrentMode:JTHamburgerButtonModeHamburger withAnimation:.3];
+        
+    }
 }
-- (void)animateColors {
-    
-    
-    [UIView animateWithDuration:0.25
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseInOut |
-     UIViewAnimationOptionRepeat |
-     UIViewAnimationOptionAutoreverse |
-     UIViewAnimationOptionAllowUserInteraction
-                     animations:^{
-                         [recordView setBackgroundColor: [UIColor whiteColor]];
-                         
-                     }
-                     completion:nil];
-    
-}
-
 
 
 
@@ -305,38 +313,11 @@
     [self animateColors];
 
     [recorder recordForDuration:30];
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                             target:self
-                                           selector:@selector(updateTime)
-                                           userInfo:nil
-                                            repeats:YES];
-    NSLog(@"started started");
+  
     
 }
 
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    if ([segue.identifier  isEqual:@"playMemo"]){
-        PlayMemoVC *vc = segue.destinationViewController;
-        vc.memoURL = tempMemoURL;
-    }
-}
-
-
--(void)updateTime
-{
-    //Get the time left until the specified date
-    NSInteger seconds = 30;
-    
-    
-    //Update the label with the remaining time
-}
-- (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController {
-    
-    NSLog(@"Bitch");
-}
 
 @end

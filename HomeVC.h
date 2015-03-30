@@ -4,7 +4,7 @@
 #import <RESideMenu/RESideMenu.h>
 
 
-@interface HomeVC : UIViewController <RESideMenuDelegate>
+@interface HomeVC : UIViewController <RESideMenuDelegate, AVAudioRecorderDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

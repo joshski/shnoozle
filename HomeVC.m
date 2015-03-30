@@ -33,7 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self recorderSettings];
-    alert = [[SCLAlertView alloc] init];
     self.recordView.layer.cornerRadius = 80;
 
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
@@ -109,22 +108,24 @@
         alarmToggle.enabled = true;
         
         
+        NSDate *now = [NSDate date];
         
+        NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
+        [comps setMinute:source.timeOfDay.minutePart];
+        [comps setHour:source.timeOfDay.hours];
         
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"<HH:mm"];
-        NSDate *date = [dateFormatter dateFromString:selectedTimeLabel.text];
-       
-
+        NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
+        
         UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-        localNotification.fireDate = date;
-        localNotification.alertBody = @"Wake Up!!";
+        localNotification.fireDate = fireTime;
+        localNotification.alertBody = @"Wake Now Up!!";
         localNotification.alertAction = @"Show me the item";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         localNotification.soundName=@"alarm1.wav";
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
         
         
+        SCLAlertView *alert = [[SCLAlertView alloc] init];
         
         [alert showSuccess:self title:@"Alarm" subTitle:@"On" closeButtonTitle:@"Done" duration:0.0f]; // Notice
 

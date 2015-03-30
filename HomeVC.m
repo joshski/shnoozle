@@ -7,6 +7,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "PlayMemoVC.h"
 #import "LeftMenuVC.h"
+#import "RERootVC.h"
 
 @interface HomeVC (){
     AVAudioRecorder *recorder;
@@ -42,7 +43,13 @@
     [self updateAlarmTime];
     
     [self isTimeLabelEmpty];
-
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+                                                             bundle: nil];
+    RERootVC *reRootVC;
+    reRootVC= (RERootVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"RERootVC"];
+    reRootVC.delegate=self;
+    
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
 }
@@ -309,6 +316,9 @@
     
     //Update the label with the remaining time
 }
-
+- (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController {
+    
+    NSLog(@"Bitch");
+}
 
 @end

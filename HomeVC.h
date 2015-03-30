@@ -1,8 +1,10 @@
 #import <UIKit/UIKit.h>
 #import <JTHamburgerButton.h>
 #import "TimeOfDay.h"
+#import <RESideMenu/RESideMenu.h>
 
-@interface HomeVC : UIViewController
+
+@interface HomeVC : UIViewController <RESideMenuDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

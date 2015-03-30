@@ -112,9 +112,6 @@
     
     return cell;
 }
-- (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController;{
-    NSLog(@"menu did close");
-}
 
 
 - (void)didReceiveMemoryWarning {

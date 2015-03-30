@@ -123,9 +123,6 @@
 
         
     }
-    
-  
-    
     NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
     
     UILocalNotification* localNotification = [[UILocalNotification alloc] init];

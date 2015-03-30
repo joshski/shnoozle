@@ -271,6 +271,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="fadeMenuView" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="parallaxEnabled" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bouncesHorizontally" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXU-Hx-QMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -339,7 +344,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-8r-Mih" userLabel="recordButtonView">
+                            <view alpha="0.49999999999999983" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-8r-Mih" userLabel="recordButtonView">
                                 <rect key="frame" x="107" y="476" width="160" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-F8-yXU" userLabel="recordButton">
@@ -361,7 +366,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.6443931502525253" green="0.06091661919074929" blue="0.10277589614308735" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.06091661919074929" blue="0.10277589614308735" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="WHx-eQ-5d8" secondAttribute="centerX" id="0Le-zb-MvD"/>
                                     <constraint firstItem="Cyq-F8-yXU" firstAttribute="leading" secondItem="mIS-8r-Mih" secondAttribute="leading" id="GgP-73-Yto"/>

@@ -115,8 +115,7 @@
         
         [[NSUserDefaults standardUserDefaults] setInteger:source.timeOfDay.hours forKey:@"AlarmHour"];
         [[NSUserDefaults standardUserDefaults] setInteger:source.timeOfDay.minutes forKey:@"AlarmMinute"];
-       NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
-        [[NSUserDefaults standardUserDefaults] synchronize];
+ 
         
 
         [self alarm];
@@ -150,16 +149,18 @@
         NSInteger day = [tomorrowAlarmComps day];
         [comps setDay:day];
         SCLAlertView *alert = [[SCLAlertView alloc] init];
-        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
     }
     else {
         SCLAlertView *alert = [[SCLAlertView alloc] init];
 
-        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
 
         
     }
+    
+  
     
     NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
     
@@ -171,15 +172,32 @@
     localNotification.soundName=@"alarm1.wav";
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    
-
+    NSTimeInterval intervalToAlarm = [fireTime timeIntervalSinceDate:now ];
+    [NSTimer scheduledTimerWithTimeInterval:intervalToAlarm
+                                     target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
 
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+-(void)playAlarmSound:(NSTimer *)timer{
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    alert.soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/alarm1.wav", [[NSBundle mainBundle] resourcePath]]];
+    [alert addButton:@"Snooze" actionBlock:^(void) {
+        NSDate *now = [NSDate date];
+        
+        NSTimeInterval snoozeInterval = 900;
+        [NSTimer scheduledTimerWithTimeInterval:snoozeInterval
+                                         target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
+    }];
+
+
+    [alert showSuccess:self title:@"Alarm!!" subTitle:@"Wake Up" closeButtonTitle:@"Ok" duration:30.0f];
+
 }
+
+
+
 - (void)changeSwitch:(id)sender{
     if([sender isOn]){
         
@@ -233,7 +251,7 @@
     NSLog(@"stopped stopped");
     
     [recordView.layer removeAllAnimations];
-    [recordView setBackgroundColor: [UIColor redColor]];
+    [recordView setBackgroundColor: [UIColor colorWithRed:255/255 green:16/255 blue:26/255 alpha:0.5]];
     [self recordButtonUpOutside:self];
 }
 

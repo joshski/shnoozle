@@ -39,7 +39,6 @@
     [self recorderSettings];
     self.recordView.layer.cornerRadius = 80;
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
-    [self isAlarmSwitchToggled];
     [self updateAlarmTime];
     
     [self isTimeLabelEmpty];
@@ -56,17 +55,10 @@
 }
 - (void)isTimeLabelEmpty {
     if (_selectedTimeLabel.text.length > 0) {
-        titleLabel.text=@"";
-    }
-}
-
-
--(void)isAlarmSwitchToggled {
-    if (_selectedTimeLabel.text.length > 0) {
         [alarmToggle setOn:YES animated:YES];
         alarmToggle.enabled = true;
-        [self alarm];
-        
+        titleLabel.text=@"";
+
     }
     else {
         titleLabel.text=@"No Alarm Set";
@@ -75,6 +67,9 @@
         
     }
 }
+
+
+
 
 - (IBAction)didCloseButtonTouch:(JTHamburgerButton *)sender
 {

@@ -13,12 +13,14 @@
     NSTimer *timer;
     SCLAlertView *alert;
     BOOL *date;
-
 }
+
+@property (strong, nonatomic) TimeOfDay *timeOfDay;
+@property (strong, nonatomic) UIWebView *webView;
+
 @end
 
 @implementation HomeVC
-
 
 
 @synthesize datePicker;
@@ -51,9 +53,6 @@
     
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
-
-    
-    
 }
 
 
@@ -102,49 +101,62 @@
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     TimePickerVC *source = [segue sourceViewController];
     if (source.timeOfDay != nil) {
-        selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)source.timeOfDay.hours, (unsigned long)source.timeOfDay.minutePart];
-        titleLabel.text=@"";
-        [alarmToggle setOn:YES animated:YES];
-        alarmToggle.enabled = true;
+        _timeOfDay = source.timeOfDay;
+        [self alarm];
         
-        
-        NSDate *now = [NSDate date];
-        
-        NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
-        
-        
-        [comps setMinute:source.timeOfDay.minutePart];
-        [comps setHour:source.timeOfDay.hours];
-        NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
-
-        if (now > newDatefromComp) {
-            NSDate *tomorrowAlarm = [now dateByAddingTimeInterval:60*60*24*1];
-            NSDateComponents *tomorrowAlarmComps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:tomorrowAlarm];
-            
-            
-            NSInteger day = [tomorrowAlarmComps day];
-            [comps setDay:day];
-
-            
-        }
-      
-        NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
-        
-        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-        localNotification.fireDate = fireTime;
-        localNotification.alertBody = @"Wake Now Up!!";
-        localNotification.alertAction = @"Show me the item";
-        localNotification.timeZone = [NSTimeZone defaultTimeZone];
-        localNotification.soundName=@"alarm1.wav";
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-        
-        
-        SCLAlertView *alert = [[SCLAlertView alloc] init];
-        
-        [alert showSuccess:self title:@"Alarm" subTitle:@"On" closeButtonTitle:@"Done" duration:0.0f]; // Notice
-
 
     }
+}
+
+
+
+-(void)alarm {
+    selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)_timeOfDay.hours, (unsigned long)_timeOfDay.minutePart];
+    titleLabel.text=@"";
+    [alarmToggle setOn:YES animated:YES];
+    alarmToggle.enabled = true;
+    
+    
+    NSDate *now = [NSDate date];
+    
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
+    
+    
+    [comps setMinute:_timeOfDay.minutePart];
+    [comps setHour:_timeOfDay.hours];
+    NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
+    
+    if ([now compare:newDatefromComp] == NSOrderedDescending ) {
+        NSDate *tomorrowAlarm = [now dateByAddingTimeInterval:60*60*24*1];
+        NSDateComponents *tomorrowAlarmComps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:tomorrowAlarm];
+        NSInteger day = [tomorrowAlarmComps day];
+        [comps setDay:day];
+        SCLAlertView *alert = [[SCLAlertView alloc] init];
+        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for tomorrow %1$@",selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+
+    }
+    else {
+        SCLAlertView *alert = [[SCLAlertView alloc] init];
+
+        [alert showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm Set for %1$@",selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+
+        
+    }
+    
+    NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
+    
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = fireTime;
+    localNotification.alertBody = @"Wake Now Up!!";
+    localNotification.alertAction = @"Show me the item";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.soundName=@"alarm1.wav";
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    
+
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

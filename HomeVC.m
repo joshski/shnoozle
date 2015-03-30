@@ -32,28 +32,34 @@
 @synthesize hamburgerMenuButton;
 @synthesize savedAlarmTime;
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self recorderSettings];
     self.recordView.layer.cornerRadius = 80;
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     [self isAlarmSwitchToggled];
-  
-    NSUInteger *savedAlarmHour = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmHour"];
-    NSUInteger *savedAlarmMinute = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmMinute"];
-   
-    NSLog(@"saved AlarmHour %lu",savedAlarmHour);
-    NSLog(@"Saved Alarm Minute %lu",savedAlarmMinute);
-
-     savedAlarmTime = [TimeOfDay createFromHours:savedAlarmHour minutes:savedAlarmMinute];
+    [self updateAlarmTime];
     
-    _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
-    
-    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+    [self isTimeLabelEmpty];
 
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
 }
+
+- (void)updateAlarmTime {
+    NSUInteger *savedAlarmHour = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmHour"];
+    NSUInteger *savedAlarmMinute = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmMinute"];
+    savedAlarmTime = [TimeOfDay createFromHours:savedAlarmHour minutes:savedAlarmMinute];
+    _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
+}
+- (void)isTimeLabelEmpty {
+    if (_selectedTimeLabel.text.length > 0) {
+        titleLabel.text=@"";
+    }
+}
+
 
 -(void)isAlarmSwitchToggled {
     if (_selectedTimeLabel.text.length > 0) {
@@ -121,7 +127,8 @@
 
 -(void)alarm {
     _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
-    titleLabel.text=@"";
+    [self isTimeLabelEmpty];
+    [self updateAlarmTime];
     [alarmToggle setOn:YES animated:YES];
     alarmToggle.enabled = true;
     

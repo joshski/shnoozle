@@ -28,6 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self labelStates];
+    UITapGestureRecognizer *tapGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseSong)];
+    [_songTitleLabel addGestureRecognizer:tapGesture];
 
     float volume = [[NSUserDefaults standardUserDefaults]
                            floatForKey:@"AlarmVolume"];

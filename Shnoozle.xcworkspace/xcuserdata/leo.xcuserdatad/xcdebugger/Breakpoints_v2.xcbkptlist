@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "-animateColors"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "-animateColors"
             landmarkType = "5">
          </BreakpointContent>
@@ -436,23 +436,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-playAlarmSound:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
@@ -464,73 +448,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "-playAlarmSound:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "-playAlarmSound:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[HomeVC playAlarmSound:]"
-                  moduleName = "Shnoozle"
-                  urlString = "file:///Users/leo/iOS/Shnoozle/HomeVC.m"
-                  timestampString = "449518616.657052"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__25-[HomeVC playAlarmSound:]_block_invoke"
-                  moduleName = "Shnoozle"
-                  urlString = "file:///Users/leo/iOS/Shnoozle/HomeVC.m"
-                  timestampString = "449518616.657163"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "43">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "-playAlarmSound:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -546,27 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "-runPlayer"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "-playAlarmSound:"
             landmarkType = "5">
          </BreakpointContent>
@@ -578,11 +500,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "-playAlarmSound:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-runPlayer"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "-playAlarmSound:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "-playAlarmSound:"
             landmarkType = "5">
          </BreakpointContent>
@@ -626,11 +596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "-alarm"
             landmarkType = "5">
          </BreakpointContent>
@@ -642,11 +612,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-alarm"
             landmarkType = "5">
          </BreakpointContent>
@@ -674,7 +644,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "-prepareForSegue:sender:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "236"
@@ -690,27 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "-prepareForSegue:sender:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "-recorderSettings"
             landmarkType = "5">
          </BreakpointContent>
@@ -738,11 +708,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -754,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeVC.m"
-            timestampString = "449525969.45427"
+            timestampString = "449527806.378233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -770,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsVC.m"
-            timestampString = "449508688.888293"
+            timestampString = "449527164.579467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-mediaPicker:didPickMediaItems:"
             landmarkType = "5">
          </BreakpointContent>
@@ -802,11 +772,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsVC.m"
-            timestampString = "449508688.888293"
+            timestampString = "449527164.579467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-mediaPicker:didPickMediaItems:"
             landmarkType = "5">
          </BreakpointContent>
@@ -818,12 +788,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsVC.m"
-            timestampString = "449508688.888293"
+            timestampString = "449527164.579467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-sliderValueChanged:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-alarm"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-alarm"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-alarm"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVC.m"
+            timestampString = "449527806.378233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "-alarm"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

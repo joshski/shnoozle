@@ -137,8 +137,14 @@
     if ([now compare:newDatefromComp] == NSOrderedDescending ) {
         NSDate *tomorrowAlarm = [now dateByAddingTimeInterval:60*60*24*1];
         NSDateComponents *tomorrowAlarmComps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:tomorrowAlarm];
+        NSInteger month = [tomorrowAlarmComps month];
         NSInteger day = [tomorrowAlarmComps day];
+        NSInteger year = [tomorrowAlarmComps year];
+
         [comps setDay:day];
+        [comps setMonth:month];
+        [comps setYear:year];
+
         SCLAlertView *alarmOnAlertTom = [[SCLAlertView alloc] init];
         [alarmOnAlertTom showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
 

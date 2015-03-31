@@ -8,6 +8,7 @@
 
 #import "SettingsVC.h"
 #import <RESideMenu/RESideMenu.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface SettingsVC ()
 
@@ -29,6 +30,27 @@
 
 }
 
+- (IBAction)chooseSong:(id)sender {
+    MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
+    
+    mediaPicker.delegate = self;
+    mediaPicker.allowsPickingMultipleItems = YES;
+    mediaPicker.prompt = @"Select songs to play";
+    
+    [self presentModalViewController:mediaPicker animated:YES];
+}
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
+{
+    if (mediaItemCollection) {
+        
+    }
+    
+    [self dismissModalViewControllerAnimated: YES];
+}
 
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
+{
+    [self dismissModalViewControllerAnimated: YES];
+}
 
 @end

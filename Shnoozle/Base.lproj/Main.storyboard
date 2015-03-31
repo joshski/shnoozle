@@ -158,8 +158,19 @@
                                     <action selector="chooseSong:" destination="DPW-gx-d9Z" eventType="touchUpInside" id="tAf-Gh-XBe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SongTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nA-Va-EPc">
+                                <rect key="frame" x="0.0" y="94" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4nA-Va-EPc" secondAttribute="trailing" id="JA9-Vx-G5B"/>
+                            <constraint firstItem="4nA-Va-EPc" firstAttribute="leading" secondItem="WLG-js-yGn" secondAttribute="leading" id="Tws-G8-5cz"/>
+                            <constraint firstItem="4nA-Va-EPc" firstAttribute="top" secondItem="UTs-wK-HeZ" secondAttribute="bottom" constant="30" id="dEy-fF-6SF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="jTQ-6M-pmQ">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="EHU-x3-gCH">
@@ -170,6 +181,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="songTitleLabel" destination="4nA-Va-EPc" id="s1B-zy-Xar"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bK3-Za-lWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

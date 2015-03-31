@@ -8,22 +8,22 @@
 
 #import "SettingsVC.h"
 #import <RESideMenu/RESideMenu.h>
-#import "AppDelegate.h"
 
 @interface SettingsVC ()
 @property (nonatomic) MPMediaItem *mediaItem;
 @property (weak, nonatomic) IBOutlet UILabel *songTitleLabel;
-@property (nonatomic, strong) NSURL *chosenSongURL;
+@property (weak, nonatomic) IBOutlet UILabel *songArtistLabel;
 
 
 @end
 
 @implementation SettingsVC
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    _chosenSongURL = [appDelegate chosenSongURL];
+    [self labelStates];
     
 }
 
@@ -42,31 +42,32 @@
     }
     
     self.mediaItem = mpMediaItem;
-    self.songTitleLabel.text = [mpMediaItem valueForProperty:MPMediaItemPropertyTitle];
+    NSString *songTitle=[mpMediaItem valueForProperty:MPMediaItemPropertyTitle];
+    NSString *songArtist=[mpMediaItem valueForProperty:MPMediaItemPropertyArtist];
+
+    self.songTitleLabel.text =songTitle;
 
     
 
-    NSString *songString =[NSString stringWithFormat:@"%@", [mpMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
-    NSURL *songUrl =[NSURL URLWithString:songString];
+    NSString *songPath =[NSString stringWithFormat:@"%@", [mpMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
     
-    NSLog(@"selected title: %@", self.songTitleLabel.text);
-    NSLog(@"URL: %@", songString);
-    
-    
-    [[NSUserDefaults standardUserDefaults] setObject:songString forKey:@"AlarmSound"];
 
-NSLog(@"ALL DEFAUKTS IN SETTTINGSVC %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+    
+    [[NSUserDefaults standardUserDefaults] setObject:songPath forKey:@"AlarmSound"];
+    [[NSUserDefaults standardUserDefaults] setObject:songTitle forKey:@"AlarmSoundTitle"];
+    [[NSUserDefaults standardUserDefaults] setObject:songArtist forKey:@"AlarmSoundArtist"];
+
+
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)menuTapped:(id)sender {
-    [self.sideMenuViewController presentLeftMenuViewController];
-    
-    
-
+- (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (IBAction)chooseSong:(id)sender {
+-(void)chooseSong
+{
     MPMediaPickerController *picker =
     [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
     picker.delegate = self;
@@ -76,5 +77,45 @@ NSLog(@"ALL DEFAUKTS IN SETTTINGSVC %@", [[NSUserDefaults standardUserDefaults] 
     
     [self presentViewController:picker animated:YES completion: nil];
 }
+- (void)labelStates {
+    //    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    //    _chosenSongURL = [appDelegate chosenSongURL];
+    NSString *songTitle = [[NSUserDefaults standardUserDefaults]
+                           stringForKey:@"AlarmSoundTitle"];
+    NSString *songArtist = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"AlarmSoundArtist"];
+    
+    if (songTitle.length < 1) {
+        self.songTitleLabel.text = @"Default Tone";
+        
+    }
+    else {
+        self.songTitleLabel.text = songTitle;
+        
+    }
+    if (songArtist.length < 1) {
+        self.songArtistLabel.text =@"No Artist Info";
+        
+    }
+    else {
+        self.songArtistLabel.text = songArtist;
+        
+    }
+
+}
+
+- (IBAction)menuTapped:(id)sender {
+    [self.sideMenuViewController presentLeftMenuViewController];
+    
+    
+
+}
+
+- (IBAction)pickerTapped:(id)sender {
+    [self chooseSong];
+}
+
+
+
 
 @end

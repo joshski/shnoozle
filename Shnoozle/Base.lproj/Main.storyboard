@@ -234,6 +234,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="alarmView" destination="mKn-I0-Yty" id="fXA-oB-spC"/>
                         <outlet property="playPauseBtn" destination="zif-cr-fJF" id="RWm-m6-cig"/>
                         <outlet property="slider" destination="vk1-Sv-yVp" id="YSI-a3-05K"/>
                         <outlet property="songArtistLabel" destination="seT-bd-VyA" id="AjZ-Qq-kQx"/>

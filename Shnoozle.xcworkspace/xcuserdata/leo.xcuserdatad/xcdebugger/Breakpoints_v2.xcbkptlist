@@ -521,7 +521,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "195"
             endingLineNumber = "195"
-            landmarkName = "-runPlayer"
+            landmarkName = "-playAlarmSound:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,7 +681,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "248"
             endingLineNumber = "248"
-            landmarkName = "-recorderSettings"
+            landmarkName = "-sideMenu:didHideMenuViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -713,7 +713,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "235"
             endingLineNumber = "235"
-            landmarkName = "-prepareForSegue:sender:"
+            landmarkName = "-changeSwitch:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -730,22 +730,6 @@
             startingLineNumber = "237"
             endingLineNumber = "237"
             landmarkName = "-prepareForSegue:sender:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SettingsVC.m"
-            timestampString = "449527164.579467"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-mediaPicker:didPickMediaItems:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -772,11 +756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsVC.m"
-            timestampString = "449527164.579467"
+            timestampString = "449529053.578488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-mediaPicker:didPickMediaItems:"
             landmarkType = "5">
          </BreakpointContent>
@@ -788,11 +772,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsVC.m"
-            timestampString = "449527164.579467"
+            timestampString = "449529053.578488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-sliderValueChanged:"
             landmarkType = "5">
          </BreakpointContent>

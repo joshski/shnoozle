@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (nonatomic) AVAudioPlayer *player;
 @property (weak, nonatomic) IBOutlet UIButton *playPauseBtn;
+@property (weak, nonatomic) IBOutlet UIView *alarmView;
 
 @end
 
@@ -30,7 +31,7 @@
     [self labelStates];
     UITapGestureRecognizer *tapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseSong)];
-    [_songTitleLabel addGestureRecognizer:tapGesture];
+    [_alarmView addGestureRecognizer:tapGesture];
 
     float volume = [[NSUserDefaults standardUserDefaults]
                            floatForKey:@"AlarmVolume"];
@@ -65,7 +66,6 @@
     NSString *songTitle=[mpMediaItem valueForProperty:MPMediaItemPropertyTitle];
     NSString *songArtist=[mpMediaItem valueForProperty:MPMediaItemPropertyArtist];
 
-    [self labelStates];
     
 
     NSString *songPath =[NSString stringWithFormat:@"%@", [mpMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
@@ -76,7 +76,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:songTitle forKey:@"AlarmSoundTitle"];
     [[NSUserDefaults standardUserDefaults] setObject:songArtist forKey:@"AlarmSoundArtist"];
 
-
+    [self labelStates];
+    [self PlayPause];
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }

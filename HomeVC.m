@@ -46,7 +46,6 @@
     [self isTimeLabelEmpty];
     
     
-    NSLog(@"ALL DEFAUKTS IN HomeVC %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
 }
@@ -157,7 +156,11 @@
 
     }];
 
+    [foregroundAlarmAlert alertIsDismissed:^{
+        [self stopPlayer];
 
+    }];
+    
     [foregroundAlarmAlert showSuccess:self title:@"Alarm!!" subTitle:@"Wake Up" closeButtonTitle:@"Ok" duration:30.0f];
 
 }
@@ -198,7 +201,6 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController {
     
-    NSLog(@"Bitch");
 }
 
 - (void)recorderSettings {
@@ -268,7 +270,6 @@
 
 - (IBAction)recordButtonUpOutside:(id)sender {
     [self performSegueWithIdentifier:@"playMemo" sender:self];
-    NSLog(@"shouldTransitionToMemo");
 
 //    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"playMemoVC"]]
 //                                                 animated:YES];
@@ -302,7 +303,6 @@
     [audioSession setActive:NO error:nil];
     
     
-    NSLog(@"stopped stopped");
     
     [recordView.layer removeAllAnimations];
     [recordView setBackgroundColor: [UIColor colorWithRed:255/255 green:16/255 blue:26/255 alpha:0.5]];

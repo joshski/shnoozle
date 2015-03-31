@@ -151,54 +151,76 @@
                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-4R-4RJ" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-rT-ARK" userLabel="pickerButton">
-                                <rect key="frame" x="311" y="117" width="64" height="64"/>
-                                <state key="normal" image="alarm.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickerTapped:" destination="DPW-gx-d9Z" eventType="touchUpInside" id="T9u-yh-PtZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seT-bd-VyA" userLabel="artistName">
-                                <rect key="frame" x="16" y="162" width="301" height="19"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Sv-yVp">
-                                <rect key="frame" x="7" y="205" width="354" height="31"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" destination="DPW-gx-d9Z" eventType="valueChanged" id="BuV-6q-Vwv"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiu-Y4-fDA" userLabel="songName">
-                                <rect key="frame" x="16" y="132" width="301" height="34"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zif-cr-fJF" userLabel="playPauseBtn">
-                                <rect key="frame" x="327" y="172" width="32" height="32"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playPauseTapped:" destination="DPW-gx-d9Z" eventType="touchUpInside" id="9xV-9u-5Nl"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz5-jv-Xdn" userLabel="title">
-                                <rect key="frame" x="16" y="91" width="172" height="50"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45G-Hw-7gO" userLabel="mainScrollView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKn-I0-Yty" userLabel="alarmView">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="133.5"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Sv-yVp">
+                                                <rect key="frame" x="10" y="87" width="354" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderValueChanged:" destination="DPW-gx-d9Z" eventType="valueChanged" id="BuV-6q-Vwv"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seT-bd-VyA" userLabel="artistName">
+                                                <rect key="frame" x="22" y="55" width="301" height="19"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-rT-ARK" userLabel="pickerButton">
+                                                <rect key="frame" x="308" y="0.0" width="59" height="64"/>
+                                                <state key="normal" image="alarm.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pickerTapped:" destination="DPW-gx-d9Z" eventType="touchUpInside" id="T9u-yh-PtZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zif-cr-fJF" userLabel="playPauseBtn">
+                                                <rect key="frame" x="321" y="55" width="32" height="32"/>
+                                                <state key="normal" image="playBtn.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playPauseTapped:" destination="DPW-gx-d9Z" eventType="touchUpInside" id="9xV-9u-5Nl"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiu-Y4-fDA" userLabel="songName">
+                                                <rect key="frame" x="22" y="8" width="298" height="34"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="19"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.18848284548903693" green="0.20612023416967307" blue="1" alpha="0.32000000000000001" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz5-jv-Xdn" userLabel="title">
+                                        <rect key="frame" x="19" y="8" width="172" height="50"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mKn-I0-Yty" secondAttribute="trailing" id="C7T-P3-H2s"/>
+                                    <constraint firstAttribute="centerX" secondItem="mKn-I0-Yty" secondAttribute="centerX" id="NOV-HD-uPH"/>
+                                    <constraint firstItem="mKn-I0-Yty" firstAttribute="top" secondItem="45G-Hw-7gO" secondAttribute="top" constant="60" id="VrE-zA-SD1"/>
+                                    <constraint firstItem="mKn-I0-Yty" firstAttribute="leading" secondItem="45G-Hw-7gO" secondAttribute="leading" id="qpc-c9-RjX"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.31650904605263158" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="LvW-4R-4RJ" secondAttribute="bottom" id="9Xg-bt-VOD"/>
+                            <constraint firstItem="45G-Hw-7gO" firstAttribute="top" secondItem="UTs-wK-HeZ" secondAttribute="bottom" id="BFQ-DH-1Ka"/>
+                            <constraint firstItem="45G-Hw-7gO" firstAttribute="height" secondItem="WLG-js-yGn" secondAttribute="height" id="CSx-dH-Lhe"/>
                             <constraint firstItem="LvW-4R-4RJ" firstAttribute="top" secondItem="WLG-js-yGn" secondAttribute="top" id="F1z-DN-fof"/>
+                            <constraint firstItem="45G-Hw-7gO" firstAttribute="width" secondItem="WLG-js-yGn" secondAttribute="width" id="fum-Wp-QPb"/>
+                            <constraint firstItem="mKn-I0-Yty" firstAttribute="height" secondItem="WLG-js-yGn" secondAttribute="height" multiplier="1/5" id="mAl-s9-ae8"/>
                             <constraint firstAttribute="trailing" secondItem="LvW-4R-4RJ" secondAttribute="trailing" id="sA1-BF-Uq6"/>
+                            <constraint firstItem="45G-Hw-7gO" firstAttribute="leading" secondItem="WLG-js-yGn" secondAttribute="leading" id="u5e-Cl-odI"/>
                             <constraint firstItem="LvW-4R-4RJ" firstAttribute="leading" secondItem="WLG-js-yGn" secondAttribute="leading" id="yp4-iW-j3j"/>
                         </constraints>
                     </view>
@@ -701,5 +723,6 @@
         <image name="menu.png" width="16" height="16"/>
         <image name="mic.png" width="256" height="256"/>
         <image name="play.png" width="256" height="256"/>
+        <image name="playBtn.png" width="32" height="32"/>
     </resources>
 </document>

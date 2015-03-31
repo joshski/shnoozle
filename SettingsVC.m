@@ -8,10 +8,12 @@
 
 #import "SettingsVC.h"
 #import <RESideMenu/RESideMenu.h>
+#import "AppDelegate.h"
 
 @interface SettingsVC ()
 @property (nonatomic) MPMediaItem *mediaItem;
 @property (weak, nonatomic) IBOutlet UILabel *songTitleLabel;
+@property (nonatomic, strong) NSURL *chosenSongURL;
 
 
 @end
@@ -20,7 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//    _chosenSongURL = [appDelegate chosenSongURL];
+    
 }
 
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker
@@ -39,16 +43,26 @@
     
     self.mediaItem = mpMediaItem;
     self.songTitleLabel.text = [mpMediaItem valueForProperty:MPMediaItemPropertyTitle];
-    NSString *songUrl =[mpMediaItem valueForProperty:MPMediaItemPropertyAssetURL];
-    NSLog(@"selected title: %@", self.songTitleLabel.text);
-    NSLog(@"URL: %@", songUrl);
+
     
-exit:
+
+    NSString *songString =[NSString stringWithFormat:@"%@", [mpMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
+    NSURL *songUrl =[NSURL URLWithString:songString];
+    
+    NSLog(@"selected title: %@", self.songTitleLabel.text);
+    NSLog(@"URL: %@", songString);
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:songString forKey:@"AlarmSound"];
+
+NSLog(@"ALL DEFAUKTS IN SETTTINGSVC %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)menuTapped:(id)sender {
     [self.sideMenuViewController presentLeftMenuViewController];
+    
+    
 
 }
 

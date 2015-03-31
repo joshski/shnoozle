@@ -25,7 +25,7 @@
                   clientKey:@"1hG7CQ86gzfllhq2pazB3iEpXpRMw6Jmk26OtlJQ"];
     [PFFacebookUtils initializeFacebook];
     
-    
+    NSURL *_chosenSongURL = [[NSURL alloc] init];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings

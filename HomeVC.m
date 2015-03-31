@@ -43,6 +43,8 @@
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     
+    
+    NSLog(@"ALL DEFAUKTS IN HomeVC %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
 }
@@ -142,8 +144,14 @@
 
 -(void)playAlarmSound:(NSTimer *)timer{
     SCLAlertView *foregroundAlarmAlert = [[SCLAlertView alloc] init];
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSString *songString = [[NSUserDefaults standardUserDefaults]
+                                                  stringForKey:@"AlarmSound"];
+    NSURL *url=[NSURL URLWithString:songString];
+
+    NSLog(@"play alarm sound url %@",url);
     
-    foregroundAlarmAlert.soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/alarm1.wav", [[NSBundle mainBundle] resourcePath]]];
+    foregroundAlarmAlert.soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath],url]];
     [foregroundAlarmAlert addButton:@"Snooze" actionBlock:^(void) {
         
         NSTimeInterval snoozeInterval = 900;

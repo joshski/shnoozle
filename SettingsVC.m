@@ -13,6 +13,7 @@
 @property (nonatomic) MPMediaItem *mediaItem;
 @property (weak, nonatomic) IBOutlet UILabel *songTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *songArtistLabel;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
 
 
 @end
@@ -24,7 +25,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self labelStates];
+    float volume = [[NSUserDefaults standardUserDefaults]
+                           floatForKey:@"AlarmVolume"];
+    _slider.value=volume*100;
     
+}
+- (IBAction)sliderValueChanged:(id)sender {
+    float volume= _slider.value / 100.0;
+    
+    [[NSUserDefaults standardUserDefaults] setFloat:volume forKey:@"AlarmVolume"];
+
 }
 
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker
@@ -45,8 +55,7 @@
     NSString *songTitle=[mpMediaItem valueForProperty:MPMediaItemPropertyTitle];
     NSString *songArtist=[mpMediaItem valueForProperty:MPMediaItemPropertyArtist];
 
-    self.songTitleLabel.text =songTitle;
-
+    [self labelStates];
     
 
     NSString *songPath =[NSString stringWithFormat:@"%@", [mpMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];

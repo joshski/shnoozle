@@ -157,7 +157,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-rT-ARK" userLabel="pickerButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-rT-ARK" userLabel="pickerButton">
                                 <rect key="frame" x="299" y="132" width="87" height="32"/>
                                 <state key="normal" image="alarm.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,6 +172,12 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Sv-yVp">
+                                <rect key="frame" x="7" y="200" width="354" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="DPW-gx-d9Z" eventType="valueChanged" id="BuV-6q-Vwv"/>
+                                </connections>
+                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiu-Y4-fDA" userLabel="songName">
                                 <rect key="frame" x="16" y="132" width="301" height="34"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="19"/>
@@ -197,6 +203,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="slider" destination="vk1-Sv-yVp" id="YSI-a3-05K"/>
                         <outlet property="songArtistLabel" destination="seT-bd-VyA" id="AjZ-Qq-kQx"/>
                         <outlet property="songTitleLabel" destination="hiu-Y4-fDA" id="ZcO-ft-wbN"/>
                     </connections>
@@ -428,7 +435,7 @@
                                 </connections>
                             </switch>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.29458390961369507" green="0.20811310825051205" blue="0.97236032196969702" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ATp-ag-qPu" firstAttribute="leading" secondItem="aBo-s0-XUj" secondAttribute="leading" id="6zy-YG-LYK"/>
                             <constraint firstAttribute="trailing" secondItem="ATp-ag-qPu" secondAttribute="trailing" id="HS9-J5-6Ss"/>

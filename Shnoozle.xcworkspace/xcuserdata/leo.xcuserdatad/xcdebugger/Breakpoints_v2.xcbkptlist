@@ -499,12 +499,12 @@
                   symbolName = "-[HomeVC playAlarmSound:]"
                   moduleName = "Shnoozle"
                   urlString = "file:///Users/leo/iOS/Shnoozle/HomeVC.m"
-                  timestampString = "449504807.388896"
+                  timestampString = "449505895.970814"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "150"
                   endingLineNumber = "150"
-                  offsetFromSymbolStart = "184">
+                  offsetFromSymbolStart = "152">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -513,12 +513,12 @@
                   symbolName = "__25-[HomeVC playAlarmSound:]_block_invoke"
                   moduleName = "Shnoozle"
                   urlString = "file:///Users/leo/iOS/Shnoozle/HomeVC.m"
-                  timestampString = "449504807.389074"
+                  timestampString = "449505895.970933"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "150"
                   endingLineNumber = "150"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "43">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -786,11 +786,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsVC.m"
-            timestampString = "449504741.784967"
+            timestampString = "449505815.443214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "-mediaPicker:didPickMediaItems:"
             landmarkType = "5">
          </BreakpointContent>
@@ -818,12 +818,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsVC.m"
-            timestampString = "449504807.272181"
+            timestampString = "449505815.443214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-mediaPicker:didPickMediaItems:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SettingsVC.m"
+            timestampString = "449505848.693851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-sliderValueChanged:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

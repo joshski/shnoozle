@@ -33,10 +33,13 @@
                            floatForKey:@"AlarmVolume"];
     _slider.value=volume*100;
      playing = NO;
+    [_playPauseBtn setBackgroundImage:[UIImage imageNamed:@"playBtn@2x.png"] forState:UIControlStateNormal];
+
 }
 - (IBAction)sliderValueChanged:(id)sender {
     float volume= _slider.value / 100.0;
-    
+    self.player.volume = volume;
+
     [[NSUserDefaults standardUserDefaults] setFloat:volume forKey:@"AlarmVolume"];
 
 }
@@ -91,7 +94,7 @@
     [self presentViewController:picker animated:YES completion: nil];
 }
 - (void)labelStates {
-    [_playPauseBtn setBackgroundImage:[UIImage imageNamed:@"playBtn@2x.png"] forState:UIControlStateNormal];
+  
 
     NSString *songTitle = [[NSUserDefaults standardUserDefaults]
                            stringForKey:@"AlarmSoundTitle"];

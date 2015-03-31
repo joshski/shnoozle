@@ -55,6 +55,8 @@
     countdown = [[MZTimerLabel alloc] initWithLabel:self.countDownLabel andTimerType:MZTimerLabelTypeTimer];
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
+    [countdown resetTimerAfterFinish];
+
 }
 -(void)cornerRadius {
     self.recordView.layer.cornerRadius = 80;
@@ -178,9 +180,8 @@
     [NSTimer scheduledTimerWithTimeInterval:intervalToAlarm
                                      target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
 
-    
     [countdown setCountDownTime:intervalToAlarm];
-    
+
     [countdown start];
 }
 -(void)updateCountDown
@@ -204,12 +205,19 @@
         NSTimeInterval snoozeInterval = 900;
         [NSTimer scheduledTimerWithTimeInterval:snoozeInterval
                                          target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
+        [countdown setCountDownTime:snoozeInterval];
+        [countdown start];
+
         [self stopPlayer];
 
     }];
 
     [foregroundAlarmAlert alertIsDismissed:^{
+        
+        [countdown setCountDownTime:intervalToAlarm];
+        [countdown start];
         [self stopPlayer];
+
 
     }];
     
@@ -221,7 +229,11 @@
 {
     NSString *songString = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"AlarmSound"];
+    
     NSURL *url=[NSURL URLWithString:songString];
+    if (url == nil ) {
+        url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/alarm1.wav", [[NSBundle mainBundle] resourcePath]]];
+    }
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     float volume = [[NSUserDefaults standardUserDefaults]
                     floatForKey:@"AlarmVolume"];

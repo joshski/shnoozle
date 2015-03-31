@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKi-PJ-RIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-864.5" y="-1016.5"/>
+            <point key="canvasLocation" x="-1188.5" y="-720.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ZOR-nZ-Lb9">
@@ -155,22 +155,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKn-I0-Yty" userLabel="alarmView">
-                                        <rect key="frame" x="0.0" y="60" width="375" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="60" width="375" height="119"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Sv-yVp">
-                                                <rect key="frame" x="10" y="87" width="354" height="31"/>
-                                                <connections>
-                                                    <action selector="sliderValueChanged:" destination="DPW-gx-d9Z" eventType="valueChanged" id="BuV-6q-Vwv"/>
-                                                </connections>
-                                            </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seT-bd-VyA" userLabel="artistName">
-                                                <rect key="frame" x="22" y="55" width="301" height="19"/>
-                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="17"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-rT-ARK" userLabel="pickerButton">
-                                                <rect key="frame" x="308" y="0.0" width="59" height="64"/>
+                                                <rect key="frame" x="2" y="-7" width="59" height="64"/>
                                                 <state key="normal" image="alarm.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -179,7 +167,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zif-cr-fJF" userLabel="playPauseBtn">
-                                                <rect key="frame" x="321" y="55" width="32" height="32"/>
+                                                <rect key="frame" x="15" y="50" width="32" height="32"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -188,8 +176,14 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiu-Y4-fDA" userLabel="songName">
-                                                <rect key="frame" x="22" y="8" width="298" height="34"/>
+                                                <rect key="frame" x="69" y="8" width="298" height="34"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="19"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seT-bd-VyA" userLabel="artistName">
+                                                <rect key="frame" x="69" y="56" width="301" height="19"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -202,6 +196,12 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Sv-yVp">
+                                        <rect key="frame" x="20" y="144" width="335" height="31"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="DPW-gx-d9Z" eventType="valueChanged" id="BuV-6q-Vwv"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mKn-I0-Yty" secondAttribute="trailing" id="C7T-P3-H2s"/>
@@ -218,7 +218,7 @@
                             <constraint firstItem="45G-Hw-7gO" firstAttribute="height" secondItem="WLG-js-yGn" secondAttribute="height" id="CSx-dH-Lhe"/>
                             <constraint firstItem="LvW-4R-4RJ" firstAttribute="top" secondItem="WLG-js-yGn" secondAttribute="top" id="F1z-DN-fof"/>
                             <constraint firstItem="45G-Hw-7gO" firstAttribute="width" secondItem="WLG-js-yGn" secondAttribute="width" id="fum-Wp-QPb"/>
-                            <constraint firstItem="mKn-I0-Yty" firstAttribute="height" secondItem="WLG-js-yGn" secondAttribute="height" multiplier="1/5" id="mAl-s9-ae8"/>
+                            <constraint firstItem="mKn-I0-Yty" firstAttribute="height" secondItem="WLG-js-yGn" secondAttribute="height" multiplier="1/5.6" id="mAl-s9-ae8"/>
                             <constraint firstAttribute="trailing" secondItem="LvW-4R-4RJ" secondAttribute="trailing" id="sA1-BF-Uq6"/>
                             <constraint firstItem="45G-Hw-7gO" firstAttribute="leading" secondItem="WLG-js-yGn" secondAttribute="leading" id="u5e-Cl-odI"/>
                             <constraint firstItem="LvW-4R-4RJ" firstAttribute="leading" secondItem="WLG-js-yGn" secondAttribute="leading" id="yp4-iW-j3j"/>
@@ -242,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bK3-Za-lWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378.5" y="-1226.5"/>
+            <point key="canvasLocation" x="-594.5" y="-874.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J86-Nw-xQr">
@@ -262,7 +262,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQC-dV-4Lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-898" y="-156"/>
+            <point key="canvasLocation" x="-1102" y="20"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
@@ -276,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25.5" y="-122.5"/>
+            <point key="canvasLocation" x="-397.5" y="-106.5"/>
         </scene>
         <!--Record MemoVC-->
         <scene sceneID="roR-5L-dPL">
@@ -396,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAD-tW-E52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36.5" y="-636.5"/>
+            <point key="canvasLocation" x="-2027.5" y="-980.5"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="ahk-fo-gYG">
@@ -422,7 +422,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view alpha="0.49999999999999983" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-8r-Mih" userLabel="recordButtonView">
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-8r-Mih" userLabel="recordButtonView">
                                         <rect key="frame" x="107" y="337" width="160" height="160"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-F8-yXU" userLabel="recordButton">
@@ -463,7 +463,7 @@
                                             <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="gnU-y3-Ztq"/>
                                         </connections>
                                     </switch>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csG-ze-pVa" userLabel="playView">
+                                    <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csG-ze-pVa" userLabel="playView">
                                         <rect key="frame" x="107" y="337" width="160" height="160"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lH-0n-gCy" userLabel="playButton">
@@ -527,7 +527,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.36455870559999998" green="0.76804551129999998" blue="1" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.36470588235294116" green="0.66274509803921566" blue="1" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="mIS-8r-Mih" secondAttribute="centerX" id="0Sf-Ww-gU1"/>
                                     <constraint firstAttribute="centerX" secondItem="csG-ze-pVa" secondAttribute="centerX" id="TJc-1y-Qlb"/>
@@ -536,7 +536,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.29458390961369507" green="0.20811310825051205" blue="0.97236032196969702" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29411764705882354" green="0.20784313725490197" blue="0.97254901960784312" alpha="0.64000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ATp-ag-qPu" firstAttribute="leading" secondItem="aBo-s0-XUj" secondAttribute="leading" id="6zy-YG-LYK"/>
                             <constraint firstAttribute="trailing" secondItem="ATp-ag-qPu" secondAttribute="trailing" id="HS9-J5-6Ss"/>
@@ -581,14 +581,11 @@
                         <outlet property="selectedTimeLabel" destination="e7j-x9-NZH" id="OPH-ZK-6jv"/>
                         <outlet property="sendToParseButton" destination="rS5-Gt-l1l" id="0tA-Hr-KDd"/>
                         <outlet property="titleLabel" destination="bJy-OJ-6mB" id="rGo-gI-W8f"/>
-                        <segue destination="r5R-Zs-RqR" kind="popoverPresentation" identifier="playMemo" popoverAnchorView="WHx-eQ-5d8" id="hUC-yl-tsB">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431.5" y="-122.5"/>
+            <point key="canvasLocation" x="219.5" y="-106.5"/>
         </scene>
         <!--playMemoVC-->
         <scene sceneID="KLb-AE-iEg">
@@ -667,7 +664,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pN-p0-QW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1507.5" y="685.5"/>
+            <point key="canvasLocation" x="431.5" y="1541.5"/>
         </scene>
         <!--Find Friends-->
         <scene sceneID="AEx-AA-Weg">
@@ -746,7 +743,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tu4-Zp-qad">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHZ-SU-qpE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36470588235294116" green="0.66274509803921566" blue="1" alpha="0.55000000000000004" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tu4-Zp-qad">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
@@ -756,10 +757,13 @@
                                 </date>
                             </datePicker>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Tu4-Zp-qad" secondAttribute="width" id="4rf-tk-mcA"/>
+                            <constraint firstItem="sHZ-SU-qpE" firstAttribute="leading" secondItem="AxR-65-ixM" secondAttribute="leading" id="NEX-Gl-hQy"/>
+                            <constraint firstItem="T6n-Tg-mvz" firstAttribute="top" secondItem="sHZ-SU-qpE" secondAttribute="bottom" id="OFk-zL-2DA"/>
                             <constraint firstAttribute="height" secondItem="Tu4-Zp-qad" secondAttribute="height" id="Wfh-Sb-5QF"/>
+                            <constraint firstAttribute="trailing" secondItem="sHZ-SU-qpE" secondAttribute="trailing" id="ZMF-3k-tiJ"/>
+                            <constraint firstItem="sHZ-SU-qpE" firstAttribute="top" secondItem="MPB-Tv-bb9" secondAttribute="bottom" id="cNW-0w-8ck"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

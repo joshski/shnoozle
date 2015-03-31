@@ -16,14 +16,13 @@
     SCLAlertView *alert;
     BOOL *date;
     AVAudioPlayer *memoPlayer;
-
+    NSTimeInterval intervalToAlarm;
 }
 
 @property (strong, nonatomic) TimeOfDay *timeOfDay;
 @property (nonatomic) AVAudioPlayer *player;
 @property (weak, nonatomic) IBOutlet UIView *playView;
 @property (weak, nonatomic) IBOutlet UIButton *sendToParseButton;
-
 
 @end
 
@@ -44,17 +43,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self recorderSettings];
-    self.recordView.layer.cornerRadius = 80;
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
-    self.playView.layer.cornerRadius=80;
-    self.sendToParseButton.layer.cornerRadius=10;
-    
+    [self cornerRadius];
+
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
 }
-
+-(void)cornerRadius {
+    self.recordView.layer.cornerRadius = 80;
+    self.playView.layer.cornerRadius=80;
+    self.sendToParseButton.layer.cornerRadius=10;
+}
 - (void)updateAlarmTime {
     NSUInteger *savedAlarmHour = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmHour"];
     NSUInteger *savedAlarmMinute = (NSUInteger*)[[NSUserDefaults standardUserDefaults] integerForKey:@"AlarmMinute"];
@@ -159,7 +160,7 @@
     localNotification.soundName=@"alarm1.wav";
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    NSTimeInterval intervalToAlarm = [fireTime timeIntervalSinceDate:now ];
+    intervalToAlarm = [fireTime timeIntervalSinceDate:now ];
     [NSTimer scheduledTimerWithTimeInterval:intervalToAlarm
                                      target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
 
@@ -208,12 +209,22 @@
 
 
 - (void)changeSwitch:(id)sender{
-    if([sender isOn]){
+    
+    if([sender isOn])
+        
+    {
         
         _selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
-    } else{
+        
+    }
+    
+    else
+        
+    {
 
         _selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
+        [timer invalidate];
+        timer = nil;
     }
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

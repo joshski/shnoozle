@@ -52,111 +52,101 @@
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
     else {
-        [self _presentHomeViewControllerAnimated:YES];
-
+        [self transferToNext];
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 
-- (void)parse {
-    PFUser *user = [PFUser user];
-  
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            // Hooray! Let them use the app now.
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-        }
-    }];
-}
-- (IBAction)createUser:(id)sender {
-    [self parse];
-    
-}
-
-- (IBAction)loginButtonTouchHandler:(id)sender  {
+- (void)FBRequest:(PFUser *)user error:(NSError *)error {
     
     // Set permissions required from the facebook user account
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location",@"user_friends"];
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        if (!error) {
+            [self transferToNext];
+        }
         
-        if (!user) {
-            NSString *errorMessage = nil;
-            if (!error) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-                errorMessage = @"Uh oh. The user cancelled the Facebook login.";
-            } else {
-                NSLog(@"Uh oh. An error occurred: %@", error);
-                errorMessage = [error localizedDescription];
-            }
-            SCLAlertView *alert = [[SCLAlertView alloc] init];
-            
-            [alert showError:self title:@"Log In Error" subTitle:errorMessage closeButtonTitle:@"Done" duration:0.0f]; // Notice
-        }
-        else {
-            if (user.isNew) {
-                NSLog(@"User with facebook signed up and logged in!");
-            } else {
-                NSLog(@"User with facebook logged in!");
-            }
-            
-            NSLog(@"should now present users details view controller");
-            
-            FBRequest *request = [FBRequest requestForMe];
-            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                if (!error) {
-                    NSDictionary *userData = (NSDictionary *)result;
-                    NSLog(@"facebook dictionary %@",userData);
-                    NSString *name = userData[@"name"];
-                    NSLog(@"first name ?? %@",name);
-                    
-                    
-                }
-        }];
-            
-//            FBRequest* friendsRequest = [FBRequest requestForMyFriends];
-//            
-//            [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
-//                                                          
-//                                                          NSDictionary* result,
-//                                                          NSError *error) {
-//                if(!error){
-//                    NSMutableArray *facebookUIDs = [NSMutableArray array];
-//                    NSArray* friends = [result objectForKey:@"data"];
-//                    NSLog(@"Found: %i friends", friends.count);
-//                    // STUFFS
-//                    for (NSDictionary<FBGraphUser>* friend in friends) {
-//                        [facebookUIDs addObject:friend.id];
-//                    }
-//                    
-//                    
-//                }
-//            }];
-            
-        }
+        [self FBRequest:user error:error];
     }];
+    
+    if (!user) {
+        NSString *errorMessage = nil;
+        if (!error) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            errorMessage = @"Uh oh. The user cancelled the Facebook login.";
+        } else {
+            NSLog(@"Uh oh. An error occurred: %@", error);
+            errorMessage = [error localizedDescription];
+        }
+        SCLAlertView *alert = [[SCLAlertView alloc] init];
+        
+        [alert showError:self title:@"Log In Error" subTitle:errorMessage closeButtonTitle:@"Done" duration:0.0f]; // Notice
+    }
+    
+    else {
+        if (user.isNew) {
+            NSLog(@"User with facebook signed up and logged in!");
+        } else {
+            NSLog(@"User with facebook logged in!");
+        }
+        
+        [self transferToNext];
+        
+
+    }
+}
+
+-(void)requestFBdetails{
+    //            FBRequest *request = [FBRequest requestForMe];
+    //            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+    //                if (!error) {
+    //                    NSDictionary *userData = (NSDictionary *)result;
+    //                    NSLog(@"facebook dictionary %@",userData);
+    //                    NSString *name = userData[@"name"];
+    //                    NSLog(@"first name ?? %@",name);
+    //
+    //
+    //                }
+    //        }];
+    
+    //            FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+    //
+    //            [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+    //
+    //                                                          NSDictionary* result,
+    //                                                          NSError *error) {
+    //                if(!error){
+    //                    NSMutableArray *facebookUIDs = [NSMutableArray array];
+    //                    NSArray* friends = [result objectForKey:@"data"];
+    //                    NSLog(@"Found: %i friends", friends.count);
+    //                    // STUFFS
+    //                    for (NSDictionary<FBGraphUser>* friend in friends) {
+    //                        [facebookUIDs addObject:friend.id];
+    //                    }
+    //
+    //
+    //                }
+    //            }];
+}
+
+-(void)transferToNext{
+    [self dismissModalViewControllerAnimated:YES];
+    [self _presentHomeViewControllerAnimated:YES];
+    
     
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [self dismissModalViewControllerAnimated:YES];
-     [self _presentHomeViewControllerAnimated:YES];
-    
-   
+    [self transferToNext];
+    NSLog(@"BLA");
     
 }
 
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
-    [self dismissModalViewControllerAnimated:YES];
-    [self _presentHomeViewControllerAnimated:YES];
-    
-    [self loginButtonTouchHandler:self];
+    [self transferToNext];
+
 }
 
 - (void)_presentHomeViewControllerAnimated:(BOOL)animated {

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC92CB1643D457E4C0401377"
+               BlueprintIdentifier = "EF6D3E35C9D025785D8524FE"
                BuildableName = "libPods-JTHamburgerButton.a"
                BlueprintName = "Pods-JTHamburgerButton"
                ReferencedContainer = "container:Pods.xcodeproj">

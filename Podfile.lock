@@ -1,5 +1,6 @@
 PODS:
   - Bolts (1.1.4)
+  - EKVideoController (0.0.1)
   - Facebook-iOS-SDK (3.23.0):
     - Bolts (~> 1.0)
   - JTHamburgerButton (1.0.1)
@@ -17,6 +18,7 @@ PODS:
   - SCLAlertView-Objective-C (0.6.1)
 
 DEPENDENCIES:
+  - EKVideoController
   - Facebook-iOS-SDK
   - JTHamburgerButton (~> 1.0)
   - Kiwi
@@ -28,6 +30,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
+  EKVideoController: 13e84d33dca52e5e41b18e28587e994384be223f
   Facebook-iOS-SDK: fcb0fd5bcdb50f1fe9ce27bf6b8cdf1aa5b2b0ed
   JTHamburgerButton: 1b3d18fd88aee45174c1bf20ae07f130783d497a
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55

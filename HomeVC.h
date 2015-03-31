@@ -2,6 +2,7 @@
 #import <JTHamburgerButton.h>
 #import "TimeOfDay.h"
 #import <RESideMenu/RESideMenu.h>
+#import "EKVideoController.h"
 
 
 @interface HomeVC : UIViewController <RESideMenuDelegate>

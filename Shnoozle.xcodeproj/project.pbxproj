@@ -68,6 +68,7 @@
 		9BE723DECB521D630272C238 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A9008DDF8A1740655721F0F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B31D19171ACB5DF200EC6D5A /* Video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video.mp4; sourceTree = "<group>"; };
 		B33614511AC44AC4001CE51F /* PlayMemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMemoVC.h; path = ../PlayMemoVC.h; sourceTree = "<group>"; };
 		B33614521AC44AC4001CE51F /* PlayMemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMemoVC.m; path = ../PlayMemoVC.m; sourceTree = "<group>"; };
 		B34AFF691AADBAD5007269C4 /* Shnoozle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shnoozle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +271,7 @@
 		B3E5FCDA1AC1C3B20043EFE7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B31D19171ACB5DF200EC6D5A /* Video.mp4 */,
 				B3BA0DDB1ACAE0DF0085B94E /* alarm@2x.png */,
 				B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */,
 				B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */,

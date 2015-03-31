@@ -10,6 +10,7 @@
 #import "RERootVC.h"
 #import <Parse/Parse.h>
 #import "MZTimerLabel.h"
+
 @interface HomeVC (){
     AVAudioRecorder *recorder;
     NSTimer *timer;
@@ -20,6 +21,7 @@
     int currMinute;
     int currSeconds;
     MZTimerLabel *countdown;
+    BOOL alarmOn ;
 
 }
 
@@ -47,15 +49,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    countdown = [[MZTimerLabel alloc] initWithLabel:self.countDownLabel andTimerType:MZTimerLabelTypeTimer];
+    hamburgerMenuButton.lineColor=[UIColor redColor];
+    [hamburgerMenuButton updateAppearance];
+    [countdown resetTimerAfterFinish];
+
     [self recorderSettings];
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     [self cornerRadius];
-    countdown = [[MZTimerLabel alloc] initWithLabel:self.countDownLabel andTimerType:MZTimerLabelTypeTimer];
-    hamburgerMenuButton.lineColor=[UIColor redColor];
-    [hamburgerMenuButton updateAppearance];
-    [countdown resetTimerAfterFinish];
+    [self alarm];
+        if (alarmOn) {
+        [countdown setCountDownTime:intervalToAlarm];
+
+    }
+        else{
+            _countDownLabel.text=@"";
+        }
 
 }
 -(void)cornerRadius {
@@ -74,13 +85,15 @@
         [alarmToggle setOn:YES animated:YES];
         alarmToggle.enabled = true;
         titleLabel.text=@"";
+        alarmOn=true;
 
     }
     else {
         titleLabel.text=@"No Alarm Set";
         [alarmToggle setOn:NO animated:YES];
         alarmToggle.enabled = FALSE;
-        
+        alarmOn=false;
+
     }
 }
 
@@ -156,6 +169,7 @@
 
         SCLAlertView *alarmOnAlertTom = [[SCLAlertView alloc] init];
         [alarmOnAlertTom showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        alarmOn=true;
     
 
     }
@@ -163,6 +177,7 @@
         SCLAlertView *alarmOnAlertTo = [[SCLAlertView alloc] init];
 
         [alarmOnAlertTo showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+        alarmOn=true;
 
         
     }
@@ -209,6 +224,8 @@
         [countdown start];
 
         [self stopPlayer];
+        alarmOn=true;
+
 
     }];
 
@@ -217,6 +234,7 @@
         [countdown setCountDownTime:intervalToAlarm];
         [countdown start];
         [self stopPlayer];
+        alarmOn=true;
 
 
     }];
@@ -248,11 +266,13 @@
 
 
 - (void)changeSwitch:(id)sender{
+    [countdown reset];
     
+
     if([sender isOn])
         
     {
-        
+        [self alarm];
         _selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
         
     }

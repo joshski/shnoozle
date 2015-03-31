@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_Bolts 1
 #define COCOAPODS_VERSION_PATCH_Bolts 4
 
+// EKVideoController
+#define COCOAPODS_POD_AVAILABLE_EKVideoController
+#define COCOAPODS_VERSION_MAJOR_EKVideoController 0
+#define COCOAPODS_VERSION_MINOR_EKVideoController 0
+#define COCOAPODS_VERSION_PATCH_EKVideoController 1
+
 // Facebook-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3

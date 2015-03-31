@@ -543,7 +543,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.29411764705882354" green="0.20784313725490197" blue="0.97254901960784312" alpha="0.64000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.29411764705882354" green="0.20784313725490197" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ATp-ag-qPu" firstAttribute="leading" secondItem="aBo-s0-XUj" secondAttribute="leading" id="6zy-YG-LYK"/>
                             <constraint firstAttribute="trailing" secondItem="ATp-ag-qPu" secondAttribute="trailing" id="HS9-J5-6Ss"/>

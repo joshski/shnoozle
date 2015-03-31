@@ -180,7 +180,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zif-cr-fJF" userLabel="playPauseBtn">
                                                 <rect key="frame" x="321" y="55" width="32" height="32"/>
-                                                <state key="normal" image="playBtn.png">
+                                                <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -466,6 +466,15 @@
                                     <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="gnU-y3-Ztq"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSw-k2-mgZ">
+                                <rect key="frame" x="172" y="370" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bla:" destination="FjB-k4-snd" eventType="touchUpInside" id="BgF-7y-CD0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29458390961369507" green="0.20811310825051205" blue="0.97236032196969702" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -723,6 +732,5 @@
         <image name="menu.png" width="16" height="16"/>
         <image name="mic.png" width="256" height="256"/>
         <image name="play.png" width="256" height="256"/>
-        <image name="playBtn.png" width="32" height="32"/>
     </resources>
 </document>

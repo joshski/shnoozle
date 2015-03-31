@@ -63,13 +63,7 @@
 
 - (void)parse {
     PFUser *user = [PFUser user];
-    //    user.username = usernameInput.text;
-    //    user.password = passwordInput.text;
-    //    user.email = @"email@example.com";
-    //
-    //    // other fields can be set if you want to save more information
-    //    user[@"phone"] = @"650-555-0000";
-    
+  
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
@@ -122,6 +116,7 @@
                     NSString *name = userData[@"name"];
                     NSLog(@"first name ?? %@",name);
                     
+                    
                 }
         }];
             
@@ -152,7 +147,8 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissModalViewControllerAnimated:YES];
      [self _presentHomeViewControllerAnimated:YES];
-    NSLog(@"yoyoy");
+    
+   
     
 }
 
@@ -164,8 +160,7 @@
 }
 
 - (void)_presentHomeViewControllerAnimated:(BOOL)animated {
-//    UserDetailsViewController *detailsViewController = [[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped];
-//    [self.navigationController pushViewController:detailsViewController animated:animated];
+
     
     [self performSegueWithIdentifier:@"transitionToHomeController" sender:self];
 

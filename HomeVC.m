@@ -8,7 +8,7 @@
 #import "PlayMemoVC.h"
 #import "LeftMenuVC.h"
 #import "RERootVC.h"
-
+#import <Parse/Parse.h>
 
 @interface HomeVC (){
     AVAudioRecorder *recorder;
@@ -90,7 +90,25 @@
 
 
 
-
+-(void)saveUsersName {
+    if ([PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        FBRequest *request = [FBRequest requestForMe];
+        [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (!error) {
+                NSDictionary *userData = (NSDictionary *)result;
+                NSString *name = userData[@"name"];
+                [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+            }
+        }];
+    }
+    if ([PFAnonymousUtils isLinkedWithUser:[PFUser currentUser]]) {
+        PFQuery *usernameQuery = [PFQuery queryWithClassName:@"_User"];
+        PFObject *user = [usernameQuery getFirstObject];
+        [user fetchIfNeeded];
+        PFUser *currentUser = [user objectForKey:@"username"];
+        NSLog(@"username: %@",currentUser.username); // not null
+    }
+}
 
 
 -(void)alarm {
@@ -141,6 +159,10 @@
                                      target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
 
     
+}
+- (IBAction)bla:(id)sender {
+    [self saveUsersName];
+
 }
 
 -(void)playAlarmSound:(NSTimer *)timer{

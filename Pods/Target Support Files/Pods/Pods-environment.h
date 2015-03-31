@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_JTHamburgerButton 0
 #define COCOAPODS_VERSION_PATCH_JTHamburgerButton 1
 
+// MZTimerLabel
+#define COCOAPODS_POD_AVAILABLE_MZTimerLabel
+#define COCOAPODS_VERSION_MAJOR_MZTimerLabel 0
+#define COCOAPODS_VERSION_MINOR_MZTimerLabel 5
+#define COCOAPODS_VERSION_PATCH_MZTimerLabel 1
+
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 #define COCOAPODS_VERSION_MAJOR_Parse 1

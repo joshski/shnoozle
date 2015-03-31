@@ -342,7 +342,7 @@
         <!--RootVC-->
         <scene sceneID="iHF-jh-dFf">
             <objects>
-                <viewController storyboardIdentifier="RERootVC" id="SzQ-Yz-9sC" customClass="RERootVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RERootVC" definesPresentationContext="YES" id="SzQ-Yz-9sC" customClass="RERootVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sKA-UH-95n"/>
                         <viewControllerLayoutGuide type="bottom" id="DX8-tO-faL"/>
@@ -527,6 +527,12 @@
                                         <color key="textColor" red="0.5179542855" green="1" blue="0.36587700969999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxp-wb-I9J">
+                                        <rect key="frame" x="8" y="126" width="359" height="39"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-CondensedLight" family="American Typewriter" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.66274509803921566" blue="1" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -574,6 +580,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="alarmToggle" destination="nGM-T0-MCB" id="mDU-eW-OPu"/>
+                        <outlet property="countDownLabel" destination="bxp-wb-I9J" id="7F8-X3-7Vc"/>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
                         <outlet property="hamburgerMenuButton" destination="8Mh-Zl-nv4" id="X5J-c8-BnY"/>
                         <outlet property="playView" destination="csG-ze-pVa" id="les-rp-hgo"/>

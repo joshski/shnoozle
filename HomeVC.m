@@ -9,7 +9,7 @@
 #import "LeftMenuVC.h"
 #import "RERootVC.h"
 #import <Parse/Parse.h>
-
+#import "MZTimerLabel.h"
 @interface HomeVC (){
     AVAudioRecorder *recorder;
     NSTimer *timer;
@@ -17,12 +17,17 @@
     BOOL *date;
     AVAudioPlayer *memoPlayer;
     NSTimeInterval intervalToAlarm;
+    int currMinute;
+    int currSeconds;
+    MZTimerLabel *countdown;
+
 }
 
 @property (strong, nonatomic) TimeOfDay *timeOfDay;
 @property (nonatomic) AVAudioPlayer *player;
 @property (weak, nonatomic) IBOutlet UIView *playView;
 @property (weak, nonatomic) IBOutlet UIButton *sendToParseButton;
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
 
 @end
 
@@ -47,7 +52,7 @@
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     [self cornerRadius];
-
+    countdown = [[MZTimerLabel alloc] initWithLabel:self.countDownLabel andTimerType:MZTimerLabelTypeTimer];
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
 }
@@ -118,6 +123,7 @@
 
 
 -(void)alarm {
+    
     _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
     [self isTimeLabelEmpty];
     [self updateAlarmTime];
@@ -132,6 +138,7 @@
     
     [comps setMinute:(unsigned long)savedAlarmTime.minutes];
     [comps setHour:(unsigned long)savedAlarmTime.hours];
+    
     NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
     
     if ([now compare:newDatefromComp] == NSOrderedDescending ) {
@@ -147,6 +154,7 @@
 
         SCLAlertView *alarmOnAlertTom = [[SCLAlertView alloc] init];
         [alarmOnAlertTom showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+    
 
     }
     else {
@@ -171,8 +179,21 @@
                                      target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
 
     
+    [countdown setCountDownTime:intervalToAlarm];
+    
+    [countdown start];
 }
-
+-(void)updateCountDown
+{
+    //Get the time left until the specified date
+    NSInteger ti = intervalToAlarm;
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600) % 24;
+    
+    //Update the label with the remaining time
+    self.countDownLabel.text = [NSString stringWithFormat:@"%02li hrs %02li min %02li sec",  (long)hours, (long)minutes, (long)seconds];
+}
 
 -(void)playAlarmSound:(NSTimer *)timer{
     [self runPlayer];
@@ -300,7 +321,7 @@
         [[NSUserDefaults standardUserDefaults] setInteger:(unsigned long)source.timeOfDay.hours forKey:@"AlarmHour"];
         [[NSUserDefaults standardUserDefaults] setInteger:(unsigned long)source.timeOfDay.minutes forKey:@"AlarmMinute"];
         
-        
+        [countdown reset];
         
         [self alarm];
         

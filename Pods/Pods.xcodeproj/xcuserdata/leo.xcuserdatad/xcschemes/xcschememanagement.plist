@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MZTimerLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,57 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>217EF927D1E887AFAAF6B070</key>
+		<key>25E0A6FE9FE765348BC6D673</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31EF2844B6A63BD0EDB586B7</key>
+		<key>3762C264BBD1D01D6E7557A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>432217FA6C7C84E1F016629E</key>
+		<key>604E716EDBCE9F28062E5EB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4FC57979FF8CD9B6EC884943</key>
+		<key>61DA2A95077FC99CE0E4DF84</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5727EC3DC8E40D78F7F63E93</key>
+		<key>729DBFFA2DFEBB049A4B7CB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8E9B868132D8574AA2E8CFA8</key>
+		<key>845E0CE427DE8735C48A098C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A2C0D583A74693E79429FFA0</key>
+		<key>964E1D01D2C566E98AEF8444</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5B6D328C1C08EEBBDBEB2FD</key>
+		<key>A2BB01B8CFC6E73D665D7A88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9994F3370658E8E73D5D799</key>
+		<key>AF3104C136049E75697E306A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD24C28E8E03CA413C82DA0E</key>
+		<key>B77B9593D60C01DA91AFAB9C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1BB613628A0E271623A3A46</key>
+		<key>EAA355F13284F8B4C0DB9FF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC92CB1643D457E4C0401377</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -24,7 +24,7 @@
     [Parse setApplicationId:@"aFhAuGikNIDZLxU3WwT4HasEXKsxq2cfsZizGGRo"
                   clientKey:@"1hG7CQ86gzfllhq2pazB3iEpXpRMw6Jmk26OtlJQ"];
     [PFFacebookUtils initializeFacebook];
-    
+    application.applicationIconBadgeNumber = 0;
     NSURL *_chosenSongURL = [[NSURL alloc] init];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {

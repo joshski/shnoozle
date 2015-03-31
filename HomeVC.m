@@ -22,6 +22,7 @@
 @property (strong, nonatomic) TimeOfDay *timeOfDay;
 @property (nonatomic) AVAudioPlayer *player;
 @property (weak, nonatomic) IBOutlet UIView *playView;
+@property (weak, nonatomic) IBOutlet UIButton *sendToParseButton;
 
 
 @end
@@ -48,6 +49,7 @@
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     self.playView.layer.cornerRadius=80;
+    self.sendToParseButton.layer.cornerRadius=10;
     
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
@@ -163,10 +165,7 @@
 
     
 }
-- (IBAction)bla:(id)sender {
-    [self saveUsersName];
 
-}
 
 -(void)playAlarmSound:(NSTimer *)timer{
     [self runPlayer];
@@ -302,6 +301,10 @@
 //                                                 animated:YES];
     
 }
+- (IBAction)playCloseTapped:(id)sender {
+    [self showRecordView];
+ 
+}
 
 - (IBAction)recordTouchUp:(id)sender {
     [recorder stop];
@@ -328,26 +331,104 @@
     recorder = [[AVAudioRecorder alloc] initWithURL:tempMemoURL settings:recSettings error:nil];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
-    
+   
+    [self showMemoView];
+    [recordView.layer removeAllAnimations];
+    [recordView setBackgroundColor: [UIColor colorWithRed:255/255 green:16/255 blue:26/255 alpha:0.5]];
+    [self recordButtonUpOutside:self];
+}
+
+-(void)showMemoView {
     recordView.hidden=true;
+    
     [UIView transitionWithView:self.recordView
                       duration:0.25
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
                         _playView.hidden=false;
+                        _sendToParseButton.hidden=false;
                         [UIView transitionWithView:self.playView
                                           duration:0.5
                                            options:UIViewAnimationOptionTransitionFlipFromLeft
                                         animations:^{
-                                         
+                                            
+                                            
+                                        }
+                                        completion:nil];
+                        [UIView transitionWithView:self.sendToParseButton
+                                          duration:0.5
+                                           options:UIViewAnimationOptionTransitionFlipFromBottom
+                                        animations:^{
+                                            
                                             
                                         }
                                         completion:nil];
                     }
                     completion:nil];
-    [recordView.layer removeAllAnimations];
-    [recordView setBackgroundColor: [UIColor colorWithRed:255/255 green:16/255 blue:26/255 alpha:0.5]];
-    [self recordButtonUpOutside:self];
+    
+}
+
+
+-(void)showRecordView {
+    _playView.hidden=true;
+    _sendToParseButton.hidden=true;
+    [UIView transitionWithView:self.playView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        recordView.hidden=false;
+                        [UIView transitionWithView:self.recordView
+                                          duration:0.25
+                                           options:UIViewAnimationOptionTransitionCrossDissolve
+                                        animations:^{
+                                            
+                                            
+                                        }
+                                        completion:nil];
+                        
+                    }
+                    completion:nil];
+    [UIView transitionWithView:self.sendToParseButton
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        
+                        
+                    }
+                    completion:nil];
+    
+}
+
+- (IBAction)sendToParse:(id)sender {
+    PFObject *testObject = [PFObject objectWithClassName:@"AudioFiles"];
+    
+    //get the audio in NSData format
+    NSData *audioData = [NSData dataWithContentsOfURL:tempMemoURL];
+    NSLog(@"audioData being sent.... = %@", audioData);
+    
+    //create audiofile as a property
+    PFFile *audioFile = [PFFile fileWithName:@"audio.caf" data:audioData];
+    testObject[@"audioFile"] = audioFile;
+    
+    //save
+    [testObject saveInBackground];
+    
+    
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SCLAlertView *uploadAlert=[[SCLAlertView alloc]init];
+
+        if (!error) {
+            
+            [uploadAlert showSuccess:self title:@"Success" subTitle:@"Memo has been uploaded to parse" closeButtonTitle:@"OK" duration:0.0f];
+            [self showRecordView];
+            
+        } else {
+            [uploadAlert showError:self title:@"Error" subTitle:@"Error Sending" closeButtonTitle:@"OK" duration:0.0f];
+            
+            
+        }
+        
+    }];
 }
 
 - (IBAction)didCloseButtonTouch:(JTHamburgerButton *)sender
@@ -374,9 +455,7 @@
     
 }
 
--(void)playMemo{
-    
-}
+
 - (IBAction)playButtonTapped:(id)sender {
   
     memoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:tempMemoURL error:nil];

@@ -26,23 +26,22 @@
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker
   didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
 {
-    MPMediaItem *i;
+    MPMediaItem *mpMediaItem;
     
     self.mediaItem = nil;
     if (mediaItemCollection.items.count <= 0) {
-        goto exit;
     }
     
-    i = mediaItemCollection.items[0];
-    if ([[i valueForProperty:MPMediaItemPropertyIsCloudItem] boolValue]) {
+    mpMediaItem = mediaItemCollection.items[0];
+    if ([[mpMediaItem valueForProperty:MPMediaItemPropertyIsCloudItem] boolValue]) {
         self.songTitleLabel.text = @"(sorry, not on the device)";
-        goto exit;
     }
     
-    self.mediaItem = i;
-    self.songTitleLabel.text = [i valueForProperty:MPMediaItemPropertyTitle];
+    self.mediaItem = mpMediaItem;
+    self.songTitleLabel.text = [mpMediaItem valueForProperty:MPMediaItemPropertyTitle];
+    NSString *songUrl =[mpMediaItem valueForProperty:MPMediaItemPropertyAssetURL];
     NSLog(@"selected title: %@", self.songTitleLabel.text);
-    NSLog(@"URL: %@", [i valueForProperty:MPMediaItemPropertyAssetURL]);
+    NSLog(@"URL: %@", songUrl);
     
 exit:
     [self dismissViewControllerAnimated:YES completion:nil];

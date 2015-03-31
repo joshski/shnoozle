@@ -158,7 +158,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-rT-ARK" userLabel="pickerButton">
-                                <rect key="frame" x="299" y="132" width="87" height="32"/>
+                                <rect key="frame" x="311" y="117" width="64" height="64"/>
                                 <state key="normal" image="alarm.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -173,7 +173,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Sv-yVp">
-                                <rect key="frame" x="7" y="200" width="354" height="31"/>
+                                <rect key="frame" x="7" y="235" width="354" height="31"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="DPW-gx-d9Z" eventType="valueChanged" id="BuV-6q-Vwv"/>
                                 </connections>
@@ -184,6 +184,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zif-cr-fJF" userLabel="playPauseBtn">
+                                <rect key="frame" x="311" y="181" width="64" height="64"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPauseTapped:" destination="DPW-gx-d9Z" eventType="touchUpInside" id="9xV-9u-5Nl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.31650904605263158" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -203,6 +212,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="playPauseBtn" destination="zif-cr-fJF" id="RWm-m6-cig"/>
                         <outlet property="slider" destination="vk1-Sv-yVp" id="YSI-a3-05K"/>
                         <outlet property="songArtistLabel" destination="seT-bd-VyA" id="AjZ-Qq-kQx"/>
                         <outlet property="songTitleLabel" destination="hiu-Y4-fDA" id="ZcO-ft-wbN"/>

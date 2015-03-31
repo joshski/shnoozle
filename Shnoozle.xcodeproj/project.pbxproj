@@ -34,6 +34,8 @@
 		B38CFF661AC7523E003FC9A7 /* FindFriendsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38CFF651AC7523E003FC9A7 /* FindFriendsTVC.xib */; };
 		B39ADEE01AC6389C005048F3 /* MenuBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */; };
 		B3BA0DDC1ACAE0DF0085B94E /* alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDB1ACAE0DF0085B94E /* alarm@2x.png */; };
+		B3BA0DDE1ACAED2F0085B94E /* playBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */; };
+		B3BA0DE01ACAEFFC0085B94E /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */; };
 		B3C7949E1AC5F713008A6B9B /* messages@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C7949D1AC5F713008A6B9B /* messages@2x.png */; };
 		B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerVC.m */; };
 		B3DFE23C1AC421DF00225DBF /* FindFriendsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DFE23B1AC421DF00225DBF /* FindFriendsVC.m */; };
@@ -105,6 +107,8 @@
 		B38CFF651AC7523E003FC9A7 /* FindFriendsTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindFriendsTVC.xib; sourceTree = "<group>"; };
 		B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuBackground@2x.png"; path = "../../MenuBackground@2x.png"; sourceTree = "<group>"; };
 		B3BA0DDB1ACAE0DF0085B94E /* alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm@2x.png"; sourceTree = "<group>"; };
+		B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playBtn@2x.png"; sourceTree = "<group>"; };
+		B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = SOURCE_ROOT; };
 		B3C7949D1AC5F713008A6B9B /* messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "messages@2x.png"; path = "../../messages@2x.png"; sourceTree = "<group>"; };
 		B3D540701AC30C3700706F6E /* TimePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerVC.h; path = ../TimePickerVC.h; sourceTree = "<group>"; };
 		B3D540711AC30C3700706F6E /* TimePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePickerVC.m; path = ../TimePickerVC.m; sourceTree = "<group>"; };
@@ -268,11 +272,13 @@
 			children = (
 				B3BA0DDB1ACAE0DF0085B94E /* alarm@2x.png */,
 				B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */,
+				B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */,
 				B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */,
 				B3695DD51AC62DFF00B38D5C /* menu@2x.png */,
 				B3695DDB1AC6358C00B38D5C /* fb@2x.png */,
 				B3C7949D1AC5F713008A6B9B /* messages@2x.png */,
 				B3E5FCDB1AC1C3B20043EFE7 /* mic.png */,
+				B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */,
 				B3E5FCDF1AC1C4B90043EFE7 /* play.png */,
 				B3E5FCE31AC1C7670043EFE7 /* close.png */,
 				B3E5FCE71AC1CA230043EFE7 /* zzz.png */,
@@ -375,6 +381,8 @@
 				B3EBE9811AC4AF8200ED8BE3 /* Stars@2x.png in Resources */,
 				B3E5FCEA1AC1CA230043EFE7 /* zzz@2x.png in Resources */,
 				B3C7949E1AC5F713008A6B9B /* messages@2x.png in Resources */,
+				B3BA0DE01ACAEFFC0085B94E /* pause@2x.png in Resources */,
+				B3BA0DDE1ACAED2F0085B94E /* playBtn@2x.png in Resources */,
 				B3E5FCE11AC1C4B90043EFE7 /* play.png in Resources */,
 				B3E5FCE21AC1C4B90043EFE7 /* play@2x.png in Resources */,
 				B3E5FCDE1AC1C3B20043EFE7 /* mic@2x.png in Resources */,

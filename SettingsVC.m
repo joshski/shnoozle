@@ -8,13 +8,16 @@
 
 #import "SettingsVC.h"
 #import <RESideMenu/RESideMenu.h>
-
-@interface SettingsVC ()
+#import <AVFoundation/AVFoundation.h>
+@interface SettingsVC (){
+    bool playing;
+}
 @property (nonatomic) MPMediaItem *mediaItem;
 @property (weak, nonatomic) IBOutlet UILabel *songTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *songArtistLabel;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
-
+@property (nonatomic) AVAudioPlayer *player;
+@property (weak, nonatomic) IBOutlet UIButton *playPauseBtn;
 
 @end
 
@@ -25,10 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self labelStates];
+
     float volume = [[NSUserDefaults standardUserDefaults]
                            floatForKey:@"AlarmVolume"];
     _slider.value=volume*100;
-    
+     playing = NO;
 }
 - (IBAction)sliderValueChanged:(id)sender {
     float volume= _slider.value / 100.0;
@@ -87,8 +91,8 @@
     [self presentViewController:picker animated:YES completion: nil];
 }
 - (void)labelStates {
-    //    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    //    _chosenSongURL = [appDelegate chosenSongURL];
+    [_playPauseBtn setBackgroundImage:[UIImage imageNamed:@"playBtn@2x.png"] forState:UIControlStateNormal];
+
     NSString *songTitle = [[NSUserDefaults standardUserDefaults]
                            stringForKey:@"AlarmSoundTitle"];
     NSString *songArtist = [[NSUserDefaults standardUserDefaults]
@@ -111,6 +115,38 @@
         
     }
 
+}
+
+-(void)PlayPause{
+    if (playing==NO) {
+        [_playPauseBtn setBackgroundImage:[UIImage imageNamed:@"pause@2x.png"] forState:UIControlStateNormal];
+        [self runPlayer];
+        playing=YES;
+    }
+    else if(playing==YES){
+        [_playPauseBtn setBackgroundImage:[UIImage imageNamed:@"playBtn@2x.png"] forState:UIControlStateNormal];
+        [self.player pause];
+
+        playing=NO;
+    }
+    
+    
+}
+
+- (void)runPlayer
+{
+    NSString *songString = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"AlarmSound"];
+    NSURL *url=[NSURL URLWithString:songString];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    float volume = [[NSUserDefaults standardUserDefaults]
+                    floatForKey:@"AlarmVolume"];
+    self.player.volume=volume;
+    [self.player play];
+}
+- (IBAction)playPauseTapped:(id)sender {
+    [self PlayPause];
+    
 }
 
 - (IBAction)menuTapped:(id)sender {

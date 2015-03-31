@@ -171,6 +171,9 @@
                             stringForKey:@"AlarmSound"];
     NSURL *url=[NSURL URLWithString:songString];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    float volume = [[NSUserDefaults standardUserDefaults]
+                    floatForKey:@"AlarmVolume"];
+    self.player.volume=volume;
     [self.player play];
 }
 - (void)stopPlayer

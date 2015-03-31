@@ -9,6 +9,7 @@
 #import "LeftMenuVC.h"
 #import "RERootVC.h"
 
+
 @interface HomeVC (){
     AVAudioRecorder *recorder;
     NSTimer *timer;
@@ -17,6 +18,7 @@
 }
 
 @property (strong, nonatomic) TimeOfDay *timeOfDay;
+@property (nonatomic) AVAudioPlayer *player;
 
 
 @end
@@ -143,20 +145,16 @@
 }
 
 -(void)playAlarmSound:(NSTimer *)timer{
+    [self runPlayer];
     SCLAlertView *foregroundAlarmAlert = [[SCLAlertView alloc] init];
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    NSString *songString = [[NSUserDefaults standardUserDefaults]
-                                                  stringForKey:@"AlarmSound"];
-    NSURL *url=[NSURL URLWithString:songString];
-
-    NSLog(@"play alarm sound url %@",url);
-    
-    foregroundAlarmAlert.soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath],url]];
+  
     [foregroundAlarmAlert addButton:@"Snooze" actionBlock:^(void) {
         
         NSTimeInterval snoozeInterval = 900;
         [NSTimer scheduledTimerWithTimeInterval:snoozeInterval
                                          target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
+        [self stopPlayer];
+
     }];
 
 
@@ -164,6 +162,19 @@
 
 }
 
+- (void)runPlayer
+{
+    NSString *songString = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"AlarmSound"];
+    NSURL *url=[NSURL URLWithString:songString];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self.player play];
+}
+- (void)stopPlayer
+{
+    [self.player stop];
+    self.player = nil;
+}
 
 
 - (void)changeSwitch:(id)sender{

@@ -336,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwV-DT-WAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165.5" y="659.5"/>
+            <point key="canvasLocation" x="-67.5" y="1515.5"/>
         </scene>
         <!--RootVC-->
         <scene sceneID="iHF-jh-dFf">
@@ -375,16 +375,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stars.png" translatesAutoresizingMaskIntoConstraints="NO" id="ruP-JM-JW7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="-10" y="-10" width="395" height="687"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ruP-JM-JW7" secondAttribute="bottom" id="7Gv-Xs-bfa"/>
+                            <constraint firstAttribute="bottom" secondItem="ruP-JM-JW7" secondAttribute="bottom" constant="-10" id="7Gv-Xs-bfa"/>
                             <constraint firstItem="ruP-JM-JW7" firstAttribute="top" secondItem="90L-qH-c4h" secondAttribute="bottom" id="8Ez-rT-TcA"/>
-                            <constraint firstItem="ruP-JM-JW7" firstAttribute="top" secondItem="DKY-iK-SPh" secondAttribute="top" id="CfI-Dj-rxn"/>
-                            <constraint firstItem="ruP-JM-JW7" firstAttribute="leading" secondItem="DKY-iK-SPh" secondAttribute="leading" id="XuN-8W-OfM"/>
-                            <constraint firstAttribute="trailing" secondItem="ruP-JM-JW7" secondAttribute="trailing" id="r1B-Yf-LWD"/>
+                            <constraint firstItem="ruP-JM-JW7" firstAttribute="top" secondItem="DKY-iK-SPh" secondAttribute="top" constant="-10" id="CfI-Dj-rxn"/>
+                            <constraint firstItem="ruP-JM-JW7" firstAttribute="leading" secondItem="DKY-iK-SPh" secondAttribute="leading" constant="-10" id="XuN-8W-OfM"/>
+                            <constraint firstAttribute="trailing" secondItem="ruP-JM-JW7" secondAttribute="trailing" constant="-10" id="r1B-Yf-LWD"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -396,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAD-tW-E52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.5" y="-637.5"/>
+            <point key="canvasLocation" x="36.5" y="-636.5"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="ahk-fo-gYG">
@@ -466,24 +466,43 @@
                                     <action selector="switchTapped:" destination="FjB-k4-snd" eventType="valueChanged" id="gnU-y3-Ztq"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSw-k2-mgZ">
-                                <rect key="frame" x="172" y="370" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="bla:" destination="FjB-k4-snd" eventType="touchUpInside" id="BgF-7y-CD0"/>
-                                </connections>
-                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csG-ze-pVa" userLabel="playView">
+                                <rect key="frame" x="107" y="476" width="160" height="160"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lH-0n-gCy" userLabel="playButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonTapped:" destination="FjB-k4-snd" eventType="touchUpInside" id="ow4-sC-VFG"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="59J-Pk-UOX">
+                                        <rect key="frame" x="40" y="46" width="80" height="80"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6lH-0n-gCy" firstAttribute="width" secondItem="csG-ze-pVa" secondAttribute="width" id="EAg-ix-1Rm"/>
+                                    <constraint firstItem="6lH-0n-gCy" firstAttribute="top" secondItem="csG-ze-pVa" secondAttribute="top" id="Smj-S4-r7m"/>
+                                    <constraint firstItem="6lH-0n-gCy" firstAttribute="leading" secondItem="csG-ze-pVa" secondAttribute="leading" id="ZPg-wf-TUE"/>
+                                    <constraint firstItem="6lH-0n-gCy" firstAttribute="height" secondItem="csG-ze-pVa" secondAttribute="height" id="pnf-IH-X08"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.29458390961369507" green="0.20811310825051205" blue="0.97236032196969702" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="csG-ze-pVa" secondAttribute="centerX" id="02q-pf-4aZ"/>
                             <constraint firstItem="ATp-ag-qPu" firstAttribute="leading" secondItem="aBo-s0-XUj" secondAttribute="leading" id="6zy-YG-LYK"/>
+                            <constraint firstAttribute="centerY" secondItem="csG-ze-pVa" secondAttribute="centerY" multiplier="0.6" id="BFf-6s-PQc"/>
+                            <constraint firstItem="mIS-8r-Mih" firstAttribute="width" secondItem="csG-ze-pVa" secondAttribute="width" id="Flt-D9-Nxg"/>
                             <constraint firstAttribute="trailing" secondItem="ATp-ag-qPu" secondAttribute="trailing" id="HS9-J5-6Ss"/>
                             <constraint firstItem="ATp-ag-qPu" firstAttribute="top" secondItem="Noy-8Y-AGT" secondAttribute="bottom" id="PLH-FH-p51"/>
                             <constraint firstAttribute="centerY" secondItem="mIS-8r-Mih" secondAttribute="centerY" multiplier="0.6" id="Vpe-K5-LfQ"/>
                             <constraint firstAttribute="centerX" secondItem="mIS-8r-Mih" secondAttribute="centerX" id="c2c-Y8-MZ5"/>
                             <constraint firstItem="G7J-u0-A2w" firstAttribute="top" secondItem="ATp-ag-qPu" secondAttribute="bottom" id="dV0-BP-gSq"/>
+                            <constraint firstItem="mIS-8r-Mih" firstAttribute="height" secondItem="csG-ze-pVa" secondAttribute="height" id="xn9-QL-mh1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
@@ -513,11 +532,14 @@
                         <outlet property="alarmToggle" destination="nGM-T0-MCB" id="mDU-eW-OPu"/>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
                         <outlet property="hamburgerMenuButton" destination="8Mh-Zl-nv4" id="X5J-c8-BnY"/>
+                        <outlet property="playView" destination="csG-ze-pVa" id="les-rp-hgo"/>
                         <outlet property="recordButton" destination="Cyq-F8-yXU" id="fr7-KV-Xos"/>
                         <outlet property="recordView" destination="mIS-8r-Mih" id="DYa-Bh-msr"/>
                         <outlet property="selectedTimeLabel" destination="e7j-x9-NZH" id="OPH-ZK-6jv"/>
                         <outlet property="titleLabel" destination="bJy-OJ-6mB" id="rGo-gI-W8f"/>
-                        <segue destination="r5R-Zs-RqR" kind="push" identifier="playMemo" id="hUC-yl-tsB"/>
+                        <segue destination="r5R-Zs-RqR" kind="popoverPresentation" identifier="playMemo" popoverAnchorView="WHx-eQ-5d8" id="hUC-yl-tsB">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhP-oe-tAL" userLabel="First Responder" sceneMemberID="firstResponder"/>

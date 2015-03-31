@@ -15,10 +15,13 @@
     NSTimer *timer;
     SCLAlertView *alert;
     BOOL *date;
+    AVAudioPlayer *memoPlayer;
+
 }
 
 @property (strong, nonatomic) TimeOfDay *timeOfDay;
 @property (nonatomic) AVAudioPlayer *player;
+@property (weak, nonatomic) IBOutlet UIView *playView;
 
 
 @end
@@ -44,7 +47,7 @@
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
-    
+    self.playView.layer.cornerRadius=80;
     
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
@@ -294,8 +297,7 @@
 }
 
 - (IBAction)recordButtonUpOutside:(id)sender {
-    [self performSegueWithIdentifier:@"playMemo" sender:self];
-
+//    [self performSegueWithIdentifier:@"playMemo" sender:self];
 //    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"playMemoVC"]]
 //                                                 animated:YES];
     
@@ -327,8 +329,22 @@
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
     
-    
-    
+    recordView.hidden=true;
+    [UIView transitionWithView:self.recordView
+                      duration:0.25
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        _playView.hidden=false;
+                        [UIView transitionWithView:self.playView
+                                          duration:0.5
+                                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                                        animations:^{
+                                         
+                                            
+                                        }
+                                        completion:nil];
+                    }
+                    completion:nil];
     [recordView.layer removeAllAnimations];
     [recordView setBackgroundColor: [UIColor colorWithRed:255/255 green:16/255 blue:26/255 alpha:0.5]];
     [self recordButtonUpOutside:self];
@@ -358,6 +374,14 @@
     
 }
 
+-(void)playMemo{
+    
+}
+- (IBAction)playButtonTapped:(id)sender {
+  
+    memoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:tempMemoURL error:nil];
+    [memoPlayer play];
+}
 
 
 

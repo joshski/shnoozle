@@ -246,7 +246,7 @@
         
         NSTimeInterval snoozeInterval = 900;
         [NSTimer scheduledTimerWithTimeInterval:snoozeInterval
-                                         target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
+                                         target:self selector:@selector(foregroundAlarmSound:) userInfo:nil repeats:NO];
         [countdown setCountDownTime:snoozeInterval];
         [countdown start];
 

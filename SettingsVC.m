@@ -142,9 +142,16 @@
 
 - (void)runPlayer
 {
+    
     NSString *songString = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"AlarmSound"];
+    
+    
     NSURL *url=[NSURL URLWithString:songString];
+    if (songString == nil) {
+        url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/alarm1.wav", [[NSBundle mainBundle] resourcePath]]];
+        
+    }
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     float volume = [[NSUserDefaults standardUserDefaults]
                     floatForKey:@"AlarmVolume"];

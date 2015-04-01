@@ -22,7 +22,6 @@
     MZTimerLabel *countdown;
     BOOL alarmOn ;
     BOOL switchOn;
-    BOOL savedAlarmToDisk;
 
 
 }
@@ -61,13 +60,7 @@
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     [self cornerRadius];
-    if ((savedAlarmTime = NULL)) {
-        savedAlarmToDisk= false;
-    }
-    else {
-        savedAlarmToDisk= true;
-
-    }
+  
     switchOn= [[NSUserDefaults standardUserDefaults] boolForKey:@"AlarmSwitchOn"];
     
     if (switchOn) {

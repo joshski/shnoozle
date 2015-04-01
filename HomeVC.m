@@ -265,8 +265,8 @@
 
 
     }];
-    
-    [foregroundAlarmAlert showSuccess:self title:@"Alarm!!" subTitle:@"Wake Up" closeButtonTitle:@"Ok" duration:30.0f];
+    NSTimeInterval songDuration=self.player.duration;
+    [foregroundAlarmAlert showSuccess:self title:@"Alarm!!" subTitle:@"Wake Up" closeButtonTitle:@"Ok" duration:songDuration];
 
 }
 

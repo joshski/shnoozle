@@ -9,7 +9,6 @@
 #import "LeftMenuVC.h"
 #import "RERootVC.h"
 #import <Parse/Parse.h>
-#import "MZTimerLabel.h"
 
 @interface HomeVC (){
     AVAudioRecorder *recorder;
@@ -22,6 +21,7 @@
     int currSeconds;
     MZTimerLabel *countdown;
     BOOL alarmOn ;
+    BOOL switchOn;
 
 }
 
@@ -53,22 +53,35 @@
     hamburgerMenuButton.lineColor=[UIColor redColor];
     [hamburgerMenuButton updateAppearance];
     [countdown resetTimerAfterFinish];
-
+    countdown.delegate = self;
     [self recorderSettings];
     [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     [self cornerRadius];
-    [self alarm];
-        if (alarmOn) {
+    
+    switchOn= [[NSUserDefaults standardUserDefaults] boolForKey:@"AlarmSwitchOn"];
+    
+    if (switchOn) {
         [countdown setCountDownTime:intervalToAlarm];
 
     }
-        else{
-            _countDownLabel.text=@"";
-        }
+    else {
+        _countDownLabel.text=@"";
+        [countdown reset];
+
+    }
+    static dispatch_once_t once;
+    dispatch_once(&once, ^ {
+        [self isSavedSwitchOn];
+    });
+ 
 
 }
+
+
+
+
 -(void)cornerRadius {
     self.recordView.layer.cornerRadius = 80;
     self.playView.layer.cornerRadius=80;
@@ -138,6 +151,8 @@
 
 
 -(void)alarm {
+    [countdown reset];
+
     
     _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
     [self isTimeLabelEmpty];
@@ -264,26 +279,55 @@
     self.player = nil;
 }
 
+-(void)isSavedSwitchOn{
+    
+    if (switchOn) {
+        [alarmToggle setOn:YES animated:YES];
+        [self alarm];
+        _selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
+
+    }
+    else {
+        [alarmToggle setOn:NO animated:YES];
+        _selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
+        [timer invalidate];
+        timer = nil;
+        
+        [countdown setCountDownTime:0];
+        
+
+
+    }
+    if ((switchOn=nil)) {
+        switchOn=NO;
+    }
+    
+}
 
 - (void)changeSwitch:(id)sender{
     [countdown reset];
-    
 
+   
     if([sender isOn])
         
     {
-        [self alarm];
-        _selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
-        
+        switchOn=true;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AlarmSwitchOn"];
+        [self isSavedSwitchOn];
+
     }
     
     else
         
     {
 
-        _selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
-        [timer invalidate];
-        timer = nil;
+        switchOn=false;
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"AlarmSwitchOn"];
+        [self isSavedSwitchOn];
+        
+
+
+
     }
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -366,10 +410,8 @@
 }
 
 - (IBAction)recordButtonUpOutside:(id)sender {
-//    [self performSegueWithIdentifier:@"playMemo" sender:self];
-//    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"playMemoVC"]]
-//                                                 animated:YES];
-    
+    [self showMemoView];
+
 }
 - (IBAction)playCloseTapped:(id)sender {
     [self showRecordView];
@@ -402,7 +444,6 @@
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
    
-    [self showMemoView];
     [recordView.layer removeAllAnimations];
     [recordView setBackgroundColor: [UIColor colorWithRed:255/255 green:16/255 blue:26/255 alpha:0.5]];
     [self recordButtonUpOutside:self];
@@ -506,6 +547,7 @@
     if(sender.currentMode == JTHamburgerButtonModeHamburger){
         [sender setCurrentMode:JTHamburgerButtonModeCross withAnimation:.3];
         [self.sideMenuViewController presentLeftMenuViewController];
+        
         
         
     }

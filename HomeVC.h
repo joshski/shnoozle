@@ -3,9 +3,10 @@
 #import "TimeOfDay.h"
 #import <RESideMenu/RESideMenu.h>
 #import "EKVideoController.h"
+#import "MZTimerLabel.h"
 
 
-@interface HomeVC : UIViewController <RESideMenuDelegate>
+@interface HomeVC : UIViewController <RESideMenuDelegate,MZTimerLabelDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

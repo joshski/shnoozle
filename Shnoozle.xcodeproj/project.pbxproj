@@ -10,6 +10,7 @@
 		5015C20B8BB18DADCD6BCA91 /* libPods-ShnoozleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB08187669FD6E571DB47F1 /* libPods-ShnoozleTests.a */; };
 		71B0481378BDBF8F46B987A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5113FF57EF7B59FD04488A9 /* libPods.a */; };
 		B319BDB41AC18B9E0091DD03 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */; };
+		B32581FE1ACC16F300A30DA9 /* Video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B31D19171ACB5DF200EC6D5A /* Video.mp4 */; };
 		B33614531AC44AC4001CE51F /* PlayMemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B33614521AC44AC4001CE51F /* PlayMemoVC.m */; };
 		B34AFF6F1AADBAD5007269C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF6E1AADBAD5007269C4 /* main.m */; };
 		B34AFF721AADBAD5007269C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B34AFF711AADBAD5007269C4 /* AppDelegate.m */; };
@@ -37,6 +38,7 @@
 		B3BA0DDE1ACAED2F0085B94E /* playBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */; };
 		B3BA0DE01ACAEFFC0085B94E /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */; };
 		B3C7949E1AC5F713008A6B9B /* messages@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C7949D1AC5F713008A6B9B /* messages@2x.png */; };
+		B3CFBA571ACC1C9900544881 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CFBA561ACC1C9900544881 /* MediaPlayer.framework */; };
 		B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerVC.m */; };
 		B3DFE23C1AC421DF00225DBF /* FindFriendsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DFE23B1AC421DF00225DBF /* FindFriendsVC.m */; };
 		B3E5FCDD1AC1C3B20043EFE7 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDB1AC1C3B20043EFE7 /* mic.png */; };
@@ -111,6 +113,7 @@
 		B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playBtn@2x.png"; sourceTree = "<group>"; };
 		B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = SOURCE_ROOT; };
 		B3C7949D1AC5F713008A6B9B /* messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "messages@2x.png"; path = "../../messages@2x.png"; sourceTree = "<group>"; };
+		B3CFBA561ACC1C9900544881 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B3D540701AC30C3700706F6E /* TimePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerVC.h; path = ../TimePickerVC.h; sourceTree = "<group>"; };
 		B3D540711AC30C3700706F6E /* TimePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePickerVC.m; path = ../TimePickerVC.m; sourceTree = "<group>"; };
 		B3DFE23A1AC421DF00225DBF /* FindFriendsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindFriendsVC.h; path = ../FindFriendsVC.h; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CFBA571ACC1C9900544881 /* MediaPlayer.framework in Frameworks */,
 				B319BDB41AC18B9E0091DD03 /* AVFoundation.framework in Frameworks */,
 				71B0481378BDBF8F46B987A3 /* libPods.a in Frameworks */,
 			);
@@ -163,6 +167,7 @@
 		812B92F6B5A506ECEF6DB5F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3CFBA561ACC1C9900544881 /* MediaPlayer.framework */,
 				B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */,
 				D5113FF57EF7B59FD04488A9 /* libPods.a */,
 				3CB08187669FD6E571DB47F1 /* libPods-ShnoozleTests.a */,
@@ -379,6 +384,7 @@
 				B3BA0DDC1ACAE0DF0085B94E /* alarm@2x.png in Resources */,
 				B38CFF5F1AC72D26003FC9A7 /* alarm1.wav in Resources */,
 				B3E5FCE91AC1CA230043EFE7 /* zzz.png in Resources */,
+				B32581FE1ACC16F300A30DA9 /* Video.mp4 in Resources */,
 				B36E1A331AC0575700300174 /* TableHeaderView.xib in Resources */,
 				B3EBE9811AC4AF8200ED8BE3 /* Stars@2x.png in Resources */,
 				B3E5FCEA1AC1CA230043EFE7 /* zzz@2x.png in Resources */,

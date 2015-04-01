@@ -67,15 +67,24 @@
         [countdown setCountDownTime:intervalToAlarm];
 
     }
-    else {
+
+        else {
         [countdown setCountDownTime:0];
 
     }
     static dispatch_once_t once;
     dispatch_once(&once, ^ {
         [self isSavedSwitchOn];
-    });
+   });
  
+    
+    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"Video" ofType:@"mp4"];
+    self.repeat        = YES;
+    self.videoSpeed    = 1.0f;
+
+    
+    [self play];
+    
 
 }
 
@@ -576,7 +585,5 @@
     memoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:tempMemoURL error:nil];
     [memoPlayer play];
 }
-
-
 
 @end

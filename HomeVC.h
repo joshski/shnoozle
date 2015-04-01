@@ -6,7 +6,7 @@
 #import "MZTimerLabel.h"
 
 
-@interface HomeVC : UIViewController <RESideMenuDelegate,MZTimerLabelDelegate>
+@interface HomeVC : EKVideoController <RESideMenuDelegate,MZTimerLabelDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

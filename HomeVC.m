@@ -77,7 +77,7 @@
    });
  
     
-    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"clouds" ofType:@"mp4"];
+    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"cloud" ofType:@"mp4"];
     self.repeat        = YES;
     self.videoSpeed    = 1.0f;
 
@@ -209,12 +209,17 @@
         localNotification.alertBody = @"Wake Now Up!!";
         localNotification.alertAction = @"Show me the item";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
         localNotification.soundName=@"alarm1.wav";
+
+    }
+    
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
         
         intervalToAlarm = [fireTime timeIntervalSinceDate:now ];
+    
         [NSTimer scheduledTimerWithTimeInterval:intervalToAlarm
-                                         target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
+                                         target:self selector:@selector(foregroundAlarmSound:) userInfo:nil repeats:NO];
         
         [countdown setCountDownTime:intervalToAlarm];
         
@@ -233,7 +238,7 @@
     self.countDownLabel.text = [NSString stringWithFormat:@"%02li hrs %02li min %02li sec",  (long)hours, (long)minutes, (long)seconds];
 }
 
--(void)playAlarmSound:(NSTimer *)timer{
+-(void)foregroundAlarmSound:(NSTimer *)timer{
     [self runPlayer];
     SCLAlertView *foregroundAlarmAlert = [[SCLAlertView alloc] init];
   
@@ -398,10 +403,7 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     TimePickerVC *source = [segue sourceViewController];
-    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"clouds" ofType:@"mp4"];
-    self.repeat        = YES;
-    self.videoSpeed    = 1.0f;
-
+  
     if (source.timeOfDay != nil) {
         _timeOfDay = source.timeOfDay;
         

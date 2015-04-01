@@ -38,10 +38,10 @@
     _slider.value=volume*100;
      playing = NO;
     [_playPauseBtn setBackgroundImage:[UIImage imageNamed:@"playBtn@2x.png"] forState:UIControlStateNormal];
-
+    [self configureAVAudioSession];
 }
 - (IBAction)sliderValueChanged:(id)sender {
-    float volume= _slider.value / 100.0;
+    float volume= _slider.value;
     self.player.volume = volume;
 
     [[NSUserDefaults standardUserDefaults] setFloat:volume forKey:@"AlarmVolume"];
@@ -175,6 +175,33 @@
 }
 
 
-
+- (void) configureAVAudioSession //To play through main iPhone Speakers
+{
+    //get your app's audioSession singleton object
+    AVAudioSession* session = [AVAudioSession sharedInstance];
+    
+    //error handling
+    BOOL success;
+    NSError* error;
+    
+    //set the audioSession category.
+    //Needs to be Record or PlayAndRecord to use audioRouteOverride:
+    
+    success = [session setCategory:AVAudioSessionCategoryPlayAndRecord
+                             error:&error];
+    
+    if (!success)  NSLog(@"AVAudioSession error setting category:%@",error);
+    
+    //set the audioSession override
+    success = [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker
+                                         error:&error];
+    if (!success)  NSLog(@"AVAudioSession error overrideOutputAudioPort:%@",error);
+    
+    //activate the audio session
+    success = [session setActive:YES error:&error];
+    if (!success) NSLog(@"AVAudioSession error activating: %@",error);
+    else NSLog(@"audioSession active");
+    
+}
 
 @end

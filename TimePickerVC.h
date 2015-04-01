@@ -1,7 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "TimeOfDay.h"
+#import "EKVideoController.h"
 
-@interface TimePickerVC : UIViewController
+@interface TimePickerVC : EKVideoController
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 

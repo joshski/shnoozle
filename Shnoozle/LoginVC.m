@@ -140,12 +140,14 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self transferToNext];
-    NSLog(@"BLA");
+    NSLog(@"didLogUserIn");
     
 }
 
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
     [self transferToNext];
+    NSLog(@"didSignUserUp");
+
 
 }
 

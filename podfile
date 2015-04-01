@@ -1,11 +1,12 @@
 pod 'Parse'
 pod 'ParseUI'
 pod 'Facebook-iOS-SDK'
+
 pod 'SCLAlertView-Objective-C'
 pod 'RESideMenu', '~> 4.0.7'
-pod 'JTHamburgerButton', '~> 1.0'
 pod 'MZTimerLabel'
 pod 'EKVideoController'
+
 target :ShnoozleTests, :exclusive => true do
     pod 'Kiwi'
 end

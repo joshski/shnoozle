@@ -43,7 +43,7 @@
 @synthesize recordButton;
 @synthesize recordView;
 @synthesize tempMemoURL;
-@synthesize hamburgerMenuButton;
+@synthesize MenuButton;
 @synthesize savedAlarmTime;
 
 
@@ -51,8 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     countdown = [[MZTimerLabel alloc] initWithLabel:self.countDownLabel andTimerType:MZTimerLabelTypeTimer];
-    hamburgerMenuButton.lineColor=[UIColor redColor];
-    [hamburgerMenuButton updateAppearance];
+
     [countdown resetTimerAfterFinish];
     countdown.delegate = self;
     [self recorderSettings];
@@ -78,13 +77,9 @@
    });
  
     
-    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"Video" ofType:@"mp4"];
+    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"clouds" ofType:@"mp4"];
     self.repeat        = YES;
     self.videoSpeed    = 1.0f;
-
-    
-    [self play];
-    
 
 }
 
@@ -403,6 +398,10 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     TimePickerVC *source = [segue sourceViewController];
+    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"clouds" ofType:@"mp4"];
+    self.repeat        = YES;
+    self.videoSpeed    = 1.0f;
+
     if (source.timeOfDay != nil) {
         _timeOfDay = source.timeOfDay;
         
@@ -554,19 +553,10 @@
     }];
 }
 
-- (IBAction)didCloseButtonTouch:(JTHamburgerButton *)sender
+- (IBAction)didCloseButtonTouch:(UIButton *)sender
 {
-    if(sender.currentMode == JTHamburgerButtonModeHamburger){
-        [sender setCurrentMode:JTHamburgerButtonModeCross withAnimation:.3];
-        [self.sideMenuViewController presentLeftMenuViewController];
-        
-        
-        
-    }
-    else{
-        [sender setCurrentMode:JTHamburgerButtonModeHamburger withAnimation:.3];
-        
-    }
+    [self.sideMenuViewController presentLeftMenuViewController];
+
 }
 
 

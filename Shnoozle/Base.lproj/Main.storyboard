@@ -411,9 +411,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5499999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ATp-ag-qPu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kce-em-xug" userLabel="MainScrollView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                                 <subviews>
@@ -534,7 +531,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.36470588235294116" green="0.66274509803921566" blue="1" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.36470588235294116" green="0.66274509803921566" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="mIS-8r-Mih" secondAttribute="centerX" id="0Sf-Ww-gU1"/>
                                     <constraint firstAttribute="centerX" secondItem="csG-ze-pVa" secondAttribute="centerX" id="TJc-1y-Qlb"/>
@@ -545,11 +542,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.29411764705882354" green="0.20784313725490197" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ATp-ag-qPu" firstAttribute="leading" secondItem="aBo-s0-XUj" secondAttribute="leading" id="6zy-YG-LYK"/>
-                            <constraint firstAttribute="trailing" secondItem="ATp-ag-qPu" secondAttribute="trailing" id="HS9-J5-6Ss"/>
                             <constraint firstItem="kce-em-xug" firstAttribute="top" secondItem="Noy-8Y-AGT" secondAttribute="bottom" id="K5u-uS-RFh"/>
-                            <constraint firstItem="ATp-ag-qPu" firstAttribute="top" secondItem="Noy-8Y-AGT" secondAttribute="bottom" id="PLH-FH-p51"/>
-                            <constraint firstItem="G7J-u0-A2w" firstAttribute="top" secondItem="ATp-ag-qPu" secondAttribute="bottom" id="dV0-BP-gSq"/>
                             <constraint firstAttribute="height" secondItem="kce-em-xug" secondAttribute="height" id="g3n-5m-CBv"/>
                             <constraint firstAttribute="width" secondItem="kce-em-xug" secondAttribute="width" id="sRF-sP-IRy"/>
                             <constraint firstItem="kce-em-xug" firstAttribute="leading" secondItem="aBo-s0-XUj" secondAttribute="leading" id="ub0-gy-VVO"/>
@@ -557,10 +550,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="QPm-VR-rBz" userLabel="Alarm">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="dPl-mh-xK6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Mh-Zl-nv4" customClass="JTHamburgerButton">
-                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Mh-Zl-nv4">
+                                <rect key="frame" x="16" y="7" width="16" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
+                                <state key="normal" image="menu.png">
                                     <color key="titleColor" red="1" green="0.094088714729999995" blue="0.1609453528" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -579,10 +572,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="MenuButton" destination="8Mh-Zl-nv4" id="cPJ-xc-maR"/>
                         <outlet property="alarmToggle" destination="nGM-T0-MCB" id="mDU-eW-OPu"/>
                         <outlet property="countDownLabel" destination="bxp-wb-I9J" id="7F8-X3-7Vc"/>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
-                        <outlet property="hamburgerMenuButton" destination="8Mh-Zl-nv4" id="X5J-c8-BnY"/>
                         <outlet property="playView" destination="csG-ze-pVa" id="les-rp-hgo"/>
                         <outlet property="recordButton" destination="Cyq-F8-yXU" id="fr7-KV-Xos"/>
                         <outlet property="recordView" destination="mIS-8r-Mih" id="DYa-Bh-msr"/>
@@ -755,9 +748,6 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.66274509803921566" blue="1" alpha="0.55000000000000004" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tu4-Zp-qad">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
                                 <rect key="frame" x="0.0" y="253" width="375" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="448956814.16217601">
@@ -766,10 +756,8 @@
                             </datePicker>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="Tu4-Zp-qad" secondAttribute="width" id="4rf-tk-mcA"/>
                             <constraint firstItem="sHZ-SU-qpE" firstAttribute="leading" secondItem="AxR-65-ixM" secondAttribute="leading" id="NEX-Gl-hQy"/>
                             <constraint firstItem="T6n-Tg-mvz" firstAttribute="top" secondItem="sHZ-SU-qpE" secondAttribute="bottom" id="OFk-zL-2DA"/>
-                            <constraint firstAttribute="height" secondItem="Tu4-Zp-qad" secondAttribute="height" id="Wfh-Sb-5QF"/>
                             <constraint firstAttribute="trailing" secondItem="sHZ-SU-qpE" secondAttribute="trailing" id="ZMF-3k-tiJ"/>
                             <constraint firstItem="sHZ-SU-qpE" firstAttribute="top" secondItem="MPB-Tv-bb9" secondAttribute="bottom" id="cNW-0w-8ck"/>
                         </constraints>

@@ -12,6 +12,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.videoPath     = [[NSBundle mainBundle] pathForResource:@"clouds" ofType:@"mp4"];
+    self.repeat        = YES;
+    self.videoSpeed    = 1.0f;
+    [self play];
 }
 
 - (void)didReceiveMemoryWarning {

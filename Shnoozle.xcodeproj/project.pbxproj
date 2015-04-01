@@ -39,6 +39,7 @@
 		B3BA0DE01ACAEFFC0085B94E /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */; };
 		B3C7949E1AC5F713008A6B9B /* messages@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C7949D1AC5F713008A6B9B /* messages@2x.png */; };
 		B3CFBA571ACC1C9900544881 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CFBA561ACC1C9900544881 /* MediaPlayer.framework */; };
+		B3CFBA5B1ACC48BB00544881 /* clouds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B3CFBA5A1ACC488500544881 /* clouds.mp4 */; };
 		B3D540721AC30C3700706F6E /* TimePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D540711AC30C3700706F6E /* TimePickerVC.m */; };
 		B3DFE23C1AC421DF00225DBF /* FindFriendsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DFE23B1AC421DF00225DBF /* FindFriendsVC.m */; };
 		B3E5FCDD1AC1C3B20043EFE7 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5FCDB1AC1C3B20043EFE7 /* mic.png */; };
@@ -114,6 +115,7 @@
 		B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = SOURCE_ROOT; };
 		B3C7949D1AC5F713008A6B9B /* messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "messages@2x.png"; path = "../../messages@2x.png"; sourceTree = "<group>"; };
 		B3CFBA561ACC1C9900544881 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B3CFBA5A1ACC488500544881 /* clouds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clouds.mp4; sourceTree = "<group>"; };
 		B3D540701AC30C3700706F6E /* TimePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerVC.h; path = ../TimePickerVC.h; sourceTree = "<group>"; };
 		B3D540711AC30C3700706F6E /* TimePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePickerVC.m; path = ../TimePickerVC.m; sourceTree = "<group>"; };
 		B3DFE23A1AC421DF00225DBF /* FindFriendsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindFriendsVC.h; path = ../FindFriendsVC.h; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				B31D19171ACB5DF200EC6D5A /* Video.mp4 */,
 				B3BA0DDB1ACAE0DF0085B94E /* alarm@2x.png */,
 				B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */,
+				B3CFBA5A1ACC488500544881 /* clouds.mp4 */,
 				B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */,
 				B3EBE9801AC4AF8200ED8BE3 /* Stars@2x.png */,
 				B3695DD51AC62DFF00B38D5C /* menu@2x.png */,
@@ -400,6 +403,7 @@
 				B3695DDC1AC6358C00B38D5C /* fb@2x.png in Resources */,
 				B34AFF7D1AADBAD5007269C4 /* LaunchScreen.xib in Resources */,
 				B3E5FCE51AC1C7670043EFE7 /* close.png in Resources */,
+				B3CFBA5B1ACC48BB00544881 /* clouds.mp4 in Resources */,
 				B38CFF661AC7523E003FC9A7 /* FindFriendsTVC.xib in Resources */,
 				B3E8899C1AC6ACF300A9ECF2 /* alarm.wav in Resources */,
 				B3695DD61AC62DFF00B38D5C /* menu@2x.png in Resources */,

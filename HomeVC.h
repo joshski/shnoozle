@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <JTHamburgerButton.h>
 #import "TimeOfDay.h"
 #import <RESideMenu/RESideMenu.h>
 #import "EKVideoController.h"
@@ -14,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *recordView;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (strong, nonatomic) NSURL *tempMemoURL;
-@property (strong, nonatomic) IBOutlet JTHamburgerButton *hamburgerMenuButton;
+@property (strong, nonatomic) IBOutlet UIButton *MenuButton;
 @property (strong, nonatomic) TimeOfDay *savedAlarmTime;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;

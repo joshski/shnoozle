@@ -22,6 +22,8 @@
     MZTimerLabel *countdown;
     BOOL alarmOn ;
     BOOL switchOn;
+    BOOL savedAlarmToDisk;
+
 
 }
 
@@ -59,7 +61,13 @@
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     [self cornerRadius];
-    
+    if ((savedAlarmTime = NULL)) {
+        savedAlarmToDisk= false;
+    }
+    else {
+        savedAlarmToDisk= true;
+
+    }
     switchOn= [[NSUserDefaults standardUserDefaults] boolForKey:@"AlarmSwitchOn"];
     
     if (switchOn) {
@@ -67,8 +75,7 @@
 
     }
     else {
-        _countDownLabel.text=@"";
-        [countdown reset];
+        [countdown setCountDownTime:0];
 
     }
     static dispatch_once_t once;
@@ -94,10 +101,11 @@
     _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
 }
 - (void)isTimeLabelEmpty {
-    if (_selectedTimeLabel.text.length > 0) {
+    if (savedAlarmTime.minutes != NULL) {
         [alarmToggle setOn:YES animated:YES];
         alarmToggle.enabled = true;
         titleLabel.text=@"";
+        
         alarmOn=true;
 
     }
@@ -105,10 +113,12 @@
         titleLabel.text=@"No Alarm Set";
         [alarmToggle setOn:NO animated:YES];
         alarmToggle.enabled = FALSE;
+        _selectedTimeLabel.text=@"";
         alarmOn=false;
 
     }
 }
+
 
 
 
@@ -151,68 +161,68 @@
 
 
 -(void)alarm {
-    [countdown reset];
+
+        _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
+        [self isTimeLabelEmpty];
+        [self updateAlarmTime];
+        [alarmToggle setOn:YES animated:YES];
+        alarmToggle.enabled = true;
+        titleLabel.text=@"";
 
     
-    _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
-    [self isTimeLabelEmpty];
-    [self updateAlarmTime];
-    [alarmToggle setOn:YES animated:YES];
-    alarmToggle.enabled = true;
-    
-    
-    NSDate *now = [NSDate date];
-    
-    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
-    
-    
-    [comps setMinute:(unsigned long)savedAlarmTime.minutes];
-    [comps setHour:(unsigned long)savedAlarmTime.hours];
-    
-    NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
-    
-    if ([now compare:newDatefromComp] == NSOrderedDescending ) {
-        NSDate *tomorrowAlarm = [now dateByAddingTimeInterval:60*60*24*1];
-        NSDateComponents *tomorrowAlarmComps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:tomorrowAlarm];
-        NSInteger month = [tomorrowAlarmComps month];
-        NSInteger day = [tomorrowAlarmComps day];
-        NSInteger year = [tomorrowAlarmComps year];
-
-        [comps setDay:day];
-        [comps setMonth:month];
-        [comps setYear:year];
-
-        SCLAlertView *alarmOnAlertTom = [[SCLAlertView alloc] init];
-        [alarmOnAlertTom showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
-        alarmOn=true;
-    
-
-    }
-    else {
-        SCLAlertView *alarmOnAlertTo = [[SCLAlertView alloc] init];
-
-        [alarmOnAlertTo showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
-        alarmOn=true;
-
+        NSDate *now = [NSDate date];
         
-    }
-    NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
-    
-    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = fireTime;
-    localNotification.alertBody = @"Wake Now Up!!";
-    localNotification.alertAction = @"Show me the item";
-    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    localNotification.soundName=@"alarm1.wav";
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    
-    intervalToAlarm = [fireTime timeIntervalSinceDate:now ];
-    [NSTimer scheduledTimerWithTimeInterval:intervalToAlarm
-                                     target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
+        NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:now];
+        
+        
+        [comps setMinute:(unsigned long)savedAlarmTime.minutes];
+        [comps setHour:(unsigned long)savedAlarmTime.hours];
+        
+        NSDate *newDatefromComp = [[NSCalendar currentCalendar] dateFromComponents:comps];
+        
+        if ([now compare:newDatefromComp] == NSOrderedDescending ) {
+            NSDate *tomorrowAlarm = [now dateByAddingTimeInterval:60*60*24*1];
+            NSDateComponents *tomorrowAlarmComps = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:tomorrowAlarm];
+            NSInteger month = [tomorrowAlarmComps month];
+            NSInteger day = [tomorrowAlarmComps day];
+            NSInteger year = [tomorrowAlarmComps year];
+            
+            [comps setDay:day];
+            [comps setMonth:month];
+            [comps setYear:year];
+            
+            SCLAlertView *alarmOnAlertTom = [[SCLAlertView alloc] init];
+            [alarmOnAlertTom showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for tomorrow %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+            alarmOn=true;
+            
+            
+        }
+        else {
+            SCLAlertView *alarmOnAlertTo = [[SCLAlertView alloc] init];
+            
+            [alarmOnAlertTo showSuccess:self title:@"Alarm" subTitle:[NSString stringWithFormat:@"Alarm set for %1$@",_selectedTimeLabel.text] closeButtonTitle:@"Done" duration:0.0f]; // Notice
+            alarmOn=true;
+            
+            
+        }
+        NSDate *fireTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
+        
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = fireTime;
+        localNotification.alertBody = @"Wake Now Up!!";
+        localNotification.alertAction = @"Show me the item";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.soundName=@"alarm1.wav";
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
+        intervalToAlarm = [fireTime timeIntervalSinceDate:now ];
+        [NSTimer scheduledTimerWithTimeInterval:intervalToAlarm
+                                         target:self selector:@selector(playAlarmSound:) userInfo:nil repeats:NO];
+        
+        [countdown setCountDownTime:intervalToAlarm];
+        
+        [countdown start];
 
-    [countdown setCountDownTime:intervalToAlarm];
-
-    [countdown start];
 }
 -(void)updateCountDown
 {

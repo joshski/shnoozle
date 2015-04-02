@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "190173A597FFE89A388216A5"
+               BlueprintIdentifier = "0E9CCB7B88C959A73C4795D7"
                BuildableName = "libPods-EKVideoController.a"
                BlueprintName = "Pods-EKVideoController"
                ReferencedContainer = "container:Pods.xcodeproj">

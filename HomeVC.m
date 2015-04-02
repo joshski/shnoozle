@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIView *playView;
 @property (weak, nonatomic) IBOutlet UIButton *sendToParseButton;
 @property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 
 @end
 
@@ -253,7 +254,6 @@
         [self stopPlayer];
         alarmOn=true;
 
-
     }];
 
     [foregroundAlarmAlert alertIsDismissed:^{
@@ -296,6 +296,7 @@
         [alarmSwitch setOn:YES animated:YES];
         [self setAlarmOn];
         _selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
+ 
 
     }
     else {
@@ -303,7 +304,7 @@
         _selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
         [timer invalidate];
         timer = nil;
-        
+     
         [countdown setCountDownTime:0];
         
 

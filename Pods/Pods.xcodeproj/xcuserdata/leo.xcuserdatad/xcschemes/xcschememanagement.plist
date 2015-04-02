@@ -8,131 +8,157 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods-EKVideoController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-Facebook-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>Pods-JTHamburgerButton.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-MZTimerLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Pods-ParseFacebookUtils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>Pods-ParseUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>Pods-RESideMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>Pods-SCLAlertView-Objective-C.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>Pods-ShnoozleTests-KIF.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>Pods-ShnoozleTests-Kiwi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
 		</dict>
 		<key>Pods-ShnoozleTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>190173A597FFE89A388216A5</key>
+		<key>0E9CCB7B88C959A73C4795D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1AC6C8A7E1E6075F7976D973</key>
+		<key>1532CAEE3C4A97781F80C0F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A9C35AD15A432A5C31DB8D6</key>
+		<key>356BCCEEBAD867AD183763E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5CD70BFE99F7ACEE14AA8E29</key>
+		<key>367BE49AFF618B7AC619BB3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60BA043A6A09E114EF6F03B0</key>
+		<key>4AECB15070324EACC67758AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6611076280D36DE2A28B73E7</key>
+		<key>5EF7D87570E2F43B1FD1A65C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6ACC21B46E28795EA30D1055</key>
+		<key>7448928C0E1A5C0266BB12B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85719CBA036446023C2D630E</key>
+		<key>861678649B6339BE36D62153</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D711D4F46D2EF5EC1E2848F</key>
+		<key>89B6510E2BBCA5906B89B086</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CCBCB5C805284BDD080AD43E</key>
+		<key>8D409B41FE24ABCDD9CF07CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D3308F70AFFE1D325E5BC096</key>
+		<key>A14459804319E172E212CD41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7D72D3D2B4F6F6E52C41C9B</key>
+		<key>C803712DECBA308A4A381786</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF6D3E35C9D025785D8524FE</key>
+		<key>FB31B1857ED69217B4435DE3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -51,6 +51,11 @@
                BlueprintName = "ShnoozleTests"
                ReferencedContainer = "container:Shnoozle.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "TimeOfDaySpec">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

@@ -9,4 +9,5 @@ pod 'EKVideoController'
 
 target :ShnoozleTests, :exclusive => true do
     pod 'Kiwi'
+    pod 'KIF', '~> 3.0'
 end

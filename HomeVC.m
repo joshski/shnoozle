@@ -258,8 +258,7 @@
 
     [foregroundAlarmAlert alertIsDismissed:^{
         
-        [countdown setCountDownTime:intervalToAlarm];
-        [countdown start];
+        [self alarm];
         [self stopPlayer];
         alarmOn=true;
 

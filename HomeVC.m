@@ -39,7 +39,7 @@
 
 @synthesize datePicker;
 @synthesize titleLabel;
-@synthesize alarmToggle;
+@synthesize alarmSwitch;
 @synthesize recordButton;
 @synthesize recordView;
 @synthesize tempMemoURL;
@@ -55,7 +55,6 @@
     [countdown resetTimerAfterFinish];
     countdown.delegate = self;
     [self recorderSettings];
-    [alarmToggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     [self updateAlarmTime];
     [self isTimeLabelEmpty];
     [self cornerRadius];
@@ -99,8 +98,8 @@
 }
 - (void)isTimeLabelEmpty {
     if (savedAlarmTime.minutes != NULL) {
-        [alarmToggle setOn:YES animated:YES];
-        alarmToggle.enabled = true;
+        [alarmSwitch setOn:YES animated:YES];
+        alarmSwitch.enabled = true;
         titleLabel.text=@"";
         
         alarmOn=true;
@@ -108,8 +107,8 @@
     }
     else {
         titleLabel.text=@"No Alarm Set";
-        [alarmToggle setOn:NO animated:YES];
-        alarmToggle.enabled = FALSE;
+        [alarmSwitch setOn:NO animated:YES];
+        alarmSwitch.enabled = FALSE;
         _selectedTimeLabel.text=@"";
         alarmOn=false;
 
@@ -157,13 +156,13 @@
 }
 
 
--(void)alarm {
+-(void)setAlarmOn {
 
         _selectedTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (unsigned long)savedAlarmTime.hours, (unsigned long)savedAlarmTime.minutes];
         [self isTimeLabelEmpty];
         [self updateAlarmTime];
-        [alarmToggle setOn:YES animated:YES];
-        alarmToggle.enabled = true;
+        [alarmSwitch setOn:YES animated:YES];
+        alarmSwitch.enabled = true;
         titleLabel.text=@"";
 
     
@@ -209,6 +208,7 @@
         localNotification.alertBody = @"Wake Now Up!!";
         localNotification.alertAction = @"Show me the item";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
     if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
         localNotification.soundName=@"alarm1.wav";
 
@@ -258,7 +258,7 @@
 
     [foregroundAlarmAlert alertIsDismissed:^{
         
-        [self alarm];
+        [self setAlarmOn];
         [self stopPlayer];
         alarmOn=true;
 
@@ -293,13 +293,13 @@
 -(void)isSavedSwitchOn{
     
     if (switchOn) {
-        [alarmToggle setOn:YES animated:YES];
-        [self alarm];
+        [alarmSwitch setOn:YES animated:YES];
+        [self setAlarmOn];
         _selectedTimeLabel.textColor=[UIColor colorWithRed:132/255 green:255/255 blue:93/255 alpha:1];
 
     }
     else {
-        [alarmToggle setOn:NO animated:YES];
+        [alarmSwitch setOn:NO animated:YES];
         _selectedTimeLabel.textColor=[UIColor colorWithRed:255/255 green:132/255 blue:93/255 alpha:1];
         [timer invalidate];
         timer = nil;
@@ -315,10 +315,10 @@
     
 }
 
-- (void)changeSwitch:(id)sender{
+- (void)switchToggled:(id)sender{
     [countdown reset];
 
-   
+
     if([sender isOn])
         
     {
@@ -350,10 +350,6 @@
     }
 }
 
-
-- (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController {
-    
-}
 
 - (void)recorderSettings {
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -411,14 +407,14 @@
         
         [countdown reset];
         
-        [self alarm];
+        [self setAlarmOn];
         
         
     }
 }
 
 - (IBAction)switchTapped:(id)sender {
-    [self changeSwitch:sender];
+    [self switchToggled:sender];
 }
 
 - (IBAction)recordButtonUpOutside:(id)sender {

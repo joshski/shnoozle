@@ -572,7 +572,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="MenuButton" destination="8Mh-Zl-nv4" id="cPJ-xc-maR"/>
-                        <outlet property="alarmToggle" destination="nGM-T0-MCB" id="mDU-eW-OPu"/>
+                        <outlet property="alarmSwitch" destination="nGM-T0-MCB" id="VxY-DC-J5H"/>
                         <outlet property="countDownLabel" destination="bxp-wb-I9J" id="7F8-X3-7Vc"/>
                         <outlet property="datePicker" destination="WEi-Ph-hoe" id="7Sg-QX-dAw"/>
                         <outlet property="playView" destination="csG-ze-pVa" id="les-rp-hgo"/>

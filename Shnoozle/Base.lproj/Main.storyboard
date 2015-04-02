@@ -151,8 +151,8 @@
                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-4R-4RJ" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45G-Hw-7gO" userLabel="mainScrollView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45G-Hw-7gO" userLabel="mainScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKn-I0-Yty" userLabel="alarmView">
                                         <rect key="frame" x="0.0" y="60" width="375" height="107.5"/>
@@ -249,7 +249,6 @@
         <scene sceneID="J86-Nw-xQr">
             <objects>
                 <navigationController storyboardIdentifier="contentViewController" id="SHS-KL-jBl" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dzP-Qy-uxb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -563,7 +562,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gew-0T-AGg">
-                            <color key="tintColor" red="0.51764705879999995" green="1" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.16897017859999999" green="0.86912089650000002" blue="0.26971825659999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="b9Z-XH-8Qs" kind="show" id="hWi-j4-igU"/>
                             </connections>
@@ -746,14 +745,24 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHZ-SU-qpE">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
+                                        <rect key="frame" x="0.0" y="193.5" width="375" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="448956814.16217601">
+                                            <!--2015-03-25 06:13:34 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.66274509803921566" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WEi-Ph-hoe" secondAttribute="trailing" id="CNe-4f-epm"/>
+                                    <constraint firstItem="WEi-Ph-hoe" firstAttribute="leading" secondItem="sHZ-SU-qpE" secondAttribute="leading" id="Dug-9K-ocI"/>
+                                    <constraint firstAttribute="bottom" secondItem="WEi-Ph-hoe" secondAttribute="bottom" id="Jp6-Wc-cu2"/>
+                                    <constraint firstItem="WEi-Ph-hoe" firstAttribute="top" secondItem="sHZ-SU-qpE" secondAttribute="top" id="bkC-fk-bD7"/>
+                                    <constraint firstAttribute="centerX" secondItem="WEi-Ph-hoe" secondAttribute="centerX" id="eaC-XK-R5E"/>
+                                    <constraint firstAttribute="centerY" secondItem="WEi-Ph-hoe" secondAttribute="centerY" id="fZk-jo-Ri6"/>
+                                </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Ph-hoe">
-                                <rect key="frame" x="0.0" y="253" width="375" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="448956814.16217601">
-                                    <!--2015-03-25 06:13:34 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <constraints>
                             <constraint firstItem="sHZ-SU-qpE" firstAttribute="leading" secondItem="AxR-65-ixM" secondAttribute="leading" id="NEX-Gl-hQy"/>
@@ -771,7 +780,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="QkK-fL-U3t">
-                            <color key="tintColor" red="0.51764705879999995" green="1" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.16897017855237692" green="0.86912089646464641" blue="0.26971825662216159" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="xK9-x0-01N" kind="unwind" unwindAction="unwindToList:" id="m7W-fF-ikL"/>
                             </connections>

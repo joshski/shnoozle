@@ -15,12 +15,13 @@
 
 @implementation LoginVC
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    UITextField *usernameField = self.logInView.usernameField;
+    [usernameField setIsAccessibilityElement:YES];
+    [usernameField setAccessibilityLabel:@"Username"];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {

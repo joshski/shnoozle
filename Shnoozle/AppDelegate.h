@@ -16,5 +16,6 @@
 
 @property (nonatomic, strong) NSURL *chosenSongURL;
 
+- (void)resetApp;
 @end
 

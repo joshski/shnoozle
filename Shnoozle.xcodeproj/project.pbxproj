@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AD1A9213F7AE3424C9CCACB /* SignUpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1A54B6F37D4A329EE8EAC /* SignUpTest.m */; };
+		1AD1AA3D8D4E7CA0B0E43AFC /* KIFUITestActor+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1A03B4FA794EB176EACAE /* KIFUITestActor+Placeholder.m */; };
 		5015C20B8BB18DADCD6BCA91 /* libPods-ShnoozleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB08187669FD6E571DB47F1 /* libPods-ShnoozleTests.a */; };
 		71B0481378BDBF8F46B987A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5113FF57EF7B59FD04488A9 /* libPods.a */; };
 		B319BDB41AC18B9E0091DD03 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B319BDB31AC18B9E0091DD03 /* AVFoundation.framework */; };
@@ -32,7 +34,6 @@
 		B38CFF641AC751E2003FC9A7 /* FindFriendsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B38CFF631AC751E2003FC9A7 /* FindFriendsTVC.m */; };
 		B38CFF661AC7523E003FC9A7 /* FindFriendsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38CFF651AC7523E003FC9A7 /* FindFriendsTVC.xib */; };
 		B39ADEE01AC6389C005048F3 /* MenuBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39ADEDF1AC6389C005048F3 /* MenuBackground@2x.png */; };
-		B3A266E31ACD777B00E4DCD0 /* UITest.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CD87E91ACD6DF900752FFB /* UITest.m */; };
 		B3BA0DDC1ACAE0DF0085B94E /* alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDB1ACAE0DF0085B94E /* alarm@2x.png */; };
 		B3BA0DDE1ACAED2F0085B94E /* playBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */; };
 		B3BA0DE01ACAEFFC0085B94E /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */; };
@@ -64,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AD1A03B4FA794EB176EACAE /* KIFUITestActor+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+Placeholder.m"; sourceTree = "<group>"; };
+		1AD1A146EC3663A160CE49BB /* SignUpTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpTest.h; sourceTree = "<group>"; };
+		1AD1A54B6F37D4A329EE8EAC /* SignUpTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpTest.m; sourceTree = "<group>"; };
+		1AD1AC4D328F9DEECCE8CDB6 /* KIFUITestActor+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+Placeholder.h"; sourceTree = "<group>"; };
 		3CB08187669FD6E571DB47F1 /* libPods-ShnoozleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShnoozleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EEE4FCC7B248F1BD8DD7802 /* Pods-ShnoozleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShnoozleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShnoozleTests/Pods-ShnoozleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		646ECC478C459F6F1D18C254 /* Pods-ShnoozleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShnoozleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShnoozleTests/Pods-ShnoozleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,8 +116,6 @@
 		B3BA0DDD1ACAED2F0085B94E /* playBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playBtn@2x.png"; sourceTree = "<group>"; };
 		B3BA0DDF1ACAEFFC0085B94E /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = SOURCE_ROOT; };
 		B3C7949D1AC5F713008A6B9B /* messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "messages@2x.png"; path = "../../messages@2x.png"; sourceTree = "<group>"; };
-		B3CD87E81ACD6DF900752FFB /* UITest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITest.h; sourceTree = "<group>"; };
-		B3CD87E91ACD6DF900752FFB /* UITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITest.m; sourceTree = "<group>"; };
 		B3CFBA561ACC1C9900544881 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B3CFBA5C1ACC512A00544881 /* cloud.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloud.mp4; sourceTree = "<group>"; };
 		B3D540701AC30C3700706F6E /* TimePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerVC.h; path = ../TimePickerVC.h; sourceTree = "<group>"; };
@@ -179,8 +182,6 @@
 		B34AFF601AADBAD5007269C4 = {
 			isa = PBXGroup;
 			children = (
-				B3CD87E81ACD6DF900752FFB /* UITest.h */,
-				B3CD87E91ACD6DF900752FFB /* UITest.m */,
 				B38CFF651AC7523E003FC9A7 /* FindFriendsTVC.xib */,
 				B38CFF621AC751E2003FC9A7 /* FindFriendsTVC.h */,
 				B38CFF631AC751E2003FC9A7 /* FindFriendsTVC.m */,
@@ -253,6 +254,10 @@
 			isa = PBXGroup;
 			children = (
 				B34AFF861AADBAD5007269C4 /* Supporting Files */,
+				1AD1A03B4FA794EB176EACAE /* KIFUITestActor+Placeholder.m */,
+				1AD1AC4D328F9DEECCE8CDB6 /* KIFUITestActor+Placeholder.h */,
+				1AD1A146EC3663A160CE49BB /* SignUpTest.h */,
+				1AD1A54B6F37D4A329EE8EAC /* SignUpTest.m */,
 			);
 			path = ShnoozleTests;
 			sourceTree = "<group>";
@@ -509,7 +514,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3A266E31ACD777B00E4DCD0 /* UITest.m in Sources */,
+				1AD1AA3D8D4E7CA0B0E43AFC /* KIFUITestActor+Placeholder.m in Sources */,
+				1AD1A9213F7AE3424C9CCACB /* SignUpTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

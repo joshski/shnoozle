@@ -1,5 +1,5 @@
 //
-//  UITest.h
+//  SignUpTest.h
 //  Shnoozle
 //
 //  Created by Leo on 02/04/2015.
@@ -8,6 +8,6 @@
 
 #import "KIFTestCase.h"
 #import "KIF.h"
-@interface UITest : KIFTestCase
+@interface SignUpTest : KIFTestCase
 
 @end

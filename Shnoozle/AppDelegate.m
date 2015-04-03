@@ -87,4 +87,7 @@
    [[PFFacebookUtils session] close];
 }
 
+- (void)resetApp {
+    [PFUser logOut];
+}
 @end
